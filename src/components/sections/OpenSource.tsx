@@ -161,7 +161,7 @@ export default function OpenSource() {
         >
           {[
             { label: 'GitHub Repository', href: 'https://github.com/abdellahaarab/lenis', icon: '⭐' },
-            { label: 'Live Demo', href: 'https://pro-lenis.dev', icon: '🌐' },
+            { label: 'Live Demo', href: 'https://pro-lenis.vercel.app', icon: '🌐' },
             { label: 'Twitter / X', href: 'https://twitter.com/abdellahaarab', icon: '𝕏' },
             { label: 'NPM Package', href: 'https://www.npmjs.com/package/lenis', icon: '📦' },
           ].map(({ label, href, icon }) => (

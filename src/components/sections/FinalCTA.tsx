@@ -103,7 +103,7 @@ export default function FinalCTA() {
           </a>
 
           <a
-            href="https://pro-lenis.dev"
+            href="https://pro-lenis.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

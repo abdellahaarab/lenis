@@ -2,7 +2,7 @@
 
 A world-class, Awwwards-quality landing page for the [Lenis](https://github.com/abdellahaarab/lenis) smooth scroll library. Built with React 19, GSAP, Framer Motion, and Tailwind CSS.
 
-**Live Demo:** [pro-lenis.dev](https://pro-lenis.dev)  
+**Live Demo:** [pro-lenis.vercel.app](https://pro-lenis.vercel.app)  
 **Repository:** [github.com/abdellahaarab/lenis](https://github.com/abdellahaarab/lenis)
 
 ---

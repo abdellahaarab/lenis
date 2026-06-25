@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/30">
             <a href="https://github.com/abdellahaarab/lenis" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">GitHub</a>
             <a href="https://www.npmjs.com/package/lenis" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">NPM</a>
-            <a href="https://pro-lenis.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">Demo</a>
+            <a href="https://pro-lenis.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">Demo</a>
           </div>
 
           {/* Credit */}

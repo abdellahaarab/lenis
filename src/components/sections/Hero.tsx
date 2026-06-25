@@ -158,7 +158,7 @@ export default function Hero() {
         {/* CTAs */}
         <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-3 mb-16">
           <a
-            href="https://pro-lenis.dev"
+            href="https://pro-lenis.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary group"
