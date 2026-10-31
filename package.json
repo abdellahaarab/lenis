@@ -14,7 +14,7 @@
   },
   "scripts": {
     "validate-data": "tsx scripts/validate-data.ts",
-    "prebuild": "npm run db:generate -w @aljeel/server && npm run build -w @aljeel/shared && tsx scripts/generate-static-api.ts",
+    "prebuild": "node scripts/admin/ensure-native.mjs && npm run db:generate -w @aljeel/server && npm run build -w @aljeel/shared",
     "build:client": "tsx scripts/validate-data.ts && tsc && vite build",
     "build": "npm run build:client && npm run build -w @aljeel/server && npm run build -w @aljeel/admin",
     "build:all": "npm run build",
@@ -26,7 +26,9 @@
     "typecheck": "tsc --noEmit && npm run typecheck --workspaces",
     "test": "npm run test -w @aljeel/server",
     "test:integration": "npm run test:integration -w @aljeel/server",
+    "test:product-updates": "node scripts/admin/test-product-updates.mjs",
     "test:ui": "playwright test -c admin/playwright.config.ts",
+    "db:commerce:seed": "tsx server/src/commerce-seed.ts",
     "db:generate": "npm run db:generate -w @aljeel/server",
     "db:migrate": "npm run db:migrate -w @aljeel/server",
     "seed:owner": "npm run seed:owner -w @aljeel/server",
@@ -34,14 +36,20 @@
     "dev:local": "node scripts/admin/local-mysql.mjs",
     "start": "npm run start -w @aljeel/server",
     "start:local": "node scripts/admin/serve-local.mjs",
+    "deploy:check": "npm run security:check && npm run lint && npm run typecheck && npm run test && npm run build",
+    "deploy:package": "npm run deploy:check && node scripts/admin/package-hostinger.mjs",
     "db:import": "tsx server/src/import-catalog.ts",
     "db:backup": "tsx server/src/backup.ts backup",
+    "db:backup:full": "node scripts/backup-full.mjs",
     "db:restore": "tsx server/src/backup.ts restore",
+    "media:export": "node scripts/export-images.mjs",
     "db:legacy:export": "node scripts/admin/export-postgresql.mjs",
     "db:legacy:import": "tsx server/src/import-legacy.ts",
     "db:audit:protect": "tsx server/src/protect-audit.ts",
     "db:verify": "tsx server/src/verify-database.ts",
-    "db:migrate:repair": "node scripts/admin/repair-checks.mjs"
+    "db:commerce:repair-case": "node scripts/admin/repair-commerce-case.mjs",
+    "db:migrate:repair": "node scripts/admin/repair-checks.mjs",
+    "security:check": "npm audit --audit-level=low"
   },
   "dependencies": {
     "@aljeel/shared": "*",
@@ -50,6 +58,7 @@
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@tailwindcss/postcss": "^4.3.3",
     "@vitejs/plugin-react": "^4.5.2",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
@@ -66,11 +75,13 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.18.4",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^5.8.3",
+    "uuid": "11.1.1",
     "vite": "^6.3.5",
-    "zod": "^4.6.5"
+    "zod": "^4.6.5",
+    "exceljs": "4.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
@@ -81,11 +92,20 @@
     "globals": "^16.5.0",
     "typescript-eslint": "^8.57.0"
   },
+  "optionalDependencies": {
+    "@img/sharp-libvips-linux-x64": "1.3.4",
+    "@img/sharp-linux-x64": "0.35.5"
+  },
   "overrides": {
     "@prisma/adapter-mariadb": {
       "mariadb": "3.5.4"
     },
     "mysql2": "^3.24.5",
-    "deepmerge-ts": "^8.0.2"
+    "deepmerge-ts": "^8.0.2",
+    "esbuild": "0.28.2",
+    "uuid": "11.1.1",
+    "exceljs": {
+      "uuid": "11.1.1"
+    }
   }
 }

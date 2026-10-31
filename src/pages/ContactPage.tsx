@@ -46,7 +46,7 @@ export const ContactPage: React.FC = () => {
     ? 'ساعات الدوام تُحدد وتُعتمد رسميًا مع إدارة المحل'
     : 'Store hours are specified upon direct consultation';
 
-  const briefText = `📌 ${language === 'ar' ? 'ملخص احتياج تقني — الجيل العربي الرقمي' : 'Setup Brief — Al-Jeel Al-Arabi'}\n` +
+  const briefText = `${language === 'ar' ? 'ملخص احتياج تقني — الجيل العربي الرقمي' : 'Setup Brief — Al-Jeel Al-Arabi'}\n` +
     `• ${language === 'ar' ? 'الاسم' : 'Name'}: ${formData.name || (language === 'ar' ? 'غير محدد' : 'Unspecified')}\n` +
     `• ${language === 'ar' ? 'طبيعة الاستخدام' : 'Use Case'}: ${formData.useCase}\n` +
     `• ${language === 'ar' ? 'الميزانية التقريبية' : 'Budget'}: ${formData.budget || (language === 'ar' ? 'غير محددة' : 'Flexible')}\n` +

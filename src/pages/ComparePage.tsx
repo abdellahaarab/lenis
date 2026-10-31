@@ -18,13 +18,15 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useCatalog } from '@/data/CatalogContext';
+import { useCatalog, useExchangeRate } from '@/data/CatalogContext';
+import { calculateYer, formatPriceYer } from '@/lib/currency';
 import { Product } from '@/data/types';
 import { addCart } from '@/data/commerce';
 
 export default function ComparePage() {
   const { language, dir } = useLanguage();
   const { products } = useCatalog();
+  const exchangeRate = useExchangeRate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Pick up to 3 product slugs from query params, or default to first 2 products
@@ -83,7 +85,12 @@ export default function ComparePage() {
     {
       key: 'price',
       label: language === 'ar' ? 'السعر' : 'Price',
-      getValue: (p: Product) => (p.price.usd ? `$${p.price.usd}` : language === 'ar' ? 'اسأل عن السعر' : 'Inquire')
+      getValue: (p: Product) => {
+        if (!p.price.usd) return language === 'ar' ? 'اسأل عن السعر' : 'Inquire';
+        const yer = calculateYer(p.price.usd, exchangeRate, p.price.yer);
+        const yerFormatted = formatPriceYer(yer, language);
+        return `$${p.price.usd}${yerFormatted ? ` ${yerFormatted}` : ''}`;
+      }
     },
     {
       key: 'condition',
@@ -239,7 +246,7 @@ export default function ComparePage() {
                         <Trash2 className="w-4 h-4" />
                       </button>
 
-                      <div className="aspect-[4/3] rounded-xl bg-white dark:bg-neutral-800 p-2 flex items-center justify-center mb-3">
+                      <div className="aspect-[4/3] rounded-xl bg-white dark:bg-white p-2 flex items-center justify-center mb-3 border border-neutral-200/60 dark:border-neutral-700/60">
                         <img
                           src={p.images[0] || '/placeholder.webp'}
                           alt={p.title[language]}
@@ -254,9 +261,20 @@ export default function ComparePage() {
                         <h3 className="text-xs font-bold text-neutral-900 dark:text-neutral-100 truncate mb-1">
                           {p.title[language]}
                         </h3>
-                        <strong className="text-base font-black text-neutral-900 dark:text-neutral-100 block mb-3">
+                        <strong className="text-base font-black text-neutral-900 dark:text-neutral-100 block mb-0.5">
                           {p.price.usd ? `$${p.price.usd}` : language === 'ar' ? 'اسأل' : 'Inquire'}
                         </strong>
+                        {(() => {
+                          const yer = calculateYer(p.price.usd, exchangeRate, p.price.yer);
+                          const yerFormatted = formatPriceYer(yer, language);
+                          return yerFormatted ? (
+                            <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 block mb-2.5">
+                              {yerFormatted}
+                            </span>
+                          ) : (
+                            <span className="block mb-2.5" />
+                          );
+                        })()}
 
                         <div className="flex gap-2">
                           <Link

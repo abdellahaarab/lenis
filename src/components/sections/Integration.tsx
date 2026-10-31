@@ -8,9 +8,12 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { useHomeImage } from '@/data/CatalogContext'
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 export default function Integration() {
   const { t, language, dir } = useLanguage()
+  const laptopImg = useHomeImage('integration_laptop', '/images/home-reference/laptop.webp')
+  const audioImg = useHomeImage('integration_audio', '/images/home-reference/headphones.webp')
   const ref = useRef<HTMLElement>(null)
   const [active, setActive] = useState(0)
   const ar = language === 'ar'
@@ -43,7 +46,7 @@ export default function Integration() {
         <div className="integration-steps">{t.integration.stages.map((s,i)=><div className={`integration-step ${active===i?'is-active':''}`} key={s.title}><span className="step-number">0{i+1}</span><div><h3>{s.title}</h3><p>{s.description}</p></div><Check size={18}/></div>)}</div>
         <a className="action-text" href="#setups">{t.integration.cta}<Arrow size={20}/></a>
       </div>
-      <div className="ecosystem"><div className="ecosystem-halo" aria-hidden="true"/><span className="ecosystem-word" aria-hidden="true" dir="ltr">IN SYNC.</span><img className="ecosystem-laptop" src="/images/home-reference/laptop.webp" alt={ar?'لابتوب للتجهيز الشخصي':'Laptop for your personal setup'} width="1600" height="766" loading="lazy"/><img className="ecosystem-audio" src="/images/home-reference/headphones.webp" alt={ar?'سماعات تكمل التجهيز':'Headphones to complete the setup'} width="614" height="680" loading="lazy"/><ProductDisplay className="ecosystem-desktop" label={ar?'شاشة ومحطة عمل متكاملة':'Display and desktop workstation'}/><span className="ecosystem-caption"><span className="status-dot"/>{ar?'اختيار. توافق. تكامل.':'CHOOSE. CONNECT. CREATE.'}</span></div>
+      <div className="ecosystem"><div className="ecosystem-halo" aria-hidden="true"/><span className="ecosystem-word" aria-hidden="true" dir="ltr">IN SYNC.</span>{laptopImg && <img className="ecosystem-laptop" src={laptopImg} alt={ar?'لابتوب للتجهيز الشخصي':'Laptop for your personal setup'} width="1600" height="766" loading="lazy"/>}{audioImg && <img className="ecosystem-audio" src={audioImg} alt={ar?'سماعات تكمل التجهيز':'Headphones to complete the setup'} width="614" height="680" loading="lazy"/>}<ProductDisplay className="ecosystem-desktop" label={ar?'شاشة ومحطة عمل متكاملة':'Display and desktop workstation'}/><span className="ecosystem-caption"><span className="status-dot"/>{ar?'اختيار. توافق. تكامل.':'CHOOSE. CONNECT. CREATE.'}</span></div>
     </div></div>
   </section>
 }

@@ -53,7 +53,7 @@ export async function importCsv(db:PrismaClient,config:AppConfig,request:Fastify
       if(input.kind==='variants'){
         const v=csvVariant.parse(row),optionKey=optionIdentity(v.options);
         let p=await tx.product.findUnique({where:{id:v.productId}});
-        if(!p)p=await tx.product.create({data:{id:v.productId,slug:v.slug||v.productId,category:v.category!,brandId:v.brandId!,model:v.model||v.sku,title:{ar:v.titleAr!,en:v.titleEn!},summary:{ar:v.summaryAr,en:v.summaryEn},condition:'new',status:'draft',specs:{},inspection:{},specSources:[],bestFor:[],tags:[]}});
+        if(!p)p=await tx.product.create({data:{id:v.productId,slug:v.slug||v.productId,category:v.category!,brandId:v.brandId!,model:v.model||v.sku,title:{ar:v.titleAr!,en:v.titleEn!},summary:{ar:v.summaryAr,en:v.summaryEn},condition:'new',status:'draft',specs:{},inspection:{passed:false,date:null,notes:{ar:'',en:''}},specSources:[],bestFor:[],tags:[]}});
         const before=await tx.productVariant.findUnique({where:{sku:v.sku}});
         const after=await tx.productVariant.upsert({where:{sku:v.sku},create:{id:v.id||randomUUID(),productId:v.productId,sku:v.sku,optionKey,options:v.options,specs:v.specs,images:[],priceUsd:v.priceUsd,quantity:v.quantity,inventoryMode:v.inventoryMode,condition:p.condition,inventoryReviewed:v.inventoryMode==='quantity',warrantyMonths:p.warrantyMonths},update:{options:v.options,specs:v.specs,optionKey,priceUsd:v.priceUsd,quantity:v.quantity,inventoryReviewed:v.inventoryMode==='quantity'?true:before?.inventoryReviewed}});
         await tx.product.update({where:{id:p.id},data:{status:'draft'}});

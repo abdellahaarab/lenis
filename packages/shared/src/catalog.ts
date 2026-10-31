@@ -2,7 +2,16 @@ import { z } from 'zod';
 
 export const LocalizedTextSchema = z.object({
   ar: z.string().min(1, 'Arabic text is required'),
-  en: z.string().min(1, 'English text is required'),
+  en: z.string().max(4000).optional().default(''),
+}).transform(val => ({
+  ar: val.ar,
+  en: (val.en && val.en.trim()) ? val.en : val.ar
+}));
+
+// Product descriptions are optional; clearing them must remain valid in the store and editor.
+export const ProductSummarySchema = z.object({
+  ar: z.string().max(4000).default(''),
+  en: z.string().max(4000).optional().default(''),
 });
 
 export const CategoryEnum = z.enum([
@@ -13,14 +22,29 @@ export const CategoryEnum = z.enum([
   'network',
   'storage',
   'power',
+  'hard-drives',
 ]);
 
-export const ConditionEnum = z.enum(['new', 'A', 'B', 'C']);
+export const ConditionEnum = z.enum([
+  'new',
+  'open_box',
+  'like_new',
+  'refurbished',
+  'used',
+  'defective',
+  'A',
+  'B',
+  'C',
+]);
+
+export const AvailabilityModeEnum = z.enum(['in_stock', 'local_order', 'external_order']);
 
 export const StockEnum = z.enum(['in_stock', 'low', 'order', 'sold']);
 
 export const PriceSchema = z.object({
   usd: z.number().nullable(),
+  originalUsd: z.number().nullable().optional(),
+  discountPercent: z.number().nullable().optional(),
   yer: z.number().nullable(),
   updatedAt: z.string().nullable(),
   negotiable: z.boolean().default(false),
@@ -78,12 +102,22 @@ export const SpecsSchema = z.object({
   capacityWatts: z.number().optional(),
   waveType: z.string().optional(),
   outletsCount: z.number().optional(),
+
+  // Hard Drive specs
+  hddType: z.string().optional(),       // HDD | SSD | NVMe | External | Portable
+  formFactor: z.string().optional(),    // 3.5" | 2.5" | M.2 | External
+  rpm: z.number().optional(),           // 5400 | 7200 | 10000
+  cacheSize: z.string().optional(),     // e.g. "64MB" | "256MB"
+  usbVersion: z.string().optional(),    // e.g. "USB 3.0" | "USB-C 3.2"
 }).passthrough();
 
 export const InspectionNotesSchema = z.object({
   ar: z.string(),
-  en: z.string(),
-});
+  en: z.string().optional().default(''),
+}).transform(val => ({
+  ar: val.ar,
+  en: (val.en && val.en.trim()) ? val.en : val.ar
+}));
 
 export const InspectionSchema = z.object({
   passed: z.boolean(),
@@ -107,7 +141,7 @@ export const ProductSchema = z.object({
   brand: z.string().min(1),
   model: z.string().min(1),
   title: LocalizedTextSchema,
-  summary: LocalizedTextSchema,
+  summary: ProductSummarySchema,
   condition: ConditionEnum,
   warrantyMonths: z.number().nullable(),
   price: PriceSchema,

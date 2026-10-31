@@ -1,4 +1,4 @@
-import {useCatalog} from '@/data/CatalogContext'
+import {useCatalog, useHomeImage} from '@/data/CatalogContext'
 import {referenceHome} from '@/data/reference-home'
 import MotionHeading from '@/components/home/MotionHeading'
 import { isLite } from '@/hooks/useMotionMode'
@@ -6,14 +6,17 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowDown, ArrowUpLeft, ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowDown, ArrowUpLeft, ArrowUpRight, Search, ShoppingBag } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { Link } from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 export default function Hero() {
-  const { t, language, dir } = useLanguage()
+  const { language, dir } = useLanguage()
   const {site}=useCatalog()
+  const heroLaptop = useHomeImage('hero_laptop', '/images/home-reference/laptop.webp')
+  const heroHeadphones = useHomeImage('hero_headphones', '/images/home-reference/headphones.webp')
   const copy=referenceHome[language]
-  const [titleLead,...titleRest]=site.tagline[language].split(/(?<=[،.])\s+/)
+  const [titleLead,...titleRest]=copy.storefrontTitle
   const ref = useRef<HTMLElement>(null)
   const ar = language === 'ar'
   const Arrow = ar ? ArrowUpLeft : ArrowUpRight
@@ -45,21 +48,21 @@ export default function Hero() {
       <div className="hero-copy">
         <div className="eyebrow"><span className="status-dot" />{site.storeName[language]}<span className="eyebrow-divider" />{site.city[language]}</div>
         <MotionHeading as="h1" lines={titleRest.length ? [titleLead, titleRest.join(' ')] : [titleLead]} accent={titleRest.length > 0}/>
-        <p className="hero-description">{copy.description}</p>
-        <p className="hero-helper">{copy.helper}</p>
-        <div className="hero-actions"><a href="#setups" className="action-primary">{t.hero.ctaPrimary}<Arrow size={21} /></a><a href="#business" className="action-text">{t.hero.ctaBusiness}<Arrow size={18} /></a></div>
-        <div className="hero-assurance"><ShieldCheck size={19} /><span>{ar ? 'اختيار مدروس' : 'Thoughtful choices'}</span><i /><span>{ar ? 'تجهيز متكامل' : 'Complete setups'}</span><i /><span>{ar ? 'دعم مستمر' : 'Ongoing support'}</span></div>
+        <p className="hero-description">{copy.storefrontDescription}</p>
+        <p className="hero-helper">{copy.storefrontHelper}</p>
+        <div className="hero-actions"><Link to={`/${language}/shop`} className="action-primary"><ShoppingBag size={19} />{copy.storefrontShop}<Arrow size={21} /></Link><a href="#categories" className="action-text"><Search size={18} />{copy.storefrontCategories}</a></div>
+        <div className="hero-assurance"><ShoppingBag size={19} /><span>{ar ? 'أجهزة وإلكترونيات' : 'Computers & electronics'}</span><i /><span>{ar ? 'ملحقات ومكونات' : 'Components & accessories'}</span></div>
       </div>
       <div className="hero-art">
         <div className="hero-orbit" aria-hidden="true" />
-        <span className="art-coordinate" dir="ltr">01 / YOUR NEXT CHAPTER</span>
-        <div className="hero-product"><img src="/images/home-reference/laptop.webp" alt={ar ? 'لابتوب MacBook Air بتصميم معدني أزرق وشاشة مفتوحة' : 'Sky blue MacBook Air, open in profile'} width="1600" height="766" fetchPriority="high" /></div>
-        <div className="hero-detail product-note"><span className="micro-label" dir="ltr">BUILT AROUND YOU</span><span>{copy.note}</span><Sparkles size={18} /></div>
-        <div className="hero-detail hero-headphones"><img src="/images/home-reference/headphones.webp" width="614" height="680" alt={ar ? 'سماعات AirPods Max بلون داكن' : 'Midnight AirPods Max headphones'} /><span>{copy.accessories}</span></div>
-        <span className="art-caption">{copy.caption} · {copy.illustration}</span>
+        <span className="art-coordinate" dir="ltr">01 / COMPUTER & TECH</span>
+        {heroLaptop && <div className="hero-product"><img src={heroLaptop} alt={ar ? 'لابتوب بتصميم معدني وشاشة مفتوحة' : 'Laptop device, open in profile'} width="1600" height="766" fetchPriority="high" /></div>}
+        <div className="hero-detail product-note"><span className="micro-label" dir="ltr">SHOP COMPUTER & TECH</span><span>{copy.storefrontSpotlight}</span></div>
+        {heroHeadphones && <div className="hero-detail hero-headphones"><img src={heroHeadphones} width="614" height="680" alt={ar ? 'سماعات رأس' : 'Headphones'} /><span>{copy.storefrontAccessories}</span></div>}
+        <span className="art-caption">{copy.storefrontBrowse} · {copy.illustration}</span>
       </div>
     </div>
-    <nav className="page-shell mobile-home-shortcuts" aria-label={ar?'ابدأ من هنا':'Start here'}>{['#setups','#categories','#contact'].map((href,i)=><a href={href} key={href}><span dir="ltr">0{i+1}</span><span>{copy.shortcuts[i]}</span><Arrow size={15}/></a>)}</nav>
-    <div className="page-shell hero-bottom"><a href="#integration"><ArrowDown size={18}/>{t.hero.scrollIndicator}</a><span dir="ltr">DEVICES / SETUPS / POSSIBILITIES</span><span>{ar ? 'تقنية تتكامل. وطموح يتجدد.' : 'Connected tech. Renewed ambition.'}</span></div>
+    <nav className="page-shell mobile-home-shortcuts" aria-label={ar?'تصفح المتجر':'Browse the store'}>{[[`/${language}/shop`,copy.storefrontShop],['#categories',copy.storefrontCategories],[`/${language}/collections`,copy.storefrontOffers]].map(([href,label],i)=><a href={href} key={href}><span dir="ltr">0{i+1}</span><span>{label}</span><Arrow size={15}/></a>)}</nav>
+    <div className="page-shell hero-bottom"><a href="#categories"><ArrowDown size={18}/>{ar ? 'ابدأ التسوق' : 'Start shopping'}</a><span dir="ltr">COMPUTERS / COMPONENTS / ACCESSORIES</span><span>{ar ? 'تسوق التقنية التي تناسبك.' : 'Find the technology that fits you.'}</span></div>
   </section>
 }

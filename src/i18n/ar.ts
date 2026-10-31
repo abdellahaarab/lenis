@@ -2,8 +2,8 @@ import { Translations } from './types';
 
 export const ar: Translations = {
   meta: {
-    title: 'الجيل العربي الرقمي — أجهزة وتجهيزات وحلول تقنية',
-    description: 'أجهزة وتجهيزات وحلول تقنية للأفراد والأعمال في صنعاء. نساعدك على اختيار التقنية المناسبة وربط تفاصيلها.'
+    title: 'الجيل العربي الرقمي | متجر الكمبيوتر والإلكترونيات في صنعاء',
+    description: 'تسوّق أجهزة الكمبيوتر واللابتوبات وملحقات التقنية والشبكات من متجر الجيل العربي الرقمي في صنعاء. تصفح المنتجات ومواصفاتها وأسعارها.'
   },
   nav: {
     setups: 'تجهيزاتك',
@@ -14,7 +14,7 @@ export const ar: Translations = {
     currentLanguageName: 'العربية',
     targetLanguageName: 'English',
     toggleMenu: 'القائمة',
-    findSetup: 'جهّز احتياجك'
+    findSetup: 'تصفح المتجر'
   },
   hero: {
     storeName: 'الجيل العربي الرقمي',
@@ -199,7 +199,12 @@ export const ar: Translations = {
     demoBadge: 'بيانات تجريبية',
     demoDisclaimer: 'هذا المنتج معروض كبيانات تجريبية لأغراض العرض واختبار الهيكل. الأسعار والضمان تُؤكد مع إدارة المتجر مباشرة.',
     conditionLabels: {
-      new: 'جديد بالكرتون',
+      new: 'جديد',
+      open_box: 'مفتوح الكرتون',
+      like_new: 'شبه جديد',
+      refurbished: 'مجدّد',
+      used: 'مستعمل',
+      defective: 'معيوب / تصفية',
       A: 'A — شبه جديد',
       B: 'B — جيد جدًا',
       C: 'C — اقتصادي'

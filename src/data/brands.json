@@ -102,5 +102,96 @@
       "ar": "علامات نوفّرها",
       "en": "Brands we supply"
     }
+  },
+  {
+    "id": "wd",
+    "name": "Western Digital (WD)",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "ويسترن ديجيتال - رائدة عالمياً في أقراص HDD و SSD و الأقراص الخارجية بأسعار منافسة وموثوقية عالية.",
+      "en": "Western Digital - global leader in HDD, SSD, and external drives with competitive pricing and high reliability."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "seagate",
+    "name": "Seagate",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "سيجيت - متخصصة في أقراص التخزين الضخمة HDD للنسخ الاحتياطي وأنظمة المراقبة والخوادم.",
+      "en": "Seagate - specializing in large-capacity HDD drives for backup, surveillance, and server systems."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "toshiba",
+    "name": "Toshiba",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "توشيبا - أقراص HDD 2.5 و 3.5 بوصة موثوقة للاستخدام اليومي وأجهزة اللابتوب.",
+      "en": "Toshiba - reliable 2.5\" and 3.5\" HDD drives for everyday use and laptops."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "kingston",
+    "name": "Kingston",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "كينغستون - أقراص SSD و ذواكر الفلاش بجودة عالية وضمان طويل الأمد.",
+      "en": "Kingston - high quality SSD drives and flash memory with long-term warranty."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "sandisk",
+    "name": "SanDisk",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "سانديسك (ويسترن ديجيتال) - متخصصة في الفلاش ميموري والـ SSD المحمولة والبطاقات.",
+      "en": "SanDisk (Western Digital) - specializing in portable SSDs, flash memory, and memory cards."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "crucial",
+    "name": "Crucial",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "كروشال (ميكرون) - أقراص SSD بأسعار معقولة وأداء ممتاز للترقية والاستبدال.",
+      "en": "Crucial (Micron) - affordable SSD upgrades with excellent performance for system replacement."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "transcend",
+    "name": "Transcend",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "ترانسيند - أقراص تخزين محمولة وبطاقات ذاكرة بتصاميم متينة ومناسبة للميزانيات المحدودة.",
+      "en": "Transcend - durable portable storage and memory cards suitable for budget-conscious users."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
   }
 ]

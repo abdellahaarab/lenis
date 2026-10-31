@@ -4,3 +4,7 @@ export * from './permissions.js';
 export * from './search.js';
 export * from './content.js';
 export * from './commerce.js';
+export * from './laptop-filter.js';
+export * from './home-slots.js';
+export * from './product-updates.js';
+export * from './coupon.js';

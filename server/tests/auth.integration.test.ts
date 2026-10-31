@@ -40,10 +40,12 @@ beforeAll(async () => {
     for(let attempt=0;;attempt++)try{await sql.query(statement);break;}catch(e){if((e as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=3)throw e;await new Promise(r=>setTimeout(r,500));}
   }
   const checks=await readFile(new URL('../prisma/mysql-migrations/202610030002_checks/migration.sql',import.meta.url),'utf8');
-  for(const statement of checks.split(';').map(s=>s.trim()).filter(Boolean))await sql.query(statement);
+  for(const statement of checks.split(';').map(s=>s.trim()).filter(Boolean)){
+    for(let attempt=0;;attempt++)try{await sql.query(statement);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(r=>setTimeout(r,500));}
+  }
   const commerce=await readFile(new URL('../prisma/mysql-migrations/202610030003_commerce/migration.sql',import.meta.url),'utf8');
   for(const statement of commerce.split(';').map(s=>s.trim()).filter(Boolean)){for(let attempt=0;;attempt++){try{await sql.query(statement);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(resolve=>setTimeout(resolve,500));}}}
-  for(const folder of ['202610030004_commerce_integrity','202610030005_commerce_checks']){const text=await readFile(new URL('../prisma/mysql-migrations/'+folder+'/migration.sql',import.meta.url),'utf8');for(const statement of text.split(';').map(s=>s.trim()).filter(Boolean)){for(let attempt=0;;attempt++){try{await sql.query(statement);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(resolve=>setTimeout(resolve,500));}}}}
+  for(const folder of ['202610030004_commerce_integrity','202610030005_commerce_checks','202610030006_contest','202610270001_coupons']){const text=await readFile(new URL('../prisma/mysql-migrations/'+folder+'/migration.sql',import.meta.url),'utf8');for(const statement of text.split(';').map(s=>s.trim()).filter(Boolean)){for(let attempt=0;;attempt++){try{await sql.query(statement);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(resolve=>setTimeout(resolve,500));}}}}
   for(const operation of ['UPDATE','DELETE'])await sql.query(`CREATE TRIGGER AuditLog_no_${operation.toLowerCase()} BEFORE ${operation} ON AuditLog FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Audit log is append-only'`);
   url.pathname='/'+namespace;
   db = createDb(url.toString()); passwordHash = await hashPassword(password);
@@ -129,5 +131,3 @@ describe('launch catalog and database-backed images',()=>{
     expect((await editor.client.call('/content/site')).statusCode).toBe(403);
   },60000);
 });
-
-

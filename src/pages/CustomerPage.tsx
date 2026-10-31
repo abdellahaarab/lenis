@@ -329,22 +329,20 @@ export default function CustomerPage() {
             <button
               type="button"
               onClick={() => setIsRegister(false)}
-              className={`py-2 text-xs font-bold rounded-xl transition-all ${
-                !isRegister
+              className={`py-2 text-xs font-bold rounded-xl transition-all ${!isRegister
                   ? 'bg-white dark:bg-neutral-900 text-purple-600 shadow-sm'
                   : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900'
-              }`}
+                }`}
             >
               {t.login}
             </button>
             <button
               type="button"
               onClick={() => setIsRegister(true)}
-              className={`py-2 text-xs font-bold rounded-xl transition-all ${
-                isRegister
+              className={`py-2 text-xs font-bold rounded-xl transition-all ${isRegister
                   ? 'bg-white dark:bg-neutral-900 text-purple-600 shadow-sm'
                   : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900'
-              }`}
+                }`}
             >
               {t.register}
             </button>
@@ -384,7 +382,7 @@ export default function CustomerPage() {
                   required
                   autoComplete="tel"
                   pattern="[+][1-9][0-9]{7,14}"
-                  placeholder="+967770000000"
+                  placeholder="+967771001044"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full text-xs py-2.5 ps-9 pe-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-start font-mono"

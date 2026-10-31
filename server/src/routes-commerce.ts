@@ -1,33 +1,54 @@
 import type {FastifyInstance,FastifyRequest,FastifyReply} from 'fastify';
 import {Prisma,type PrismaClient} from '@prisma/client';
 import {z} from 'zod';
-import {CartLines,Checkout,CustomerCredentials,CustomerRegistration,OrderStatuses} from '@aljeel/shared';
+import {CartLines,Checkout,CustomerCredentials,CustomerRegistration,OrderStatuses,CouponValidate} from '@aljeel/shared';
 import {hashPassword,verifyPassword,randomToken,hashToken,safeEqual} from './security.js';
 import {ApiError} from './errors.js';
 import type {AppConfig} from './config.js';
-import {catalogSearch,publishedRows,offers,effectiveFields,priceInYer} from './commerce-catalog.js';
+import {catalogSearch,catalogSuggestions,publishedRows,offers,effectiveFields,priceInYer,getCollectionBySlug,getPublishedCollections} from './commerce-catalog.js';
 import {productDto} from './catalog-service.js';
 import {cartPreview,normalizeLines} from './commerce-cart.js';
+import {validateAndCalculateCoupon,recordCouponRedemption} from './coupon-service.js';
 import {transaction} from './db.js';
 import {audit} from './audit.js';
 export async function commerceRoutes(app:FastifyInstance,db:PrismaClient,config:AppConfig){
-  app.get('/api/shop/catalog',async request=>{
+  app.get('/api/shop/catalog',{config:{rateLimit:{max:60,timeWindow:'1 minute'}}},async (request,reply)=>{
+    reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=60');
     const params=new URL(request.url,'http://local').searchParams;
     for(const key of ['min','max'])if(params.has(key)&&!/^\d{1,12}(\.\d{1,2})?$/.test(params.get(key)!))throw new ApiError(400,'invalid_price');
     return catalogSearch(db,params);
   });
-  app.get('/api/shop/products/:slug',async request=>{
+  app.get('/api/shop/suggestions',{config:{rateLimit:{max:40,timeWindow:'1 minute'}}},async (request,reply)=>{
+    reply.header('Cache-Control','private, max-age=15, stale-while-revalidate=30');
+    const params=new URL(request.url,'http://local').searchParams;
+    const query=(params.get('q')??'').slice(0,80);
+    const language=params.get('lang')==='en'?'en':'ar';
+    return catalogSuggestions(db,query,language);
+  });
+  app.get('/api/shop/collections',async(_request,reply)=>{
+    reply.header('Cache-Control','public, max-age=15, stale-while-revalidate=45');
+    return getPublishedCollections(db);
+  });
+  app.get('/api/shop/collections/:slug',async (request,reply)=>{
+    reply.header('Cache-Control','public, max-age=15, stale-while-revalidate=45');
+    const slug=z.string().max(160).parse((request.params as {slug:string}).slug);
+    return getCollectionBySlug(db,slug);
+  });
+  app.get('/api/shop/products/:slug',async (request,reply)=>{
+    reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=60');
     const slug=z.string().max(160).parse((request.params as {slug:string}).slug);
     const category=z.object({category:z.string().max(100).optional()}).parse(request.query).category;
-    const {rows}=await publishedRows(db);
+    const cache=await publishedRows(db);
+    const {rows}=cache;
     let selected=rows.filter(v=>v.product.slug===slug);
     if(category){const redirect=await db.productRedirect.findUnique({where:{path:category+'/'+slug}});if(redirect)selected=rows.filter(v=>v.productId===redirect.productId);}
     if(!selected.length){const redirects=await db.productRedirect.findMany({where:{path:{endsWith:'/'+slug}}});selected=rows.filter(v=>redirects.some(r=>r.productId===v.productId));}
     if(!selected.length)throw new ApiError(404,'not_found');
     const pricing=await db.pricingConfig.findUnique({where:{id:1}});
-    return {product:productDto(selected[0].product),brandId:selected[0].product.brandId,offers:selected.flatMap(offers).map(o=>({...o,priceYer:priceInYer(o.priceUsd,pricing?.usdToYer)})),fields:await effectiveFields(db,selected[0].product)};
+    return {product:productDto(selected[0].product),brandId:selected[0].product.brandId,offers:selected.flatMap(offers).map(o=>({...o,priceYer:priceInYer(o.priceUsd,pricing?.usdToYer),originalPriceYer:priceInYer(o.originalPriceUsd??null,pricing?.usdToYer)})),fields:await effectiveFields(db,selected[0].product)};
   });
-  app.get('/api/shop/packages',async()=>{
+  app.get('/api/shop/packages',async(_request,reply)=>{
+    reply.header('Cache-Control','public, max-age=15, stale-while-revalidate=45');
     const {rows}=await publishedRows(db),packages=await db.catalogPackage.findMany({where:{published:true},include:{items:true}});
     return {items:packages.map(p=>{
       const items=p.items.map(part=>{const v=rows.find(v=>v.id===part.variantId);return {variantId:part.variantId,quantity:part.quantity,title:v?.product.title??{},sku:v?.sku??'',inventoryMode:v?.inventoryMode??'quantity',offers:v?offers(v):[],available:Boolean(v&&v.inventoryReviewed&&(v.inventoryMode==='quantity'?v.quantity>=part.quantity:v.units.filter(u=>u.available).length>=part.quantity))};});
@@ -92,7 +113,52 @@ export async function commerceRoutes(app:FastifyInstance,db:PrismaClient,config:
     });
     store.get('/cart',async(request,reply)=>{
       const c=await cart(request,reply);
-      try{return {...await cartPreview(db,c.items),rawLines:c.items};}catch(error){if(!(error instanceof ApiError))throw error;return {rawLines:c.items,items:[],errors:[error.code],previewToken:null};}
+      const couponCode = (request.query as { coupon?: string })?.coupon || null;
+      const account = await customer(request, false);
+      try{return {...await cartPreview(db,c.items, couponCode, account?.id),rawLines:c.items};}catch(error){if(!(error instanceof ApiError))throw error;return {rawLines:c.items,items:[],errors:[error.code],previewToken:null};}
+    });
+    store.post('/coupon/validate', async (request, reply) => {
+      const input = CouponValidate.parse(request.body);
+      const c = await cart(request, reply);
+      const account = await customer(request, false);
+      const preview = await cartPreview(db, c.items);
+      const pricing = await db.pricingConfig.findUnique({ where: { id: 1 } });
+      const result = await validateAndCalculateCoupon(db, {
+        code: input.code,
+        items: preview.items,
+        subtotalUsd: new Prisma.Decimal(preview.subtotalUsd),
+        customerId: account?.id ?? null,
+        customerPhone: account?.phone ?? null,
+        exchangeRate: pricing?.usdToYer ?? null,
+      });
+      return result;
+    });
+    store.get('/coupons/public', async (_request, reply) => {
+      reply.header('Cache-Control', 'public, max-age=30, stale-while-revalidate=60');
+      const now = new Date();
+      const publicCoupons = await db.coupon.findMany({
+        where: {
+          isPublic: true,
+          active: true,
+          OR: [{ endDate: null }, { endDate: { gt: now } }],
+          AND: [{ OR: [{ startDate: null }, { startDate: { lte: now } }] }],
+        },
+        orderBy: { createdAt: 'desc' },
+        take: 10,
+      });
+      const available = publicCoupons
+        .filter((c) => c.usageLimitTotal === null || c.usedCount < c.usageLimitTotal)
+        .map((c) => ({
+          code: c.code,
+          title: c.title,
+          description: c.description,
+          discountType: c.discountType,
+          discountValue: Number(c.discountValue),
+          maxDiscountUsd: c.maxDiscountUsd ? Number(c.maxDiscountUsd) : null,
+          minOrderAmountUsd: c.minOrderAmountUsd ? Number(c.minOrderAmountUsd) : null,
+          endDate: c.endDate ? c.endDate.toISOString() : null,
+        }));
+      return { items: available };
     });
     store.post('/cart',async(request,reply)=>{
       const input=z.object({items:CartLines}).parse(request.body),c=await cart(request,reply),lines=normalizeLines(input.items);
@@ -107,14 +173,56 @@ export async function commerceRoutes(app:FastifyInstance,db:PrismaClient,config:
       const c=await customer(request),input=Checkout.parse(request.body);
       const order=await transaction(db,async tx=>{
         const prior=await tx.commerceOrder.findUnique({where:{customerId_idempotencyKey:{customerId:c!.id,idempotencyKey:input.idempotencyKey}}});if(prior)return prior;
-        const shopping=await tx.shoppingCart.findUnique({where:{customerId:c!.id}}),preview=await cartPreview(tx,shopping?.items??[]);
+        const shopping=await tx.shoppingCart.findUnique({where:{customerId:c!.id}}),preview=await cartPreview(tx,shopping?.items??[],input.couponCode,c!.id);
         if(!preview.items.length)throw new ApiError(400,'empty_cart');
         if(preview.previewToken!==input.previewToken)throw new ApiError(409,'prices_changed');
         if(input.currency==='YER'&&!preview.usdToYer)throw new ApiError(409,'rate_not_set');
-        const order=await tx.commerceOrder.create({data:{number:'AR-'+Date.now().toString(36).toUpperCase()+'-'+randomToken().slice(0,8).toUpperCase(),customerId:c!.id,idempotencyKey:input.idempotencyKey,currency:input.currency,usdToYer:preview.usdToYer,rateAt:preview.rateAt?new Date(preview.rateAt):null,subtotalUsd:preview.subtotalUsd,subtotalYer:preview.subtotalYer,hasUnpriced:preview.hasUnpriced,items:preview.items as unknown as Prisma.InputJsonValue,fulfillment:input.fulfillment,customerSnapshot:{name:c!.name,phone:c!.phone,phoneVerified:c!.phoneVerified}}});
+        if(input.couponCode&&!preview.appliedCoupon?.valid)throw new ApiError(409,'coupon_invalid');
+        // Use MAX to avoid race condition: two concurrent orders with COUNT could get the same number
+        const lastOrder = await tx.commerceOrder.findFirst({ orderBy: { createdAt: 'desc' }, select: { number: true } });
+        const lastNum = lastOrder?.number ? parseInt(lastOrder.number.replace('AR-', ''), 10) : 1000;
+        const orderNumber = `AR-${(isNaN(lastNum) ? 1000 : lastNum) + 1}`;
+        const discountUsd = preview.discountUsd ? new Prisma.Decimal(preview.discountUsd) : new Prisma.Decimal(0);
+        const discountYer = preview.discountYer ? new Prisma.Decimal(preview.discountYer) : null;
+        const totalUsd = preview.totalUsd ? new Prisma.Decimal(preview.totalUsd) : new Prisma.Decimal(preview.subtotalUsd);
+        const totalYer = preview.totalYer ? new Prisma.Decimal(preview.totalYer) : (preview.subtotalYer ? new Prisma.Decimal(preview.subtotalYer) : null);
+        const order=await tx.commerceOrder.create({
+          data:{
+            number:orderNumber,
+            customerId:c!.id,
+            idempotencyKey:input.idempotencyKey,
+            currency:input.currency,
+            usdToYer:preview.usdToYer,
+            rateAt:preview.rateAt?new Date(preview.rateAt):null,
+            subtotalUsd:preview.subtotalUsd,
+            subtotalYer:preview.subtotalYer,
+            couponId:preview.appliedCoupon?.valid?preview.appliedCoupon.coupon.id:null,
+            couponCode:preview.appliedCoupon?.valid?preview.appliedCoupon.coupon.code:null,
+            discountUsd,
+            discountYer,
+            totalUsd,
+            totalYer,
+            couponDetails:preview.appliedCoupon?.valid?(preview.appliedCoupon as unknown as Prisma.InputJsonValue):undefined,
+            hasUnpriced:preview.hasUnpriced,
+            items:preview.items as unknown as Prisma.InputJsonValue,
+            fulfillment:input.fulfillment,
+            customerSnapshot:{name:c!.name,phone:c!.phone,phoneVerified:c!.phoneVerified}
+          }
+        });
+        if(preview.appliedCoupon?.valid){
+          await recordCouponRedemption(tx,{
+            couponId:preview.appliedCoupon.coupon.id,
+            orderId:order.id,
+            customerId:c!.id,
+            discountUsd,
+            discountYer,
+            orderSubtotalUsd:new Prisma.Decimal(preview.subtotalUsd),
+            customerPhone:c!.phone,
+          });
+        }
         await tx.shoppingCart.update({where:{id:shopping!.id},data:{items:[]}});
         await audit(tx,config,request,{action:'order.created',entity:'CommerceOrder',entityId:order.id});return order;
-      });return reply.code(201).send(order);
+      }, 'Serializable');return reply.code(201).send(order);
     });
     store.get('/orders',async request=>{const c=await customer(request);return {items:await db.commerceOrder.findMany({where:{customerId:c!.id},orderBy:{createdAt:'desc'},take:100})};});
     store.get('/orders/:id',async request=>{

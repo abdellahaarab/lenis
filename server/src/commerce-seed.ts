@@ -11,7 +11,7 @@ const templates=[
   {id:'displays',title:{ar:'شاشات',en:'Displays'},fields:[field('sizeInch','المقاس','Screen size','number','inch'),field('refreshHz','التردد','Refresh rate','number','Hz'),field('resolution','الدقة','Resolution','text'),field('panel','نوع اللوحة','Panel','text')]},
   {id:'components',title:{ar:'مكونات وترقيات',en:'Components'},fields:[...common,field('interface','الواجهة','Interface','text'),field('powerW','الطاقة','Power','number','W')]},
   {id:'audio',title:{ar:'صوتيات',en:'Audio'},fields:[field('wireless','لاسلكي','Wireless','boolean'),field('batteryHours','عمر البطارية','Battery life','number','h')]},
-  {id:'network',title:{ar:'شبكات',en:'Networking'},fields:[field('speedMbps','السرعة','Speed','number','Mbps'),field('ports','عدد المنافذ','Ports','number'),field('wireless','لاسلكي','Wireless','boolean')]},
+  {id:'network',title:{ar:'شبكات',en:'Networking'},fields:[field('speedMbps','السرعة','Speed','number','Mbps'),field('portsCount','عدد المنافذ','Ports count','number'),field('wireless','لاسلكي','Wireless','boolean')]},
   {id:'storage',title:{ar:'تخزين',en:'Storage'},fields:[field('storageGB','السعة','Capacity','number','GB'),field('interface','الواجهة','Interface','text')]},
   {id:'power',title:{ar:'طاقة',en:'Power'},fields:[field('powerW','القدرة','Power','number','W'),field('capacityVA','السعة','Capacity','number','VA')]},
   {id:'accessories',title:{ar:'ملحقات',en:'Accessories'},fields:[field('wireless','لاسلكي','Wireless','boolean'),field('interface','الواجهة','Interface','text')]}

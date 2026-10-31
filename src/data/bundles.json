@@ -7,27 +7,27 @@
       "en": "Study & Learn"
     },
     "summary": {
-      "ar": "لابتوب خفيف وتخزين سريع للدراسة.",
-      "en": "A light laptop and fast storage for study."
+      "ar": "لابتوب خفيف وتخزين فائق السرعة للتنقل والتحصيل الأكاديمي.",
+      "en": "A lightweight laptop and ultra-fast storage for academic mobility."
     },
     "why": {
-      "ar": "التنقل اليومي بين القاعات وانقطاع الكهرباء يتطلبان جهازًا لا يتجاوز 1.4 كجم ببطارية ممتازة وذاكرة تكفي المتصفح والملفات.",
+      "ar": "التنقل اليومي بين القاعات وانقطاع الكهرباء يتطلبان جهازًا لا يتجاوز 1.4 كجم ببطارية ممتازة وذاكرة تكفي المتصفح والملفات والبحوث.",
       "en": "Daily campus movement requires a sub-1.4kg laptop with dependable battery and responsive memory."
     },
     "problemSolved": {
-      "ar": "حل مشكلة ضياع الملفات عند انقطاع التيار وحمل أوزان ثقيلة طوال اليوم.",
-      "en": "Prevents file loss during outages and avoids carrying cumbersome gear all day."
+      "ar": "حل مشكلة ضياع الملفات عند انقطاع التيار وحمل أوزان ثقيلة طوال اليوم مع سرعة إقلاع فورية للمحاضرات.",
+      "en": "Prevents file loss during outages, avoids carrying cumbersome gear, and ensures instant boot for lectures."
     },
     "tiers": [
       {
         "id": "study-starter",
         "name": {
-          "ar": "باقة أساسية",
-          "en": "Essential Tier"
+          "ar": "باقة أساسية - سرعة وتنقل",
+          "en": "Essential Tier - Light & Fast"
         },
         "summary": {
-          "ar": "ثينك باد T490s مع قرص Samsung 980 PRO. توافق القرص مع الجهاز يحتاج تحققًا.",
-          "en": "ThinkPad T490s with Samsung 980 PRO. Drive compatibility needs verification."
+          "ar": "ثينك باد T490s بوزن 1.3 كجم مع قرص سامسونج 980 برو فائق السرعة وقرص خارجي محمول سانديسك لحفظ المحاضرات والبحوث.",
+          "en": "ThinkPad T490s (1.3kg) with high-speed Samsung 980 PRO NVMe SSD and SanDisk portable SSD for coursework backup."
         },
         "price": {
           "usd": null,
@@ -35,18 +35,19 @@
         },
         "items": [
           "lap-thinkpad-t490s-001",
-          "sto-samsung-980-pro-008"
+          "sto-samsung-980-pro-008",
+          "ext-sandisk-ssd-500gb-036"
         ]
       },
       {
         "id": "study-pro",
         "name": {
-          "ar": "باقة متقدمة",
-          "en": "Advanced Tier"
+          "ar": "باقة متقدمة - طاقة واستمرارية",
+          "en": "Advanced Tier - Uninterrupted Power"
         },
         "summary": {
-          "ar": "لابتوب 16GB رام مع شاحن إضافي ووحدة UPS للراوتر المنزلي",
-          "en": "16GB RAM laptop with extra charger and home router UPS"
+          "ar": "لابتوب ديل لاتيتيود 7420 فئة رجال الأعمال مع وحدة طاقة UPS ذكية لمنع انقطاع الإنترنت والعمل أثناء انقطاع الكهرباء وقرص WD خارجي.",
+          "en": "Dell Latitude 7420 business laptop with smart UPS battery backup ensuring zero downtime during power cuts plus WD external drive."
         },
         "price": {
           "usd": null,
@@ -54,7 +55,8 @@
         },
         "items": [
           "lap-latitude-7420-003",
-          "pow-apc-back-ups-650va-009"
+          "pow-apc-back-ups-650va-009",
+          "ext-wd-elements-1tb-032"
         ]
       }
     ]
@@ -67,27 +69,27 @@
       "en": "Work & Productivity"
     },
     "summary": {
-      "ar": "تجهيز إنتاجية مكتبي متكامل: شاشة خارجية، موزع منافذ USB-C، وحماية طاقة للعمل المستمر.",
-      "en": "Complete desktop productivity: external display, USB-C docking hub, and power surge protection."
+      "ar": "تجهيز إنتاجية مكتبي متكامل: لابتوب أعمال، شاشة خارجية 2K، حماية طاقة، ونسخ احتياطي فوري.",
+      "en": "Complete desktop productivity: business laptop, 2K external display, power surge protection, and instant backup."
     },
     "why": {
-      "ar": "مساحة إضافية للشاشة وتجهيز طاقة احتياطية. التوافق وزمن التشغيل يحتاجان تحققًا.",
-      "en": "Extra screen space and backup power. Compatibility and runtime require verification."
+      "ar": "بيئة العمل المكتبي تتطلب مساحة شاشة واسعة لتعدد المهام، وتأمين مصدر الطاقة الاحتياطي لحماية الملفات المحاسبية والإدارية من التلف المفاجئ.",
+      "en": "Modern workplace productivity requires ample screen real estate and uninterruptible power to safeguard business workflows."
     },
     "problemSolved": {
-      "ar": "إنهاء فوضى الكابلات المتعددة وفقدان العمل المكتبي غير المحفوظ عند انقطاع الشبكة الكهربائية.",
-      "en": "Eliminates cable mess and stops unsaved workplace data loss during power cuts."
+      "ar": "إنهاء فوضى الكابلات المتعددة، وتجنب فقدان العمل المكتبي غير المحفوظ عند انقطاع الشبكة الكهربائية.",
+      "en": "Eliminates desk cable clutter and prevents unsaved enterprise data loss during sudden electrical outages."
     },
     "tiers": [
       {
         "id": "work-pro",
         "name": {
-          "ar": "باقة الإنتاجية المتكاملة",
-          "en": "Full Productivity Setup"
+          "ar": "باقة الإنتاجية والمكتب الذكي",
+          "en": "Smart Office Productivity Suite"
         },
         "summary": {
-          "ar": "لابتوب أعمال i7 مع شاشة Hub 2K ووحدة طاقة UPS لحماية بيئة العمل",
-          "en": "Core i7 business laptop, 2K Hub monitor, and UPS backup unit"
+          "ar": "لابتوب أعمال HP EliteBook 840 G7 بمعالج i7 قوي، مع شاشة ديل ألترا شارب 27 بوصة 2K Hub Type-C، ووحدة حماية طاقة APC UPS.",
+          "en": "HP EliteBook 840 G7 i7 laptop, Dell UltraSharp 27\" 2K USB-C Hub monitor, and APC Back-UPS power protection."
         },
         "price": {
           "usd": null,
@@ -97,6 +99,27 @@
           "lap-elitebook-840-g7-002",
           "disp-dell-u2722de-004",
           "pow-apc-back-ups-650va-009"
+        ]
+      },
+      {
+        "id": "work-executive",
+        "name": {
+          "ar": "باقة الإدارة والاتصال المتكامل",
+          "en": "Executive Connectivity Ecosystem"
+        },
+        "summary": {
+          "ar": "لابتوب ديل لاتيتيود 7420 مع شاشة ديل 27 بوصة، قرص تخزين مشفر WD My Passport، ومنظومة وايفاي 6 شبكية Deco X50.",
+          "en": "Dell Latitude 7420, Dell 27\" monitor, WD My Passport encrypted storage, and Deco X50 Wi-Fi 6 mesh."
+        },
+        "price": {
+          "usd": null,
+          "yer": null
+        },
+        "items": [
+          "lap-latitude-7420-003",
+          "disp-dell-u2722de-004",
+          "net-tplink-deco-x50-007",
+          "ext-wd-my-passport-2tb-038"
         ]
       }
     ]
@@ -109,27 +132,27 @@
       "en": "Content Creation"
     },
     "summary": {
-      "ar": "محطة عمل متنقلة، سماعة بميكروفون، وتخزين سريع.",
-      "en": "A mobile workstation, headset with microphone, and fast storage."
+      "ar": "محطة عمل هندسية متنقلة، شاشة ألوان احترافية، سماعة استوديو، وتخزين فائق السرعة للمونتاج.",
+      "en": "Mobile engineering workstation, calibrated color display, studio headset, and high-speed timeline storage."
     },
     "why": {
-      "ar": "جودة الصوت تؤثر في المشاهد أكثر من دقة الصورة، والمونتاج يتطلب قراءة رندر سريعة دون تقطيع.",
-      "en": "Clean audio retains viewers, while rapid storage eliminates timeline rendering lag."
+      "ar": "صناعة المحتوى والمونتاج تتطلب معالجة رسومية قوية، شاشة دقيقة الألوان لعرض تفاصيل الصورة، وسرعة قراءة ملفات الفيديو الضخمة دون تقطيع.",
+      "en": "Content creation and editing require robust graphics, color-accurate displays, and ultra-fast timeline read speeds."
     },
     "problemSolved": {
-      "ar": "تجنب صدى الصوت والضوضاء المحيطة وتسريع تصدير ملفات الفيديو بدقة 4K.",
-      "en": "Mitigates background room noise and speeds up 4K video rendering timelines."
+      "ar": "القضاء على بطء تصدير مقاطع الفيديو بدقة 4K، وتجنب أخطاء تدرج الألوان والصوتيات بفضل العتاد المتوافق.",
+      "en": "Eliminates 4K timeline stutter and export bottlenecks, preventing color and acoustic mastering errors."
     },
     "tiers": [
       {
         "id": "content-creator",
         "name": {
-          "ar": "باقة الاستوديو المكتبي",
-          "en": "Desk Studio Package"
+          "ar": "باقة الاستوديو المكتبي والمونتاج",
+          "en": "Desk Studio & Video Production"
         },
         "summary": {
-          "ar": "ثينك باد P1 مع سماعة Logitech G432 وقرص Samsung 980 PRO.",
-          "en": "ThinkPad P1 with Logitech G432 and Samsung 980 PRO."
+          "ar": "محطة عمل متنقلة ThinkPad P1 Gen 4، شاشة ديل 27 بوصة احترافية، سماعة لوجيتك G432 المحيطية، وقرص Samsung 980 PRO.",
+          "en": "ThinkPad P1 Gen 4 mobile workstation, Dell 27\" calibrated display, Logitech G432 headset, and Samsung 980 PRO SSD."
         },
         "price": {
           "usd": null,
@@ -137,8 +160,29 @@
         },
         "items": [
           "lap-thinkpad-p1-gen4-010",
+          "disp-dell-u2722de-004",
           "aud-logitech-g432-005",
           "sto-samsung-980-pro-008"
+        ]
+      },
+      {
+        "id": "content-field",
+        "name": {
+          "ar": "باقة الإنتاج الميداني المتنقل",
+          "en": "Mobile Field Production Pack"
+        },
+        "summary": {
+          "ar": "محطة عمل ThinkPad P1 Gen 4 مع قرص SanDisk Extreme SSD فائق السرعة والمقاوم للصدمات لنقل وتعديل ملفات 4K ميدانياً.",
+          "en": "ThinkPad P1 Gen 4 workstation with rugged SanDisk Extreme Portable SSD for high-bitrate 4K field editing."
+        },
+        "price": {
+          "usd": null,
+          "yer": null
+        },
+        "items": [
+          "lap-thinkpad-p1-gen4-010",
+          "ext-sandisk-ssd-1tb-037",
+          "aud-logitech-g432-005"
         ]
       }
     ]
@@ -151,27 +195,27 @@
       "en": "Gaming & Immersion"
     },
     "summary": {
-      "ar": "لابتوب ASUS للألعاب مع منظومة اتصال TP-Link.",
-      "en": "An ASUS gaming laptop with TP-Link connectivity."
+      "ar": "لابتوب ألعاب متطور، منظومة واي فاي 6 شبكية لبينج ثابت، وسماعة ألعاب محيطية ثلاثية الأبعاد.",
+      "en": "High-end gaming laptop, Wi-Fi 6 mesh for rock-solid ping, and 3D surround sound headset."
     },
     "why": {
-      "ar": "التجربة تعتمد على التوافق بين عدد الإطارات ومعدل تحديث الشاشة، مع استقرار استجابة البينج للشبكة.",
-      "en": "Smooth gameplay relies on balanced FPS, monitor refresh rates, and low ping network stability."
+      "ar": "التجربة التنافسية للألعاب تعتمد على استقرار معدل الإطارات (FPS)، وسرعة استجابة الشبكة بدون تذبذب، مع صوت مكاني يحدد مصادر الحركة.",
+      "en": "Competitive gaming relies on high frame rates, low latency network routing, and accurate positional spatial audio."
     },
     "problemSolved": {
-      "ar": "تجهيز مقترح للألعاب؛ استقرار الشبكة يُختبر في موقع الاستخدام.",
-      "en": "A suggested gaming setup; network stability is tested at the installation site."
+      "ar": "تجنب انقطاع الاتصال (Lag) أثناء المباريات، والتخلص من حرارة الأجهزة التقليدية بفضل التبريد المخصص وتوزيع الشبكة.",
+      "en": "Eliminates in-game latency spikes and lag while providing calibrated acoustic positioning."
     },
     "tiers": [
       {
         "id": "gaming-rig",
         "name": {
-          "ar": "باقة الأداء السريع",
-          "en": "High Performance Rig"
+          "ar": "باقة الأداء السريع والبث",
+          "en": "High Performance Gaming & Stream"
         },
         "summary": {
-          "ar": "Zephyrus G14 مع Deco X50. التوافق الشبكي يحتاج تحققًا.",
-          "en": "Zephyrus G14 with Deco X50. Network compatibility needs verification."
+          "ar": "لابتوب ASUS ROG Zephyrus G14 مع راوتر Mesh Wi-Fi 6 TP-Link Deco X50 وسماعة Logitech G432 بصوت ثلاثي الأبعاد محيطي.",
+          "en": "ASUS ROG Zephyrus G14 gaming laptop, TP-Link Deco X50 Wi-Fi 6 mesh system, and Logitech G432 7.1 headset."
         },
         "price": {
           "usd": null,
@@ -179,7 +223,91 @@
         },
         "items": [
           "gam-asus-rog-zephyrus-g14-006",
+          "net-tplink-deco-x50-007",
+          "aud-logitech-g432-005"
+        ]
+      },
+      {
+        "id": "gaming-turbo",
+        "name": {
+          "ar": "باقة الجيمنج التوربو والتخزين الموسّع",
+          "en": "Turbo Gaming & Storage Suite"
+        },
+        "summary": {
+          "ar": "لابتوب ROG Zephyrus G14 مع ترقية قرص الألعاب WD Black SN770 1TB فائق السرعة وسماعة ألعاب محيطية ووحدة UPS.",
+          "en": "ROG Zephyrus G14 with WD Black SN770 1TB NVMe Gen4 gaming upgrade, Logitech 7.1 headset, and APC UPS."
+        },
+        "price": {
+          "usd": null,
+          "yer": null
+        },
+        "items": [
+          "gam-asus-rog-zephyrus-g14-006",
+          "nvme-wd-sn770-1tb-029",
+          "aud-logitech-g432-005",
+          "pow-apc-back-ups-650va-009"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "security",
+    "slug": "security-bundle",
+    "title": {
+      "ar": "أحمي وأراقب",
+      "en": "Security & Surveillance"
+    },
+    "summary": {
+      "ar": "منظومة تسجيل وتخزين كاميرات مراقبة مع حماية كهربائية متواصلة 24/7.",
+      "en": "Dedicated CCTV video surveillance storage with continuous power backup."
+    },
+    "why": {
+      "ar": "أنظمة المراقبة الأمنية تتطلب وحدات تخزين مخصصة للعمل الشاق 24 ساعة دون تلف، ووحدة UPS لمنع فقدان التسجيلات أثناء انقطاع الكهرباء.",
+      "en": "Surveillance systems require heavy-duty 24/7 drives and continuous battery protection to prevent recording dropouts."
+    },
+    "problemSolved": {
+      "ar": "حماية أجهزة المراقبة والتسجيل DVR/NVR من التلف عند تذبذب وانقطاع التيار، وضمان أرشفة الفيديو بدقة عالية بدون تقطيع.",
+      "en": "Protects NVR/DVR units from power outages and guarantees continuous high-definition video archiving without frame drops."
+    },
+    "tiers": [
+      {
+        "id": "security-cctv",
+        "name": {
+          "ar": "باقة حماية وأرشفة الكاميرات المعتمدة",
+          "en": "Certified CCTV Protection Suite"
+        },
+        "summary": {
+          "ar": "قرص WD Purple 2TB المخصص لكاميرات المراقبة مع وحدة طاقة واحتياط APC Back-UPS 650VA لحماية أجهزة التسجيل وراوتر Deco X50.",
+          "en": "WD Purple 2TB surveillance hard drive with APC Back-UPS 650VA to ensure continuous camera recording and Deco X50 mesh."
+        },
+        "price": {
+          "usd": null,
+          "yer": null
+        },
+        "items": [
+          "hdd-wd-purple-2tb-014",
+          "pow-apc-back-ups-650va-009",
           "net-tplink-deco-x50-007"
+        ]
+      },
+      {
+        "id": "security-enterprise",
+        "name": {
+          "ar": "باقة المنشآت والمراقبة الموسعة",
+          "en": "Enterprise Surveillance Dual Drive"
+        },
+        "summary": {
+          "ar": "قرصان مراقبة WD Purple و Seagate SkyHawk بسعة إجمالية 4TB مع وحدة طاقة APC لحماية السيرفرات والشبكة.",
+          "en": "Dual surveillance drives (WD Purple + Seagate SkyHawk 4TB total) with APC UPS for DVR and network protection."
+        },
+        "price": {
+          "usd": null,
+          "yer": null
+        },
+        "items": [
+          "hdd-wd-purple-2tb-014",
+          "hdd-seagate-skyhawk-2tb-018",
+          "pow-apc-back-ups-650va-009"
         ]
       }
     ]

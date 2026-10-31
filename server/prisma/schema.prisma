@@ -24,6 +24,11 @@ enum Category {
 }
 enum Condition {
   new
+  open_box
+  like_new
+  refurbished
+  used
+  defective
   A
   B
   C
@@ -76,6 +81,7 @@ enum LeadSource {
   walk_in
   phone
   manual
+  exhibition_contest
 }
 enum LeadStatus {
   new
@@ -215,6 +221,8 @@ model Product {
   demo             Boolean @default(false)
   warrantyMonths   Int?
   priceUsd         Decimal? @db.Decimal(14, 2)
+  originalPriceUsd Decimal? @db.Decimal(14, 2)
+  discountPercent  Decimal? @db.Decimal(5, 2)
   priceYer         Decimal? @db.Decimal(18, 2)
   priceUpdatedAt   DateTime? @db.DateTime(3)
   negotiable       Boolean @default(false)
@@ -283,16 +291,20 @@ model ProductCompat {
 }
 model PriceHistory {
   id        String @id @default(uuid()) @db.VarChar(100)
-  productId String @db.VarChar(100)
-  priceUsd  Decimal? @db.Decimal(14, 2)
-  priceYer  Decimal? @db.Decimal(18, 2)
-  changedBy String @db.VarChar(100)
-  changedAt DateTime @default(now()) @db.DateTime(3)
-  reason    String?
-  product   Product @relation(fields: [productId], references: [id], onDelete: Restrict)
-  user      User @relation(fields: [changedBy], references: [id], onDelete: Restrict)
+  productId        String   @db.VarChar(100)
+  priceUsd         Decimal? @db.Decimal(14, 2)
+  originalPriceUsd Decimal? @db.Decimal(14, 2)
+  discountPercent  Decimal? @db.Decimal(5, 2)
+  priceYer         Decimal? @db.Decimal(18, 2)
+  changedBy        String   @db.VarChar(100)
+  changedAt        DateTime @default(now()) @db.DateTime(3)
+  reason           String?
+  changeType       String   @default("price") @db.VarChar(20)
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+  user             User     @relation(fields: [changedBy], references: [id], onDelete: Restrict)
   @@index([productId, changedAt])
   @@index([changedBy])
+  @@index([changedAt])
 }
 model Bundle {
   id             String @id @default(uuid()) @db.VarChar(100)
@@ -384,6 +396,7 @@ model MediaAsset {
   categoryImages CatalogCategory[]
   @@index([kind, createdAt])
   @@index([createdBy])
+  @@index([originalPath])
 }
 model Customer {
   id               String @id @default(uuid()) @db.VarChar(100)
@@ -610,9 +623,13 @@ model ProductVariant {
   specs Json @db.Json
   images Json @db.Json
   priceUsd Decimal? @db.Decimal(14,2)
+  originalPriceUsd Decimal? @db.Decimal(14,2)
+  discountPercent  Decimal? @db.Decimal(5,2)
   warrantyMonths Int?
   condition Condition
   inventoryMode String @default("quantity") @db.VarChar(20)
+  availabilityMode String @default("in_stock") @db.VarChar(30)
+  leadTimeDays Int?
   quantity Int @default(0)
   inventoryReviewed Boolean @default(false)
   active Boolean @default(true)
@@ -707,6 +724,7 @@ model CustomerAccount {
   resets CustomerReset[]
   cart ShoppingCart?
   orders CommerceOrder[]
+  couponUsages CouponUsage[]
 }
 model CustomerSession {
   id String @id @db.VarChar(64)
@@ -746,6 +764,13 @@ model CommerceOrder {
   rateAt DateTime? @db.DateTime(3)
   subtotalUsd Decimal @db.Decimal(18,2)
   subtotalYer Decimal? @db.Decimal(24,2)
+  couponId String? @db.VarChar(100)
+  couponCode String? @db.VarChar(50)
+  discountUsd Decimal? @default(0) @db.Decimal(18,2)
+  discountYer Decimal? @default(0) @db.Decimal(24,2)
+  totalUsd Decimal @default(0) @db.Decimal(18,2)
+  totalYer Decimal? @db.Decimal(24,2)
+  couponDetails Json? @db.Json
   hasUnpriced Boolean
   items Json @db.Json
   fulfillment Json @db.Json
@@ -754,13 +779,138 @@ model CommerceOrder {
   createdAt DateTime @default(now()) @db.DateTime(3)
   updatedAt DateTime @updatedAt @db.DateTime(3)
   customer CustomerAccount @relation(fields:[customerId],references:[id],onDelete:Restrict)
+  coupon Coupon? @relation(fields:[couponId],references:[id],onDelete:SetNull)
+  couponUsage CouponUsage?
   soldUnits InventoryUnit[]
   movements InventoryMovement[]
   @@unique([customerId,idempotencyKey])
   @@index([status,createdAt])
+  @@index([couponId])
 }
 model ProductRedirect {
   path String @id @db.VarChar(500)
   productId String @db.VarChar(100)
   product Product @relation(fields:[productId],references:[id],onDelete:Restrict)
 }
+
+model Contest {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  slug        String   @unique @db.VarChar(100)
+  title       Json     @db.Json
+  description Json     @db.Json
+  isActive    Boolean  @default(true)
+  startsAt    DateTime @default(now()) @db.DateTime(3)
+  endsAt      DateTime? @db.DateTime(3)
+  createdAt   DateTime @default(now()) @db.DateTime(3)
+  updatedAt   DateTime @updatedAt @db.DateTime(3)
+  prizes      ContestPrize[]
+  entries     ContestEntry[]
+  drawLogs    ContestDrawLog[]
+  @@index([isActive, startsAt])
+}
+
+model ContestPrize {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  contestId   String   @db.VarChar(100)
+  title       Json     @db.Json
+  description Json?    @db.Json
+  imageUrl    String?  @db.VarChar(500)
+  category    String   @default("electronics") @db.VarChar(50)
+  quantity    Int      @default(1)
+  sort        Int      @default(0)
+  contest     Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  winners     ContestEntry[]
+  drawLogs    ContestDrawLog[]
+  @@index([contestId, sort])
+}
+
+model ContestEntry {
+  id          String    @id @default(uuid()) @db.VarChar(100)
+  contestId   String    @db.VarChar(100)
+  ticketNumber String   @unique @db.VarChar(60)
+  name        String    @db.VarChar(150)
+  phone       String    @db.VarChar(20)
+  city        String?   @db.VarChar(100)
+  interests   Json      @db.Json
+  deviceHash  String?   @db.VarChar(64)
+  ipHash      String?   @db.VarChar(64)
+  isWinner    Boolean   @default(false)
+  wonPrizeId  String?   @db.VarChar(100)
+  wonAt       DateTime? @db.DateTime(3)
+  claimedAt   DateTime? @db.DateTime(3)
+  notes       String?   @db.VarChar(500)
+  createdAt   DateTime  @default(now()) @db.DateTime(3)
+  contest     Contest   @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  wonPrize    ContestPrize? @relation(fields: [wonPrizeId], references: [id], onDelete: SetNull)
+  drawLogs    ContestDrawLog[]
+  @@unique([contestId, phone])
+  @@index([contestId, isWinner])
+  @@index([contestId, deviceHash])
+  @@index([createdAt])
+}
+
+model ContestDrawLog {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  contestId   String   @db.VarChar(100)
+  prizeId     String   @db.VarChar(100)
+  entryId     String   @db.VarChar(100)
+  drawnBy     String?  @db.VarChar(100)
+  drawnAt     DateTime @default(now()) @db.DateTime(3)
+  contest     Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  prize       ContestPrize @relation(fields: [prizeId], references: [id], onDelete: Cascade)
+  entry       ContestEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  @@index([contestId, drawnAt])
+}
+
+model Coupon {
+  id                    String            @id @default(uuid()) @db.VarChar(100)
+  code                  String            @unique @db.VarChar(50)
+  title                 Json              @db.Json
+  description           Json?             @db.Json
+  discountType          String            @db.VarChar(20)
+  discountValue         Decimal           @db.Decimal(18,2)
+  maxDiscountUsd        Decimal?          @db.Decimal(18,2)
+  minOrderAmountUsd     Decimal?          @db.Decimal(18,2)
+  maxOrderAmountUsd     Decimal?          @db.Decimal(18,2)
+  minItemQuantity       Int?              @default(1)
+  startDate             DateTime?         @db.DateTime(3)
+  endDate               DateTime?         @db.DateTime(3)
+  usageLimitTotal       Int?
+  usageLimitPerCustomer Int?              @default(1)
+  usedCount             Int               @default(0)
+  firstOrderOnly        Boolean           @default(false)
+  excludeDiscounted     Boolean           @default(false)
+  isPublic              Boolean           @default(false)
+  active                Boolean           @default(true)
+  applicableCategories  Json?             @db.Json
+  excludedCategories    Json?             @db.Json
+  applicableBrands      Json?             @db.Json
+  excludedBrands        Json?             @db.Json
+  applicableProducts    Json?             @db.Json
+  customerPhones        Json?             @db.Json
+  createdAt             DateTime          @default(now()) @db.DateTime(3)
+  updatedAt             DateTime          @updatedAt @db.DateTime(3)
+  orders                CommerceOrder[]
+  usages                CouponUsage[]
+  @@index([active, endDate])
+}
+
+model CouponUsage {
+  id                String          @id @default(uuid()) @db.VarChar(100)
+  couponId          String          @db.VarChar(100)
+  orderId           String          @unique @db.VarChar(100)
+  customerId        String          @db.VarChar(100)
+  discountUsd       Decimal         @db.Decimal(18,2)
+  discountYer       Decimal?        @db.Decimal(24,2)
+  orderSubtotalUsd  Decimal         @db.Decimal(18,2)
+  customerPhone     String?         @db.VarChar(30)
+  usedAt            DateTime        @default(now()) @db.DateTime(3)
+  coupon            Coupon          @relation(fields: [couponId], references: [id], onDelete: Restrict)
+  order             CommerceOrder   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  customer          CustomerAccount @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  @@index([couponId])
+  @@index([customerId])
+  @@index([couponId, customerId])
+}
+
+

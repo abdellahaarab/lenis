@@ -11,7 +11,8 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate deploy",
     "seed:owner": "tsx src/seed-owner.ts",
-    "test": "vitest run tests/unit.test.ts tests/laptop-filter.test.ts",
+    "seed:coupons": "tsx src/seed-coupons.ts",
+    "test": "vitest run tests/unit.test.ts tests/laptop-filter.test.ts tests/excel.unit.test.ts tests/product-updates.unit.test.ts tests/coupon.unit.test.ts tests/seo-meta.unit.test.ts",
     "test:integration": "vitest run tests/auth.integration.test.ts tests/commerce.integration.test.ts --no-file-parallelism"
   },
   "dependencies": {
@@ -28,16 +29,16 @@
     "@prisma/client": "^7.0.0",
     "argon2": "^0.44.0",
     "dotenv": "^17.2.0",
+    "esbuild": "^0.28.2",
     "fastify": "^5.6.0",
     "mariadb": "^3.4.5",
     "otpauth": "^9.5.2",
     "pg": "^8.16.0",
+    "prisma": "^7.10.0",
     "sharp": "^0.35.5",
     "tsx": "^4.23.15",
-    "zod": "^4.6.5",
-    "esbuild": "^0.25.0",
-    "prisma": "^7.10.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

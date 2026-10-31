@@ -1,15 +1,15 @@
 -- AlterTable
-ALTER TABLE `catalogcategory` ADD COLUMN `description` JSON NOT NULL DEFAULT (JSON_OBJECT()),
+ALTER TABLE `CatalogCategory` ADD COLUMN `description` JSON NOT NULL DEFAULT (JSON_OBJECT()),
     ADD COLUMN `imageId` VARCHAR(100) NULL,
     ADD COLUMN `parentSlug` VARCHAR(100) NULL,
     ADD COLUMN `productTypeId` VARCHAR(100) NULL,
     ADD COLUMN `status` ENUM('draft', 'published', 'archived') NOT NULL DEFAULT 'published';
 
 -- AlterTable
-ALTER TABLE `product` ADD COLUMN `productTypeId` VARCHAR(100) NULL;
+ALTER TABLE `Product` ADD COLUMN `productTypeId` VARCHAR(100) NULL;
 
 -- AlterTable
-ALTER TABLE `specdefinition` ADD COLUMN `card` BOOLEAN NOT NULL DEFAULT false,
+ALTER TABLE `SpecDefinition` ADD COLUMN `card` BOOLEAN NOT NULL DEFAULT false,
     ADD COLUMN `options` JSON NOT NULL DEFAULT (JSON_ARRAY()),
     ADD COLUMN `required` BOOLEAN NOT NULL DEFAULT false,
     ADD COLUMN `sort` INTEGER NOT NULL DEFAULT 0,
@@ -257,4 +257,3 @@ ALTER TABLE `ShoppingCart` ADD CONSTRAINT `ShoppingCart_customerId_fkey` FOREIGN
 
 -- AddForeignKey
 ALTER TABLE `CommerceOrder` ADD CONSTRAINT `CommerceOrder_customerId_fkey` FOREIGN KEY (`customerId`) REFERENCES `CustomerAccount`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-

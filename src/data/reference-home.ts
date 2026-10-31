@@ -1,5 +1,7 @@
 export const referenceHome = {
  ar: {
+   storefrontEyebrow:'متجر إلكترونيات وحاسوب', storefrontTitle:['كل ما تحتاجه','لعالم التقنية.'], storefrontDescription:'تصفّح أجهزة الكمبيوتر ومكوناتها وملحقاتها من متجر الجيل العربي الرقمي.', storefrontHelper:'ابحث عن اللابتوبات، الشاشات، قطع الكمبيوتر، الشبكات والإكسسوارات، ثم قارن المنتجات من الكتالوج.', storefrontShop:'تسوق المنتجات', storefrontCategories:'تسوق حسب الفئة', storefrontOffers:'العروض', storefrontSpotlight:'من منتجات المتجر', storefrontViewProduct:'عرض المنتج', storefrontAskPrice:'اسأل عن السعر', storefrontEmpty:'تصفح كتالوج المتجر واكتشف المنتجات.', storefrontAccessories:'إكسسوارات الكمبيوتر', storefrontBrowse:'تسوق الكمبيوتر والإلكترونيات',
+   categoriesTitle:'تصفح منتجات المتجر',
    title:['تقنيتك،','تعمل معًا.'], description:'جهاز يناسب يومك. وتجهيز يكمل طموحك.',
    helper:'للدراسة، للعمل، أو للعب؛ نرتّب معك الاختيار حسب استخدامك وميزانيتك.',
    note:'على مقاس احتياجك.', accessories:'تفاصيل تصنع الفرق', caption:'جهازك بداية. والتوافق يكمل التجربة.', illustration:'صور توضيحية',
@@ -13,6 +15,8 @@ export const referenceHome = {
    catalogEmptyCta:'حدّد ما تحتاجه', faqTitle:'قبل أن تختار.', faqDescription:'إجابات عن حالة الأجهزة، والفحص، والضمان، والتوصيل.',
  },
  en: {
+   storefrontEyebrow:'Computer & electronics store', storefrontTitle:['Everything for','your tech needs.'], storefrontDescription:'Shop computers, components and accessories from Al-Jeel Al-Arabi Al-Raqmi.', storefrontHelper:'Browse laptops, monitors, PC components, networking and accessories, then compare products from the catalog.', storefrontShop:'Shop products', storefrontCategories:'Shop by category', storefrontOffers:'Offers', storefrontSpotlight:'From the store catalog', storefrontViewProduct:'View product', storefrontAskPrice:'Ask for price', storefrontEmpty:'Browse the store catalog and discover its products.', storefrontAccessories:'Computer accessories', storefrontBrowse:'Shop computers & electronics',
+   categoriesTitle:'Browse store products',
    title:['Your tech.','In sync.'], description:'A device for your day. A setup for your goals.',
    helper:'Study, work or play. Start with what you need and the budget you have.',
    note:'Made for your needs.', accessories:'Details that matter', caption:'Start with a device. Complete the connection.', illustration:'Illustrative images',

@@ -13,7 +13,8 @@ import {
   AlertCircle,
   ShieldCheck,
   XCircle,
-  MapPin
+  MapPin,
+  Tag
 } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import {
@@ -83,7 +84,7 @@ export default function OrderPage() {
         ...order.items.map(
           (item) =>
             `- ${item.title[language]} · ${item.sku} × ${item.quantity}${
-              item.unitId ? ` (${t.unit} #${item.unitId.slice(-6)})` : ''
+              item.unitId ? ` (${language === 'ar' ? 'قطعة مفحوصة' : 'Certified unit'})` : ''
             }`
         ),
         `${t.subtotal}: ${order.currency === 'USD' ? `$${order.subtotalUsd}` : `${order.subtotalYer} YER`}`,
@@ -302,7 +303,7 @@ export default function OrderPage() {
                       <span>× {item.quantity}</span>
                       {item.unitId && (
                         <span className="text-purple-600 dark:text-purple-400 font-semibold">
-                          ({t.unit} #{item.unitId.slice(-6)})
+                          ({language === 'ar' ? 'قطعة مفحوصة' : 'Certified unit'})
                         </span>
                       )}
                     </div>
@@ -316,10 +317,33 @@ export default function OrderPage() {
             </div>
 
             {/* Subtotal row */}
-            <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
-              <span className="text-xs font-bold text-neutral-600 dark:text-neutral-400">{t.subtotal}:</span>
-              <strong className="text-xl font-black text-purple-600 dark:text-purple-400" dir="ltr">
+            <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between text-xs text-neutral-600 dark:text-neutral-400">
+              <span className="font-semibold">{t.subtotal}:</span>
+              <span className="font-bold" dir="ltr">
                 {order.currency === 'USD' ? `$${order.subtotalUsd}` : `${order.subtotalYer} YER`}
+              </span>
+            </div>
+
+            {/* Coupon Discount row if applied */}
+            {order.couponCode && order.discountUsd && Number(order.discountUsd) > 0 && (
+              <div className="pt-2 flex items-center justify-between text-xs text-emerald-600 dark:text-emerald-400 font-bold">
+                <span className="flex items-center gap-1.5">
+                  <Tag className="w-3.5 h-3.5" />
+                  <span>{language === 'ar' ? 'خصم الكوبون' : 'Coupon Discount'} ({order.couponCode}):</span>
+                </span>
+                <span dir="ltr">-${Number(order.discountUsd).toFixed(2)}</span>
+              </div>
+            )}
+
+            {/* Total row */}
+            <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
+              <span className="text-xs font-bold text-neutral-700 dark:text-neutral-300">
+                {language === 'ar' ? 'المجموع النهائي:' : 'Final Total:'}
+              </span>
+              <strong className="text-xl font-black text-purple-600 dark:text-purple-400" dir="ltr">
+                {order.currency === 'USD'
+                  ? `$${order.totalUsd ?? order.subtotalUsd}`
+                  : `${order.totalYer ?? order.subtotalYer} YER`}
               </strong>
             </div>
 

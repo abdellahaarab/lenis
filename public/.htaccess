@@ -3,11 +3,15 @@
   RewriteEngine On
   RewriteBase /
 
-  # Serve API endpoints with JSON header
-  <FilesMatch "^(bootstrap|catalog|.*\.json)$">
+  # Serve API bootstrap with JSON header
+  <Files "bootstrap">
     ForceType application/json
     Header set Access-Control-Allow-Origin "*"
-  </FilesMatch>
+  </Files>
+  <Files "catalog">
+    ForceType application/json
+    Header set Access-Control-Allow-Origin "*"
+  </Files>
 
   # SPA Routing: Send all non-file/non-directory requests to index.html
   RewriteRule ^index\.html$ - [L]

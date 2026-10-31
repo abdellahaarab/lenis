@@ -38,7 +38,7 @@ async function ready(admin:Browser,order:{id:string;updatedAt:string}){let curre
 beforeAll(async()=>{
   sql=await mariadb.createConnection({host:url.hostname,port:Number(url.port||3306),user:decodeURIComponent(url.username),password:decodeURIComponent(url.password),allowPublicKeyRetrieval:true});
   await sql.query('CREATE DATABASE '+namespace+' CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');await sql.query('USE '+namespace);
-  for(const folder of ['202610030001_mysql','202610030002_checks','202610030003_commerce','202610030004_commerce_integrity','202610030005_commerce_checks']){const text=await readFile(new URL('../prisma/mysql-migrations/'+folder+'/migration.sql',import.meta.url),'utf8');for(const stmt of text.split(';').map(s=>s.trim()).filter(Boolean)){for(let attempt=0;;attempt++){try{await sql.query(stmt);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(resolve=>setTimeout(resolve,500));}}}}
+  for(const folder of ['202610030001_mysql','202610030002_checks','202610030003_commerce','202610030004_commerce_integrity','202610030005_commerce_checks','202610030006_contest','202610270001_coupons']){const text=await readFile(new URL('../prisma/mysql-migrations/'+folder+'/migration.sql',import.meta.url),'utf8');for(const stmt of text.split(';').map(s=>s.trim()).filter(Boolean)){for(let attempt=0;;attempt++){try{await sql.query(stmt);break;}catch(error){if((error as {code:string}).code!=='ER_ERROR_ON_RENAME'||attempt>=5)throw error;await new Promise(resolve=>setTimeout(resolve,500));}}}}
   url.pathname='/'+namespace;db=createDb(url.toString());passwordHash=await hashPassword(randomToken());app=await buildApp(config,db,{disableRateLimits:true});await app.ready();
 },60000);
 afterAll(async()=>{if(app)await app.close();if(db)await db.$disconnect();if(sql){await sql.query('DROP DATABASE IF EXISTS '+namespace);await sql.end();}});
@@ -103,9 +103,3 @@ it('records unit withdrawal with a reason, protects image references, and reject
   await db.productVariant.update({where:{id:v.id},data:{images:[media.originalPath]}});
   expect((await admin.call('/media/'+media.id,'DELETE')).json().error.code).toBe('image_in_use');
 });
-
-
-
-
-
-

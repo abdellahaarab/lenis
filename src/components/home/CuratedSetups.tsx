@@ -1,4 +1,5 @@
-import { useCatalog } from '@/data/CatalogContext';
+import { useCatalog, useExchangeRate } from '@/data/CatalogContext';
+import { calculateYer, formatPriceYer } from '@/lib/currency';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -19,6 +20,7 @@ import {
 
 export default function CuratedSetups() {
   const { bundles: bundles, products: productsData } = useCatalog();
+  const exchangeRate = useExchangeRate();
   const { language, t } = useLanguage();
   const ar = language === 'ar';
   const Arrow = ar ? ArrowUpLeft : ArrowUpRight;
@@ -35,7 +37,8 @@ export default function CuratedSetups() {
     study: GraduationCap,
     work: Briefcase,
     content: Sparkles,
-    gaming: Gamepad2
+    gaming: Gamepad2,
+    security: ShieldCheck
   };
 
   if(!currentBundle||!primaryTier)return null;
@@ -105,7 +108,22 @@ export default function CuratedSetups() {
               <Arrow size={18} />
             </a>
             <span className="setup-price-indicator">
-              {primaryTier.price.usd == null ? (ar ? 'الأسعار تُحدد عند اعتماد التوليفة' : 'Custom configuration pricing') : `$${primaryTier.price.usd}`}
+              {primaryTier.price.usd == null ? (
+                ar ? 'الأسعار تُحدد عند اعتماد التوليفة' : 'Custom configuration pricing'
+              ) : (
+                <>
+                  <bdi dir="ltr">${primaryTier.price.usd}</bdi>
+                  {(() => {
+                    const yer = calculateYer(primaryTier.price.usd, exchangeRate, primaryTier.price.yer);
+                    const yerFormatted = formatPriceYer(yer, language);
+                    return yerFormatted ? (
+                      <span className="setup-price-yer ms-1.5 opacity-85 text-xs font-normal">
+                        {yerFormatted}
+                      </span>
+                    ) : null;
+                  })()}
+                </>
+              )}
             </span>
           </div>
         </div>

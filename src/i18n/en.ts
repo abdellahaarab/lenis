@@ -2,8 +2,8 @@ import { Translations } from './types';
 
 export const en: Translations = {
   meta: {
-    title: 'Al-Jeel Al-Arabi Digital Store — Devices, Setups & Tech Solutions',
-    description: 'Devices, setups and technology solutions for people and businesses in Sana\'a. Choose the right technology and bring the pieces together.'
+    title: 'Al-Jeel Al-Arabi Digital | Computer & Electronics Store in Sana’a',
+    description: 'Shop computers, laptops, tech accessories and networking products from Al-Jeel Al-Arabi Digital in Sana’a. Browse products, specifications and listed prices.'
   },
   nav: {
     setups: 'Setups',
@@ -14,7 +14,7 @@ export const en: Translations = {
     currentLanguageName: 'English',
     targetLanguageName: 'العربية',
     toggleMenu: 'Menu',
-    findSetup: 'Find your setup'
+    findSetup: 'Browse the store'
   },
   hero: {
     storeName: 'Al-Jeel Al-Arabi Digital Store',
@@ -200,6 +200,11 @@ export const en: Translations = {
     demoDisclaimer: 'This device is displayed as sample demo data for structure validation. Final price and warranty terms are confirmed directly with store management.',
     conditionLabels: {
       new: 'Brand New (Sealed)',
+      open_box: 'Open Box',
+      like_new: 'Like New',
+      refurbished: 'Refurbished',
+      used: 'Used',
+      defective: 'Defective',
       A: 'Grade A — Like New',
       B: 'Grade B — Very Good',
       C: 'Grade C — Value / Fair'

@@ -8,7 +8,7 @@ process.env.ALLOWED_ORIGINS='https://alarabiye.com';
 process.env.COOKIE_SECURE='true';process.env.NODE_ENV='production';
 const command=process.argv.slice(2);
 if(!command.length) throw new Error('Usage: node scripts/admin/hostinger-db.mjs <npm script> [arguments]');
-if(!['db:migrate','db:migrate:repair','db:legacy:import','db:import','db:backup','db:audit:protect','db:verify'].includes(command[0])) throw new Error('Unsupported database task');
+if(!['db:commerce:repair-case','db:commerce:seed','db:migrate','db:migrate:repair','db:legacy:import','db:import','db:backup','db:audit:protect','db:verify'].includes(command[0])) throw new Error('Unsupported database task');
 // Child argv is not assembled into a shell string; npm-cli receives exact arguments.
 const npmCli=process.env.npm_execpath ?? 'C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js';
 const result=spawnSync(process.execPath,[npmCli,'run',command[0],...(command.length>1?['--',...command.slice(1)]:[])],{env:process.env,stdio:'inherit',windowsHide:true});

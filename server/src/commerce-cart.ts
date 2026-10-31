@@ -1,12 +1,14 @@
 import {Prisma,type PrismaClient,type CatalogCategory} from '@prisma/client';
 import {CartLines,type CartLineInput} from '@aljeel/shared';
 import {createHash} from 'node:crypto';
-import {variantInclude,offers,jsonObject} from './commerce-catalog.js';
+import {variantInclude,offers,jsonObject,type VariantRow} from './commerce-catalog.js';
 import {ApiError} from './errors.js';
 import {transaction} from './db.js';
 import type {AppConfig} from './config.js';
 import type {FastifyRequest} from 'fastify';
 import {audit} from './audit.js';
+import {validateAndCalculateCoupon} from './coupon-service.js';
+import type {CouponValidationResult} from '@aljeel/shared';
 type Db=PrismaClient|Prisma.TransactionClient;
 export type SnapshotItem={variantId:string;unitId:string|null;productId:string;sku:string;title:unknown;options:unknown;condition:string;inspection:unknown;defects:unknown;quantity:number;unitPriceUsd:string|null;linePriceUsd:string|null;packageId:string|null;priceIncluded?:boolean;images:string[];warrantyMonths:number|null};
 export function normalizeLines(lines:CartLineInput[]):CartLineInput[]{
@@ -14,16 +16,30 @@ export function normalizeLines(lines:CartLineInput[]):CartLineInput[]{
   for(const line of lines){const key=JSON.stringify([line.variantId,line.unitId,line.packageId,[...(line.unitIds??[])].sort()]);const prior=result.get(key);const quantity=(prior?.quantity??0)+line.quantity;if(quantity>100||(line.unitId||line.unitIds?.length)&&quantity>1)throw new ApiError(400,'invalid_quantity');result.set(key,{...line,quantity});}
   return [...result.values()];
 }
-export async function cartPreview(db:Db,raw:unknown){
+export async function cartPreview(db:Db,raw:unknown,couponCode?:string|null,customerId?:string|null){
   const lines=normalizeLines(CartLines.parse(raw)),items:SnapshotItem[]=[],errors:string[]=[];
   const pricing=await db.pricingConfig.findUnique({where:{id:1}});
   let subtotal=new Prisma.Decimal(0),hasUnpriced=false;
   const usedUnits=new Set<string>();
+  // جلب كافة الفئات دفعة واحدة والبحث في الذاكرة لتجنب استعلامات N+1 في شجرة الفئات
+  const allCategories=await db.catalogCategory.findMany();
+  const categoryMap=new Map<string,CatalogCategory>(allCategories.map(c=>[c.slug,c]));
+  // ذاكرة مؤقتة وجلب مسبق للمتغيرات لتفادي تكرار الاستعلامات
+  const variantCache=new Map<string,VariantRow>();
+  const directVariantIds=[...new Set(lines.map(l=>l.variantId).filter((id):id is string=>Boolean(id)))];
+  if(directVariantIds.length){
+    const prefetched=await db.productVariant.findMany({where:{id:{in:directVariantIds}},include:variantInclude});
+    for(const v of prefetched)variantCache.set(v.id,v);
+  }
   async function expand(variantId:string,quantity:number,unitId?:string,packageId:string|null=null){
-    const v=await db.productVariant.findUnique({where:{id:variantId},include:variantInclude});
+    let v=variantCache.get(variantId);
+    if(!v){
+      v=(await db.productVariant.findUnique({where:{id:variantId},include:variantInclude}))??undefined;
+      if(v)variantCache.set(variantId,v);
+    }
     if(!v||!v.active||v.product.status!=='published'||v.product.deletedAt||!v.product.brand.published)throw new ApiError(409,'item_unavailable');
     let category:string|null=v.product.category;
-    const seen=new Set<string>();while(category){if(seen.has(category))throw new ApiError(409,'item_unavailable');seen.add(category);const c:CatalogCategory|null=await db.catalogCategory.findUnique({where:{slug:category}});if(!c||c.status!=='published')throw new ApiError(409,'item_unavailable');category=c.parentSlug;}
+    const seen=new Set<string>();while(category){if(seen.has(category))throw new ApiError(409,'item_unavailable');seen.add(category);const c=categoryMap.get(category);if(!c||c.status!=='published')throw new ApiError(409,'item_unavailable');category=c.parentSlug;}
     if(v.inventoryMode==='serialized'&&(!unitId||quantity!==1)||v.inventoryMode==='quantity'&&unitId)throw new ApiError(400,'select_unit');
     const o=offers(v).find(o=>o.unitId===unitId);
     if(!o?.available||v.inventoryMode==='quantity'&&v.quantity<quantity)throw new ApiError(409,'insufficient_stock');
@@ -55,17 +71,66 @@ export async function cartPreview(db:Db,raw:unknown){
       }else if(unknown){hasUnpriced=true;subtotal=subtotal.add(amount);}else subtotal=subtotal.add(amount);
     }
   }
-  // Aggregate components across ordinary lines and multiple bundles.
+  // تجميع الكميات والتحقق من توفر المخزون عبر إعادة استخدام المتغيرات المحملة مسبقاً في الذاكرة دون استعلامات إضافية
   const quantities=new Map<string,number>();
   for(const item of items)if(!item.unitId)quantities.set(item.variantId,(quantities.get(item.variantId)??0)+item.quantity);
-  for(const [id,qty]of quantities){const variant=await db.productVariant.findUniqueOrThrow({where:{id}});if(variant.quantity<qty)throw new ApiError(409,'insufficient_stock');}
+  for(const [id,qty]of quantities){const variant=variantCache.get(id);if(!variant||variant.quantity<qty)throw new ApiError(409,'insufficient_stock');}
   const rate=pricing?.usdToYer??null;
-  const preview={items,lines,subtotalUsd:subtotal.toFixed(2),subtotalYer:rate?subtotal.mul(rate).toFixed(2):null,hasUnpriced,usdToYer:rate?.toString()??null,rateAt:pricing?.updatedAt.toISOString()??null,deliveryFee:null,errors};
+  let appliedCoupon: CouponValidationResult | null = null;
+  let discountUsd = new Prisma.Decimal(0);
+  let discountYer: Prisma.Decimal | null = null;
+  let totalUsd = subtotal;
+  let totalYer = rate ? subtotal.mul(rate) : null;
+
+  if (couponCode) {
+    const cust = customerId ? await db.customerAccount.findUnique({ where: { id: customerId }, select: { phone: true } }) : null;
+    appliedCoupon = await validateAndCalculateCoupon(db, {
+      code: couponCode,
+      items,
+      subtotalUsd: subtotal,
+      customerId: customerId ?? null,
+      customerPhone: cust?.phone ?? null,
+      exchangeRate: rate,
+    });
+    if (appliedCoupon.valid) {
+      discountUsd = new Prisma.Decimal(appliedCoupon.discountUsd);
+      discountYer = appliedCoupon.discountYer ? new Prisma.Decimal(appliedCoupon.discountYer) : null;
+      totalUsd = new Prisma.Decimal(appliedCoupon.totalUsd);
+      totalYer = appliedCoupon.totalYer ? new Prisma.Decimal(appliedCoupon.totalYer) : null;
+    }
+  }
+
+  const preview = {
+    items,
+    lines,
+    subtotalUsd: subtotal.toFixed(2),
+    subtotalYer: rate ? subtotal.mul(rate).toFixed(2) : null,
+    discountUsd: discountUsd.toFixed(2),
+    discountYer: discountYer ? discountYer.toFixed(2) : null,
+    totalUsd: totalUsd.toFixed(2),
+    totalYer: totalYer ? totalYer.toFixed(2) : null,
+    appliedCoupon,
+    hasUnpriced,
+    usdToYer: rate?.toString() ?? null,
+    rateAt: pricing?.updatedAt.toISOString() ?? null,
+    deliveryFee: null,
+    errors,
+  };
   const previewToken=createHash('sha256').update(JSON.stringify(preview)).digest('hex');
   return {...preview,previewToken};
 }
-const transitions:Record<string,string[]>={new:['review','cancelled'],review:['confirmed','cancelled'],confirmed:['preparing','cancelled'],preparing:['ready_pickup','out_delivery','cancelled'],ready_pickup:['completed','cancelled'],out_delivery:['completed','cancelled'],completed:[],cancelled:[]};
+const transitions:Record<string,string[]>={
+  new:['review','confirmed','cancelled'],
+  review:['new','confirmed','cancelled'],
+  confirmed:['review','preparing','cancelled'],
+  preparing:['confirmed','ready_pickup','out_delivery','cancelled'],
+  ready_pickup:['preparing','completed','cancelled'],
+  out_delivery:['preparing','completed','cancelled'],
+  completed:[],
+  cancelled:['new','review']
+};
 export async function changeOrder(db:PrismaClient,config:AppConfig,request:FastifyRequest,id:string,status:string,revision:string){
+  // Serializable required: order completion decrements inventory and must not race with concurrent orders
   return transaction(db,async tx=>{
     const order=await tx.commerceOrder.findUniqueOrThrow({where:{id}});
     if(order.status===status)return order;
@@ -83,7 +148,8 @@ export async function changeOrder(db:PrismaClient,config:AppConfig,request:Fasti
         await tx.sale.create({data:{productId:item.productId,serialNumber:item.unitId?(await tx.inventoryUnit.findUniqueOrThrow({where:{id:item.unitId}})).serialNumber:null,priceUsd:item.unitPriceUsd,warrantyMonths:item.warrantyMonths,warrantyStart:new Date(),notes:'Order '+order.number+'; quantity '+item.quantity}});
       }
     }
-    const after=await tx.commerceOrder.update({where:{id},data:{status,...(status==='completed'?{completedAt:new Date()}:{} )}});
+    const after=await tx.commerceOrder.update({where:{id},data:{status,...(status==='completed'?{completedAt:new Date()}:{})}});
     await audit(tx,config,request,{action:'order.'+status,entity:'CommerceOrder',entityId:id,before:{status:order.status},after:{status}});return after;
-  });
+  }, 'Serializable');
 }
+

@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: [
     './index.html',
     './src/**/*.{ts,tsx,js,jsx}',
@@ -14,6 +14,17 @@ const config: Config = {
         inter: ['MPLUSRounded1c', 'Inter', 'system-ui', 'sans-serif'],
         arabic: ['LinaRound', 'Cairo', 'sans-serif'],
         english: ['MPLUSRounded1c', 'Inter', 'sans-serif'],
+      },
+      fontSize: {
+        'xs': ['0.84rem', { lineHeight: '1.35rem' }],
+        'sm': ['0.95rem', { lineHeight: '1.5rem' }],
+        'base': ['1.0625rem', { lineHeight: '1.65rem' }],
+        'lg': ['1.1875rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.3125rem', { lineHeight: '1.85rem' }],
+        '2xl': ['1.625rem', { lineHeight: '2.1rem' }],
+        '3xl': ['2rem', { lineHeight: '2.4rem' }],
+        '4xl': ['2.375rem', { lineHeight: '2.75rem' }],
+        '5xl': ['3.125rem', { lineHeight: '1.15' }],
       },
       colors: {
         background: '#0B0B0F',

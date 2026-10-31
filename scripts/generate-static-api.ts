@@ -15,13 +15,16 @@ const warranty = loadJson('warranty');
 const bundles = loadJson('bundles');
 
 const categories = [
-  { slug: 'laptops', title: { ar: 'لابتوبات', en: 'Laptops' } },
-  { slug: 'displays', title: { ar: 'شاشات', en: 'Displays' } },
-  { slug: 'audio', title: { ar: 'صوتيات', en: 'Audio' } },
-  { slug: 'gaming', title: { ar: 'ألعاب', en: 'Gaming' } },
-  { slug: 'network', title: { ar: 'شبكات', en: 'Networking' } },
-  { slug: 'storage', title: { ar: 'تخزين', en: 'Storage' } },
-  { slug: 'power', title: { ar: 'طاقة', en: 'Power' } }
+  { slug: 'laptops', title: { ar: 'لابتوبات', en: 'Laptops' }, sort: 1 },
+  { slug: 'desktops', title: { ar: 'اجهزه مكتبيه', en: 'Desktops' }, sort: 2 },
+  { slug: 'displays', title: { ar: 'شاشات', en: 'Displays' }, sort: 3 },
+  { slug: 'hard-drives', title: { ar: 'الهادسكات', en: 'Hard Drives' }, sort: 4 },
+  { slug: 'ram', title: { ar: 'رامات', en: 'RAM' }, sort: 5 },
+  { slug: 'cameras', title: { ar: 'كامرات المراقبة', en: 'Security Cameras' }, sort: 6 },
+  { slug: 'accessories', title: { ar: 'اكسسوارات', en: 'Accessories' }, sort: 7 },
+  { slug: 'network', title: { ar: 'شبكات', en: 'Networking' }, sort: 8 },
+  { slug: 'printers', title: { ar: 'طابعات', en: 'Printers' }, sort: 9 },
+  { slug: 'audio', title: { ar: 'صوتيات', en: 'Audio' }, sort: 10 }
 ];
 
 const specs = [
@@ -58,83 +61,11 @@ const catalog = {
 const payload = JSON.stringify(catalog);
 
 const apiDir = join(root, 'public', 'api');
-const shopDir = join(apiDir, 'shop');
-const shopProductsDir = join(shopDir, 'products');
 mkdirSync(apiDir, { recursive: true });
-mkdirSync(shopDir, { recursive: true });
-mkdirSync(shopProductsDir, { recursive: true });
 
 writeFileSync(join(apiDir, 'bootstrap'), payload, 'utf-8');
 writeFileSync(join(apiDir, 'bootstrap.json'), payload, 'utf-8');
 writeFileSync(join(apiDir, 'catalog'), payload, 'utf-8');
 writeFileSync(join(apiDir, 'catalog.json'), payload, 'utf-8');
 
-// Build SearchResult for /api/shop/catalog
-const shopItems = products.map((p: any) => ({
-  product: {
-    id: p.id,
-    slug: p.slug,
-    category: p.category,
-    brand: p.brand,
-    model: p.model,
-    title: p.title,
-    summary: p.summary,
-    images: p.images,
-    demo: p.demo
-  },
-  offers: [{
-    variantId: p.id,
-    sku: p.slug,
-    condition: p.condition,
-    priceUsd: p.price.usd ? String(p.price.usd) : null,
-    priceYer: p.price.yer ? String(p.price.yer) : null,
-    specs: p.specs,
-    images: p.images,
-    available: p.stock === 'in_stock',
-    batteryHealthPct: typeof p.specs?.batteryHealthPct === 'number' ? p.specs.batteryHealthPct : null,
-    inspection: null,
-    defects: [],
-    warrantyMonths: p.warrantyMonths
-  }],
-  fields: []
-}));
-
-const brandsFacet = Array.from(new Set(products.map((p: any) => p.brand))).map(b => ({
-  value: b,
-  count: products.filter((p: any) => p.brand === b).length
-}));
-const condFacet = ['new', 'A', 'B', 'C'].map(c => ({
-  value: c,
-  count: products.filter((p: any) => p.condition === c).length
-})).filter(f => f.count > 0);
-
-const shopCatalog = {
-  items: shopItems,
-  total: shopItems.length,
-  page: 1,
-  pageSize: 50,
-  hasCatalog: true,
-  categories: categories.map(c => ({ slug: c.slug, parentSlug: null, title: c.title })),
-  collections: [],
-  facets: {
-    brand: brandsFacet,
-    condition: condFacet,
-    collection: [],
-    specs: []
-  },
-  pricing: null
-};
-
-const shopPayload = JSON.stringify(shopCatalog);
-writeFileSync(join(shopDir, 'catalog'), shopPayload, 'utf-8');
-writeFileSync(join(shopDir, 'catalog.json'), shopPayload, 'utf-8');
-
-// Generate static endpoints for each individual product
-for (const item of shopItems) {
-  const pPayload = JSON.stringify(item);
-  writeFileSync(join(shopProductsDir, item.product.slug), pPayload, 'utf-8');
-  writeFileSync(join(shopProductsDir, `${item.product.slug}.json`), pPayload, 'utf-8');
-}
-
-console.log('✅ Generated static /api/bootstrap and /api/shop/catalog fallback successfully!');
-
+console.log('✅ Generated static /api/bootstrap and /api/catalog fallback successfully!');

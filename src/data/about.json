@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "headline": { "ar": "الجيل العربي الرقمي", "en": "Digital Arab Generation" },
+    "subheadline": { "ar": "متخصصون في التقنية. نبني الثقة بالشفافية.", "en": "Technology Specialists. Building Trust Through Transparency." },
+    "description": { "ar": "متجر ومزوّد حلول تقنية متخصص في صنعاء. لا ننافس بإعلانات مبهمة أو تفاصيل غير مؤكدة؛ بل ننافس بالوضوح التام، وجودة الفحص قبل التسليم، وتنظيم البيانات الفنية التي تحترم وقت العميل وقراره.", "en": "A dedicated electronics and tech solution store in Sana'a. We don't compete with vague ads or hidden details; our value lies in total transparency, certified pre-delivery inspection, and structured data that respects your decision." },
+    "heroImage": null
+  },
+  "story": {
+    "title": { "ar": "قصتنا", "en": "Our Story" },
+    "content": { "ar": "في سوق التقنية المحلي، لاحظنا أن المشتري يواجه تحديات حقيقية: مواصفات مبعثرة، ضمانات شفوية غير موثقة، وصعوبة في التحقق من جودة الأجهزة. انطلقنا من هذه الحاجة لنبني متجراً مختلفاً — متجراً يضع البيانات الدقيقة والشفافية الكاملة في صميم كل قرار شراء.", "en": "In the local tech market, we noticed buyers facing real challenges: scattered specifications, undocumented verbal warranties, and difficulty verifying device quality. We launched to address this need — building a different kind of store where accurate data and complete transparency are at the heart of every purchasing decision." },
+    "image": null,
+    "year": 2023
+  },
+  "mission": {
+    "title": { "ar": "مهمتنا", "en": "Our Mission" },
+    "content": { "ar": "نوفر أجهزة مفحوصة بمعايير موثقة، مع بيانات تقنية كاملة وضمان مكتوب واضح البنود. نحن لا نبيع قطعة معزولة — نبيع تجهيزاً كاملاً يعمل معاً بتوافق تام، مدعوماً بدعم فني حقيقي ومستمر.", "en": "We provide inspected devices with documented standards, complete technical data, and clearly written warranty terms. We don't sell isolated pieces — we sell complete setups that work together perfectly, backed by real and continuous technical support." },
+    "image": null
+  },
+  "whyUs": [
+    {
+      "icon": "shield",
+      "title": { "ar": "فحص موثق قبل التسليم", "en": "Certified Pre-Delivery Inspection" },
+      "description": { "ar": "كل جهاز يمر بـ 7 نقاط فحص موثقة بتقرير رسمي يتضمن درجة الحالة ونتائج الفحص.", "en": "Every device passes through 7-point certified inspection with an official report including condition grade and test results." }
+    },
+    {
+      "icon": "file-text",
+      "title": { "ar": "بيانات تقنية كاملة", "en": "Complete Technical Data" },
+      "description": { "ar": "المعالج وجيله، الرام ونوعها، التخزين وسرعته، الشاشة، المنافذ — لا مواصفة جوهرية مجهولة.", "en": "Processor and generation, RAM type, storage speed, display, ports — no essential spec left unknown." }
+    },
+    {
+      "icon": "check-circle",
+      "title": { "ar": "توافق تام بين المكونات", "en": "Full Component Compatibility" },
+      "description": { "ar": "نتحقق من توافق المنافذ وقدرة الشحن وعمل المنظومة ككل قبل أي تسليم.", "en": "We verify port compatibility, charging capacity, and full system operation before any delivery." }
+    },
+    {
+      "icon": "file-signature",
+      "title": { "ar": "ضمان مكتوب واضح البنود", "en": "Written Warranty with Clear Terms" },
+      "description": { "ar": "ما يغطيه الضمان وما يستثنيه واضح ومكتوب — لا وعود شفوية غامضة.", "en": "What the warranty covers and excludes is clear and written — no vague verbal promises." }
+    },
+    {
+      "icon": "headphones",
+      "title": { "ar": "دعم فني متخصص", "en": "Specialized Technical Support" },
+      "description": { "ar": "استشارة اختيار الأجهزة بحسب تخصصك، مع دعم مستمر لتحديث الأنظمة وترقية القطع.", "en": "Device selection consultation based on your specialty, with continuous support for system updates and component upgrades." }
+    },
+    {
+      "icon": "star",
+      "title": { "ar": "شفافية تامة في الأسعار", "en": "Full Pricing Transparency" },
+      "description": { "ar": "سعر واضح بالدولار والريال، مع تفاصيل تحديث السعر وإمكانية التفاوض المعلنة.", "en": "Clear price in USD and YER, with price update details and disclosed negotiability options." }
+    }
+  ],
+  "stats": [
+    { "value": "7", "label": { "ar": "نقاط فحص لكل جهاز", "en": "Inspection points per device" } },
+    { "value": "100%", "label": { "ar": "شفافية في المواصفات", "en": "Specification transparency" } },
+    { "value": "صنعاء", "label": { "ar": "متخصصون محليون", "en": "Local specialists" } }
+  ],
+  "teamHighlight": {
+    "title": { "ar": "فريق متخصص في التقنية", "en": "A Tech-Specialized Team" },
+    "description": { "ar": "خلف كل جهاز نبيعه فريق يفهم التقنية جيداً — يتحقق من المواصفات، يختبر الأداء، ويضمن أنك تحصل على ما طلبته بالضبط.", "en": "Behind every device we sell is a team that truly understands technology — verifying specs, testing performance, and ensuring you get exactly what you asked for." },
+    "image": null
+  },
+  "values": [
+    {
+      "icon": "eye",
+      "title": { "ar": "الشفافية", "en": "Transparency" },
+      "description": { "ar": "كل قرار نتخذه مبني على معلومات واضحة ومشاركة صادقة مع عملائنا.", "en": "Every decision we make is built on clear information and honest sharing with our customers." }
+    },
+    {
+      "icon": "award",
+      "title": { "ar": "الجودة", "en": "Quality" },
+      "description": { "ar": "لا نتساهل في معايير الفحص والتحقق من الأجهزة قبل وصولها للعميل.", "en": "We never compromise on inspection standards and device verification before reaching the customer." }
+    },
+    {
+      "icon": "users",
+      "title": { "ar": "خدمة العميل", "en": "Customer Service" },
+      "description": { "ar": "علاقتنا مع العميل لا تنتهي عند البيع — نحن هنا للدعم والاستشارة على المدى البعيد.", "en": "Our relationship with the customer doesn't end at sale — we're here for support and consultation long-term." }
+    }
+  ],
+  "ctaTitle": { "ar": "جاهز لاستكشاف الأجهزة والتجهيزات؟", "en": "Ready to Explore Our Devices and Setups?" },
+  "ctaDescription": { "ar": "تصفح كتالوجنا المفصّل أو تواصل معنا للحصول على استشارة مجانية لاختيار الجهاز المناسب لاحتياجاتك.", "en": "Browse our detailed catalog or contact us for a free consultation to choose the right device for your needs." }
+}

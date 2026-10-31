@@ -6,11 +6,13 @@ export async function api<T>(path: string, options: { method?: string; body?: un
   if (method !== 'GET' && !csrfToken) {
     const response = await fetch('/api/admin/auth/csrf', { credentials: 'include' });
     if (!response.ok) throw new ApiError('request_failed', response.status);
+    if (!response.headers.get('content-type')?.includes('application/json')) throw new ApiError('service_not_configured', 503);
     csrfToken = (await response.json()).csrfToken;
   }
   let response: Response;
   try { response = await fetch(`/api/admin${path}`, { method, credentials: 'include', headers: { ...(options.body !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(method !== 'GET' ? { 'X-CSRF-Token': csrfToken } : {}) }, ...(options.body !== undefined ? { body: JSON.stringify(options.body) } : {}) }); }
   catch { throw new ApiError('disconnected', 0); }
+  if (!response.headers.get('content-type')?.includes('application/json')) throw new ApiError('service_not_configured', 503);
   const data = await response.json();
   if (!response.ok) {
     if (data.error?.code === 'csrf_invalid') csrfToken = '';

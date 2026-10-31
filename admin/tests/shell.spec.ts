@@ -11,8 +11,9 @@ for (const width of [360,1280]) for(const lang of ['ar','en']) test(`shell ${lan
   });
   await page.goto('/admin/');
   await expect(page.locator('html')).toHaveAttribute('dir',lang==='ar'?'rtl':'ltr');
-  await expect(page.getByRole('heading',{name:lang==='ar'?'نظرة عامة':'Overview',exact:true})).toBeVisible();
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await expect(page.getByRole('heading',{name:(lang==='ar'?'أهلاً بك، ':'Welcome back, ')+fixture.name,exact:true})).toBeVisible();
+  const layout=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,overflowing:[...document.querySelectorAll('body *')].filter(element=>{const rect=element.getBoundingClientRect();return rect.width>0&&(rect.left< -1||rect.right>innerWidth+1);}).map(element=>({className:element.className,tag:element.tagName,width:element.getBoundingClientRect().width})).slice(0,12)}));
+  expect(layout.scrollWidth,JSON.stringify(layout)).toBeLessThanOrEqual(layout.width);
   await page.screenshot({path:`test-results/admin-${lang}-${width}.png`,fullPage:true});
   await page.getByRole('button', { name: lang === 'ar' ? 'تبديل المظهر' : 'Switch theme', exact: true }).click();
   await expect(page.locator('html')).toHaveClass(/dark/);
