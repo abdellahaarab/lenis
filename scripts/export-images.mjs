@@ -2,7 +2,8 @@ import mariadb from 'mariadb';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 
-const url = new URL(process.env.DATABASE_URL || 'mysql://u498439850_root:%23Ammarcom12@srv2051.hstgr.io:3306/u498439850_alar?ssl=true');
+if (!process.env.DATABASE_URL) throw new Error('Set DATABASE_URL before running this script.');
+const url = new URL(process.env.DATABASE_URL);
 const outputDir = resolve(process.argv[2] || '.backups/imported_images_20261027');
 
 await mkdir(outputDir, { recursive: true });

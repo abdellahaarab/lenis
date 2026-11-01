@@ -1,0 +1,3 @@
+ALTER TABLE `ProductVariant`
+  ADD COLUMN IF NOT EXISTS `availabilityMode` VARCHAR(30) NOT NULL DEFAULT 'in_stock',
+  ADD COLUMN IF NOT EXISTS `leadTimeDays` INT NULL;

@@ -3,7 +3,8 @@ import { createWriteStream } from 'node:fs';
 import { mkdir, writeFile, stat, rename, unlink, access } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 
-const dbUrl = process.env.DATABASE_URL || 'mysql://u498439850_root:%23Ammarcom12@srv2051.hstgr.io:3306/u498439850_alar?ssl=true';
+const dbUrl = process.env.DATABASE_URL;
+if (!dbUrl) throw new Error('Set DATABASE_URL before running this script.');
 const url = new URL(dbUrl);
 const dbName = decodeURIComponent(url.pathname.slice(1));
 
