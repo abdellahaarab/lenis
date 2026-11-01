@@ -1,14 +1,23 @@
 # الجيل العربي الرقمي
 
-موقع عربي/إنجليزي للأجهزة والتجهيزات والحلول التقنية، مبني على React وTypeScript وVite.
+متجر إلكتروني (عربي/إنجليزي) للأجهزة والتجهيزات — React 19، Vite، Fastify، MySQL.
 
-## التشغيل
+> **تنبيه:** اسم المستودع `lenis` تاريخي (fork قديم). المشروع الحالي **متجر الجيل العربي** وليس صفحة تسويق مكتبة Lenis.  
+> **Cursor Cloud:** اتبع [docs/CURSOR-CLOUD.md](docs/CURSOR-CLOUD.md) وملف [`.cursor/environment.json`](.cursor/environment.json) — المنفذ **53000** ومسار **`/ar/shop`**.
+
+## التشغيل (محلي كامل — مثل الإنتاج)
 
 ```sh
 npm install
-npm run dev
+npm run build:all
+npm run start:local    # http://127.0.0.1:53000/ar/shop — قاعدة MariaDB محلية فقط
+```
+
+تطوير الواجهة فقط (بدون نفس منفذ المتجر الكامل):
+
+```sh
+npm run dev            # Vite — غالباً 5173؛ يحتاج dev:server للـ API
 npm run build
-npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
 ## التصميم والحركة

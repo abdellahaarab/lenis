@@ -1,6 +1,14 @@
 # Cursor Cloud — متجر الجيل العربي
 
-## لماذا يظهر موقع Lenis بدل المتجر؟
+## إعداد دائم (لا يتكرر)
+
+1. على GitHub: الفرع **`main`** يجب أن يحتوي المتجر (تمت مزامنته). الافتراضي = **`main`**.
+2. في Cursor → Environment → **environment.json location** = `.cursor/environment.json` من هذا الم repo.
+3. **Secrets:** `DATABASE_URL`, `SESSION_SECRET`, `TOTP_ENCRYPTION_KEY`.
+4. بعد أي تغيير على Environment: **Save** ثم **Rebuild** للـ Build.
+5. المعاينة: **`https://…:53000/ar/shop`** — ليس منفذ 5173.
+
+## لماذا كان يظهر موقع Lenis بدل المتجر؟
 
 المستودع اسمه `lenis` لأنه **fork** قديم لمكتبة Lenis. فرع **`main` على GitHub** كان يحتوي صفحة تسويق Lenis («The scroll experience…»). **المتجر الكامل** (مسارات `/ar/shop`، الإدارة، API) على فرع **`design/ui-refresh-base`** وعلى **`main` بعد الدمج**.
 
