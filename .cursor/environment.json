@@ -1,0 +1,11 @@
+{
+  "install": "npm install && npm run build:all",
+  "terminals": [
+    {
+      "name": "aljeel-store",
+      "command": "HOST=0.0.0.0 PORT=53000 SERVE_STATIC=true npm start",
+      "description": "Full Al-Jeel store (Fastify + built SPA). Preview /ar/shop and /admin/. Requires DATABASE_URL and session secrets in environment."
+    }
+  ],
+  "ports": [{ "name": "web", "port": 53000 }]
+}
