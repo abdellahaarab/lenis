@@ -1,20 +1,22 @@
-import { useScroll, useSpring, motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export default function ProgressBar() {
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  })
-
-  return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-[2px] origin-left z-[100] pointer-events-none"
-      style={{
-        scaleX,
-        background: 'linear-gradient(90deg, #8b5cf6, #6366f1, #06b6d4)',
-      }}
-    />
-  )
+  const ref = useRef<HTMLDivElement>(null)
+  const { dir } = useLanguage()
+  useEffect(() => {
+    let frame = 0
+    const update = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const range = document.documentElement.scrollHeight - window.innerHeight
+        if (ref.current) ref.current.style.transform = `scaleX(${range > 0 ? Math.min(1, Math.max(0, window.scrollY / range)) : 0})`
+      })
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', update); window.removeEventListener('resize', update) }
+  }, [])
+  return <div ref={ref} aria-hidden="true" className="site-reading-progress fixed top-0 start-0 end-0 h-[3px] bg-gradient-to-r from-purple-600 to-purple-500 z-[60]" style={{ transform: 'scaleX(0)', transformOrigin: dir === 'rtl' ? 'right' : 'left' }} />
 }

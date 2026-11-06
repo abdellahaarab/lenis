@@ -1,24 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preload" href="/LinaRound-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/LinaRound-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Lenis — The smoothest scroll library. Butter-smooth scrolling for your next project. Open source, performant, framework-agnostic." />
-    <meta name="keywords" content="smooth scroll, javascript library, lenis, scrolling, animation, web development" />
-    <meta property="og:title" content="Lenis — Smooth Scroll Library" />
-    <meta property="og:description" content="The smoothest scroll library. Butter-smooth scrolling for your next project." />
+    
+    <!-- Primary Meta Tags -->
+    <title>الجيل العربي الرقمي | متجر كمبيوتر وإلكترونيات</title>
+    <meta name="description" content="تسوق أجهزة الكمبيوتر واللابتوبات ومكوناتها وملحقاتها ومنتجات الشبكات من متجر الجيل العربي الرقمي. تصفح الكتالوج وقارن المنتجات." />
+    <meta name="keywords" content="لابتوبات في اليمن, لابتوب صنعاء, شراء لابتوب عدن, لابتوبات حضرموت, لابتوبات تعز, أسعار اللابتوبات في اليمن, إلكترونيات اليمن, الجيل العربي الرقمي" />
+
+    <!-- Google Regional & Geographic Targeting for Yemen -->
+    <meta name="geo.region" content="YE" />
+    <meta name="geo.placename" content="Sana'a, Yemen" />
+    <meta name="geo.position" content="15.3694;44.1910" />
+    <meta name="ICBM" content="15.3694, 44.1910" />
+    
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:site_name" content="الجيل العربي الرقمي" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pro-lenis.vercel.app" />
-    <meta name="twitter:site" content="@abdellahaarab" />
+    <meta property="og:title" content="الجيل العربي الرقمي | متجر كمبيوتر وإلكترونيات" />
+    <meta property="og:description" content="تسوق أجهزة الكمبيوتر واللابتوبات ومكوناتها وملحقاتها ومنتجات الشبكات. تصفح الكتالوج وقارن المنتجات." />
+    <meta property="og:image" content="/desktop-ar.png" />
+    <meta property="og:image:alt" content="الجيل العربي الرقمي" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lenis — Smooth Scroll Library" />
-    <title>Lenis — The Smoothest Scroll Library</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <meta name="twitter:title" content="الجيل العربي الرقمي | متجر كمبيوتر وإلكترونيات" />
+    <meta name="twitter:description" content="تسوق أجهزة الكمبيوتر واللابتوبات ومكوناتها وملحقاتها ومنتجات الشبكات. تصفح الكتالوج وقارن المنتجات." />
+    <meta name="twitter:image" content="/desktop-ar.png" />
+    
+    <!-- Initial Setup Script -->
+    <script src="/init-theme.js"></script>
   </head>
   <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #0B0B0F; color: white; direction: rtl;">
+        يتطلب هذا الموقع تفعيل JavaScript
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

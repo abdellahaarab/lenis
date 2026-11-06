@@ -1,0 +1,133 @@
+/* Mobile pacing: useful content first, native touch scroll, no pinned scenes. */
+.heading-line { display:block; }
+.heading-line.is-accent { color:var(--violet); }
+.integration-scene .heading-line.is-accent { color:#c4a2ff; }
+.reference-home .contact-section .heading-line { color:#fff; }
+.reference-home .contact-section .heading-line.is-accent { color:#e5d5ff; }
+.reference-home .brief-card .action-primary,html.dark .reference-home .brief-card .action-primary { background:#fff; color:#6126c9; }
+.reference-home .contact-section .action-text { color:#fff; }
+.word-window { display:inline-block; overflow:clip; vertical-align:bottom; padding-block:.12em; margin-block:-.12em; }
+.motion-word { display:inline-block; }
+.reference-home .hero-copy h1 > .heading-line { color:var(--ink); }
+.reference-home .hero-copy h1 > .heading-line.is-accent { color:var(--violet); }
+.mobile-home-shortcuts { display:none; }
+.catalog-empty-state { display:grid; justify-items:start; gap:14px; padding:28px; background:var(--lavender); border:1px solid var(--line); border-radius:20px; }
+.catalog-empty-state > svg { color:var(--violet); }
+.catalog-empty-state p { max-width:560px; color:var(--muted); font-size:15px; line-height:1.8; }
+
+@media(max-width:899px) {
+  body:has(.reference-home) .site-reading-progress { top:76px; height:2px; background:var(--violet); z-index:49; pointer-events:none; }
+  .reference-home .section-space { padding-block:64px; }
+  .reference-home h2 { font-size:clamp(30px,7.6vw,46px); line-height:1.35; }
+  .reference-home .section-heading { gap:12px; margin-bottom:24px; }
+  .reference-home .section-heading .eyebrow { margin-bottom:12px; }
+  .reference-home .section-heading > p { font-size:14px; line-height:1.85; padding:0; }
+  .reference-home .hero-copy h1 { font-size:clamp(48px,13.6vw,76px); line-height:1.12; margin-bottom:18px; }
+  .reference-home .hero-helper { font-size:13px; line-height:1.8; max-width:38ch; }
+  .reference-home .hero-assurance { font-size:10px; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .reference-home .hero-bottom { margin-top:14px; padding-block:18px; }
+  .reference-home .hero-bottom > span { display:none; }
+  .mobile-home-shortcuts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; padding-top:12px; }
+  .mobile-home-shortcuts a { display:grid; grid-template-columns:1fr auto; align-items:center; gap:8px 3px; border:1px solid var(--line); background:var(--surface); border-radius:13px; padding:12px; font-size:12px; line-height:1.5; }
+  .mobile-home-shortcuts a > span:first-child { grid-column:1/-1; font:10px monospace; color:var(--muted); }
+  .mobile-home-shortcuts svg { color:var(--violet); }
+  .mobile-home-shortcuts a:active { transform:scale(.97); }
+  .reference-home .setup-tabs { gap:4px; padding:5px; margin-bottom:18px; border-radius:14px; }
+  .reference-home .setup-tabs button { min-height:48px; padding:10px; font-size:12px; gap:7px; }
+  .reference-home .setup-tabs button span { display:none; }
+  .reference-home .setup-image { min-height:235px; }
+  .reference-home .setup-panel { border-radius:20px; min-height:0; }
+  .reference-home .setup-copy { padding:22px; gap:14px; }
+  .reference-home .setup-copy h3 { font-size:27px; line-height:1.4; }
+  .reference-home .setup-copy > p { font-size:14px; line-height:1.85; }
+  .reference-home .setup-copy ul { display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+  .reference-home .setup-copy li { font-size:11px; padding:7px 9px; border:1px solid var(--line); border-radius:8px; gap:5px; }
+  .reference-home .setup-copy li svg { width:13px; }
+  .reference-home .setup-footnote { font-size:11px; line-height:1.7; }
+  .reference-home .category-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .reference-home .category-card { grid-column:auto; grid-row:auto; min-height:225px; border-radius:17px; padding:16px; }
+  .reference-home .category-0 { grid-column:1/-1; min-height:245px; }
+  .reference-home .category-copy { inset-inline:14px; bottom:16px; }
+  .reference-home .category-copy h3,.reference-home .category-card:nth-child(n+4) h3 { font-size:18px; margin-bottom:5px; }
+  .reference-home .category-copy p,.reference-home .category-card:nth-child(n+4) p { font-size:11px; line-height:1.6; }
+  .reference-home .category-meta { position:relative; z-index:2; display:flex; justify-content:flex-end; padding-top:2px; padding-inline-end:37px; }
+  .reference-home .category-meta > span:last-child { font-size:9px; }
+  .reference-home .category-number { top:4px; inset-inline-start:0; font-size:9px; }
+  .reference-home .category-arrow { width:30px; height:30px; inset-inline-end:10px; top:11px; }
+  .reference-home .category-image,.reference-home .category-2 .category-image { inset:48px 10px 83px; }
+  .reference-home .category-0 .category-image { inset:40px 20px 70px; }
+  .reference-home .category-image .product-display { height:100%; width:auto; max-height:100%; max-width:100%; }
+  .reference-home .category-image .display-hardware { height:100%; width:100%; object-fit:contain; }
+  .reference-home .category-card:nth-child(n+4) .category-meta > span:last-child { color:#fff; background:#20153270; }
+  .reference-home .category-6 .category-meta > span:last-child { color:#28352d; background:#fff9; }
+  .reference-home .business-grid { gap:26px; }
+  .reference-home .business-copy > p { font-size:14px; line-height:1.85; margin-top:18px; }
+  .reference-home .business-pillars { gap:16px; margin-block:24px; }
+  .reference-home .business-pillars p { font-size:12px; line-height:1.7; }
+  .reference-home .business-process { margin-top:30px; gap:22px 18px; padding-top:24px; }
+  .reference-home .business-step p { font-size:12px; }
+  .reference-home .service-row { padding-block:20px; gap:14px; }
+  .reference-home .service-row h3 { font-size:18px; }
+  .reference-home .service-row p { font-size:13px; }
+  .reference-home .service-seal { font-size:18px; margin-block:22px; }
+  .reference-home .brand-track { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px 12px; padding-block:28px; }
+  .reference-home .brand-name { font-size:18px; }
+  .reference-home .trust-disclaimer { font-size:11px; line-height:1.8; }
+  .reference-home .contact-grid { gap:26px; }
+  .reference-home .contact-grid > div > p { font-size:14px; line-height:1.9; margin-top:18px; }
+  .reference-home .brief-card { padding:22px; border-radius:20px; }
+  .reference-home .brief-card input,.reference-home .brief-card textarea,.reference-home .brief-card select { font-size:16px; }
+  .reference-home .brief-note { font-size:12px; line-height:1.8; }
+  .reference-home .featured-catalog-section,.reference-home .home-faq-section { padding-block:56px; }
+  .reference-home .catalog-section-head { flex-direction:column; align-items:flex-start; gap:18px; }
+  .reference-home .catalog-section-head h2,.reference-home .section-head-wrap h2 { font-size:clamp(30px,7.6vw,46px); line-height:1.4; }
+  .reference-home .catalog-head-sub,.reference-home .section-head-desc { font-size:14px; line-height:1.85; }
+  .reference-home .filter-pill-list { flex-wrap:nowrap; overflow-x:auto; padding-bottom:8px; scrollbar-width:thin; }
+  .reference-home .filter-pill-btn { flex-shrink:0; min-height:44px; }
+  .reference-home .catalog-empty-state { padding:22px; gap:12px; }
+  .reference-home .catalog-empty-state p { font-size:14px; }
+  .reference-home .home-product-grid:empty { display:none; }
+  .reference-home .catalog-bottom-cta { margin-top:24px; }
+  .reference-home .faq-summary-btn { padding:18px; font-size:14px; line-height:1.8; }
+  .reference-home .faq-answer-content { padding:16px 18px 20px; }
+}
+
+@media(max-width:599px) {
+  .reference-home .hero-scene { padding-top:100px; }
+  .reference-home .hero-copy { padding-block:0 8px; }
+  .reference-home .hero-copy .eyebrow { margin-bottom:18px; font-size:10px; gap:9px; }
+  .reference-home .hero-description { font-size:17px; line-height:1.65; margin-bottom:8px; }
+  .reference-home .hero-actions { display:grid; grid-template-columns:1fr auto; gap:18px; margin-top:18px; }
+  .reference-home .hero-actions .action-primary { font-size:14px; padding-inline:18px; min-height:50px; gap:10px; }
+  .reference-home .hero-actions .action-text { font-size:12px; }
+  .reference-home .hero-art { height:285px; margin-top:10px; }
+  .reference-home .hero-orbit { width:260px; height:260px; left:calc(50% - 130px); top:12px; }
+  .reference-home .hero-product { top:80px; left:-7px; right:-7px; }
+  .reference-home .art-coordinate { display:none; }
+  .reference-home .product-note { top:12px; right:0; padding:10px 12px; font-size:11px; }
+  .reference-home .hero-headphones { bottom:34px; width:84px; left:4px; }
+  .reference-home .hero-headphones img { height:96px; }
+  .reference-home .hero-headphones span { font-size:8px; padding:6px 4px; }
+  .reference-home .art-caption { bottom:2px; inset-inline:0; text-align:center; font-size:10px; line-height:1.7; }
+  .reference-home .integration-sticky { padding-block:54px; }
+  .reference-home .integration-grid { gap:0; }
+  .reference-home .integration-copy { display:contents; }
+  .reference-home .integration-copy .eyebrow { order:0; margin-bottom:14px; }
+  .reference-home .integration-copy h2 { order:1; }
+  .reference-home .integration-copy > p { order:2; margin-top:16px; font-size:14px; line-height:1.85; }
+  .reference-home .ecosystem { order:3; height:265px; margin-block:12px; }
+  .reference-home .ecosystem-word { font-size:40px; top:15px; left:0; }
+  .reference-home .ecosystem-laptop { top:95px; width:95%; left:-5px; }
+  .reference-home .ecosystem-audio { width:70px; top:38px; right:0; }
+  .reference-home .product-display.ecosystem-desktop { width:140px; bottom:16px; left:10px; }
+  .reference-home .ecosystem-caption { bottom:0; font-size:10px; }
+  .reference-home .integration-steps { order:4; margin-block:16px; }
+  .reference-home .integration-copy > .action-text { order:5; justify-self:start; }
+  .reference-home .integration-step { padding-block:16px; gap:14px; }
+  .reference-home .integration-step h3 { font-size:16px; }
+  .reference-home .integration-step p { font-size:12px; line-height:1.7; }
+  .reference-home .business-visual { padding:22px; }
+  .reference-home .business-visual .product-display { margin:18px auto 6px; max-width:310px; }
+  html[dir=ltr] .reference-home .hero-copy h1 { font-size:clamp(44px,12vw,64px); }
+}
+@media(prefers-reduced-motion:reduce) { body:has(.reference-home) .site-reading-progress { display:none; } }

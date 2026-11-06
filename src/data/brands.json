@@ -1,0 +1,197 @@
+[
+  {
+    "id": "lenovo",
+    "name": "Lenovo",
+    "categories": ["laptops"],
+    "description": {
+      "ar": "سلاسل ThinkPad الشهيرة بصلابتها، كيبوردات استثنائية وسهولة صيانة واعتمادية عالية لبيئات الأعمال.",
+      "en": "Renowned ThinkPad lineup known for endurance, legendary keyboards, and serviceability."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "hp",
+    "name": "HP",
+    "categories": ["laptops"],
+    "description": {
+      "ar": "سلاسل EliteBook و ZBook بتصميم معدني أنيق وشاشات ساطعة وأمان متقدم للمؤسسات والمحترفين.",
+      "en": "EliteBook and ZBook lines offering sleek metallic builds, vivid displays, and enterprise security."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "dell",
+    "name": "Dell",
+    "categories": ["laptops", "displays"],
+    "description": {
+      "ar": "سلاسل Latitude و Precision وشاشات UltraSharp ذات التغطية اللونية والمنافذ الشاملة.",
+      "en": "Latitude and Precision workstations plus UltraSharp hub monitors with exceptional color accuracy."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "asus",
+    "name": "ASUS",
+    "categories": ["gaming", "laptops"],
+    "description": {
+      "ar": "أجهزة ROG و TUF ذات كفاءة التبريد والتردد العالي للشاشات لمجتمع اللاعبين وصناع المحتوى.",
+      "en": "High performance ROG and TUF gaming series with superior cooling and high refresh rates."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "samsung",
+    "name": "Samsung",
+    "categories": ["storage", "displays"],
+    "description": {
+      "ar": "أقراص تخزين NVMe الرائدة عالميًا وشاشات منحنية ومكتبية عالية الوضوح.",
+      "en": "Industry leading NVMe SSD drives and high definition desktop displays."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "lg",
+    "name": "LG",
+    "categories": ["displays"],
+    "description": {
+      "ar": "شاشات UltraFine و UltraGear بدقة فائقة وألوان حقيقية لمصممي الجرافيك ومحرري الفيديو.",
+      "en": "UltraFine and UltraGear monitors delivering crisp color reproduction for creators."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "logitech",
+    "name": "Logitech",
+    "categories": ["audio", "gaming"],
+    "description": {
+      "ar": "ملحقات مكتبية وصوتية متوافقة ومصممة لدعم راحة اليد وجودة التحدث في الاجتماعات والبث.",
+      "en": "Ergonomic workspace accessories, audio solutions, and streaming peripherals."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "tp-link",
+    "name": "TP-Link",
+    "categories": ["network", "power"],
+    "description": {
+      "ar": "حلول شبكات Deco Mesh وراوترات Wi-Fi 6 لتغطية مستقرة وسريعة للمنازل والمكاتب.",
+      "en": "Deco Mesh ecosystems and Wi-Fi 6 routers ensuring stable connectivity."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "wd",
+    "name": "Western Digital (WD)",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "ويسترن ديجيتال - رائدة عالمياً في أقراص HDD و SSD و الأقراص الخارجية بأسعار منافسة وموثوقية عالية.",
+      "en": "Western Digital - global leader in HDD, SSD, and external drives with competitive pricing and high reliability."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "seagate",
+    "name": "Seagate",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "سيجيت - متخصصة في أقراص التخزين الضخمة HDD للنسخ الاحتياطي وأنظمة المراقبة والخوادم.",
+      "en": "Seagate - specializing in large-capacity HDD drives for backup, surveillance, and server systems."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "toshiba",
+    "name": "Toshiba",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "توشيبا - أقراص HDD 2.5 و 3.5 بوصة موثوقة للاستخدام اليومي وأجهزة اللابتوب.",
+      "en": "Toshiba - reliable 2.5\" and 3.5\" HDD drives for everyday use and laptops."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "kingston",
+    "name": "Kingston",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "كينغستون - أقراص SSD و ذواكر الفلاش بجودة عالية وضمان طويل الأمد.",
+      "en": "Kingston - high quality SSD drives and flash memory with long-term warranty."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "sandisk",
+    "name": "SanDisk",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "سانديسك (ويسترن ديجيتال) - متخصصة في الفلاش ميموري والـ SSD المحمولة والبطاقات.",
+      "en": "SanDisk (Western Digital) - specializing in portable SSDs, flash memory, and memory cards."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "crucial",
+    "name": "Crucial",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "كروشال (ميكرون) - أقراص SSD بأسعار معقولة وأداء ممتاز للترقية والاستبدال.",
+      "en": "Crucial (Micron) - affordable SSD upgrades with excellent performance for system replacement."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  },
+  {
+    "id": "transcend",
+    "name": "Transcend",
+    "categories": ["hard-drives", "storage"],
+    "description": {
+      "ar": "ترانسيند - أقراص تخزين محمولة وبطاقات ذاكرة بتصاميم متينة ومناسبة للميزانيات المحدودة.",
+      "en": "Transcend - durable portable storage and memory cards suitable for budget-conscious users."
+    },
+    "tagline": {
+      "ar": "علامات نوفّرها",
+      "en": "Brands we supply"
+    }
+  }
+]

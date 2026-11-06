@@ -1,0 +1,10 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Preferences } from './i18n';
+import { ToastProvider } from './components';
+import { App } from './App';
+import './styles.css';
+export const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false, staleTime: 30000, refetchOnWindowFocus: false } } });
+createRoot(document.getElementById('root')!).render(<React.StrictMode><QueryClientProvider client={queryClient}><Preferences><ToastProvider><BrowserRouter basename="/admin"><App/></BrowserRouter></ToastProvider></Preferences></QueryClientProvider></React.StrictMode>);

@@ -1,0 +1,21 @@
+# LiteSpeed / Apache configuration for Al-Jeel Al-Arabi Store
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve API bootstrap with JSON header
+  <Files "bootstrap">
+    ForceType application/json
+    Header set Access-Control-Allow-Origin "*"
+  </Files>
+  <Files "catalog">
+    ForceType application/json
+    Header set Access-Control-Allow-Origin "*"
+  </Files>
+
+  # SPA Routing: Send all non-file/non-directory requests to index.html
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

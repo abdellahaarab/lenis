@@ -1,0 +1,95 @@
+{
+  "conditionGrades": [
+    {
+      "grade": "new",
+      "label": { "ar": "جديد بالكرتون", "en": "Brand New" },
+      "meaning": { "ar": "في علبته الأصلية بتغليف المصنع", "en": "Factory sealed in original box" },
+      "criteria": { "ar": "لم يُفتح ولم يُستخدم، مع كامل الملحقات الأصلية وضمان المصنع الرسمي", "en": "Unopened, unused with complete original factory accessories and manufacturer warranty" }
+    },
+    {
+      "grade": "A",
+      "label": { "ar": "A — شبه جديد", "en": "Grade A - Like New" },
+      "meaning": { "ar": "حالة ممتازة بلا خدوش ظاهرة", "en": "Pristine condition with no visible marks" },
+      "criteria": { "ar": "هيكل نظيف تمامًا، كيبورد وشاشة سليمان، بطارية بصحة ممتازة، تم اجتياز الفحص الشامل بنسبة 100%", "en": "Clean chassis, flawless screen and keyboard, healthy battery, passed 7-point tests 100%" }
+    },
+    {
+      "grade": "B",
+      "label": { "ar": "B — جيد جدًا", "en": "Grade B - Very Good" },
+      "meaning": { "ar": "علامات استخدام سطحية خفيفة", "en": "Light cosmetic traces from normal handling" },
+      "criteria": { "ar": "خدوش خفيفة على الهيكل الخارجي لا تؤثر مطلقًا على الشاشة أو الأداء أو كفاءة المنافذ", "en": "Minor cosmetic signs on exterior not affecting display, performance or ports" }
+    },
+    {
+      "grade": "C",
+      "label": { "ar": "C — اقتصادي", "en": "Grade C - Fair / Value" },
+      "meaning": { "ar": "علامات استخدام واضحة بسعر اقتصادي", "en": "Visible signs of wear at budget-friendly pricing" },
+      "criteria": { "ar": "يعمل بكامل كفاءته التقنية، مع وضوح وتوثيق أي ملاحظة شكلية في تقرير الفحص المرفق", "en": "Fully functional hardware with any cosmetic defects transparently noted in the inspection report" }
+    }
+  ],
+  "inspectionChecklist": [
+    {
+      "id": "screen",
+      "title": { "ar": "1. فحص الشاشة والإضاءة", "en": "1. Display & Backlight Check" },
+      "description": { "ar": "فحص خلو البكسلات من النقاط الميتة، تدرج السطوع، ودقة الألوان وتماسك الإضاءة الخلفية.", "en": "Dead pixel inspection, brightness uniformity, and color fidelity with backlight bleed verification." }
+    },
+    {
+      "id": "keyboard_touchpad",
+      "title": { "ar": "2. الكيبورد ولوحة اللمس", "en": "2. Keyboard & Trackpad" },
+      "description": { "ar": "استجابة جميع المفاتيح حرفًا حرفًا، إضاءة الأزرار، وحساسية إيماءات اللمس المتعددة.", "en": "Testing all key inputs individually, backlight uniformity, and multi-touch trackpad gestures." }
+    },
+    {
+      "id": "battery",
+      "title": { "ar": "3. صحة البطارية والشحن", "en": "3. Battery Health & Charging" },
+      "description": { "ar": "قياس نسبة السعة الفعلية المقاسة، دورات الشحن، وسرعة قبول الطاقة واستقرار الاستهلاك.", "en": "Measuring real capacity percentage, cycle count, and charging rate stability." }
+    },
+    {
+      "id": "thermals",
+      "title": { "ar": "4. الحرارة والتبريد تحت الضغط", "en": "4. Thermals & Fan Under Load" },
+      "description": { "ar": "اختبار حرارة المعالج وكرت الشاشة وهدوء المراوح أثناء الاستخدام الأقصى عبر معايير الضغط (Stress Tests).", "en": "Thermal stress test on CPU/GPU and fan acoustic check under heavy system workloads." }
+    },
+    {
+      "id": "storage_smart",
+      "title": { "ar": "5. فحص وسيط التخزين SSD (SMART)", "en": "5. Storage Health (SMART)" },
+      "description": { "ar": "قراءة تقرير SMART للتأكد من سلامة القرص وسرعات القراءة والكتابة وخلوه من القطاعات التالفة.", "en": "SMART diagnostic verification of sector health, zero bad sectors, and sequential read/write speeds." }
+    },
+    {
+      "id": "ports_connectivity",
+      "title": { "ar": "6. المنافذ والاتصال اللاسلكي", "en": "6. Ports & Wireless" },
+      "description": { "ar": "اختبار منافذ Type-C و HDMI والشحن والـ USB، وسرعة واستقرار شبكة الواي فاي والبلوتوث.", "en": "Testing USB, HDMI, Type-C video/charging outputs, Wi-Fi connectivity and Bluetooth stability." }
+    },
+    {
+      "id": "audio_camera",
+      "title": { "ar": "7. الصوت والميكروفون والكاميرا والتشغيل النظيف", "en": "7. Audio, Mic, Camera & Clean OS" },
+      "description": { "ar": "نقاوة السماعات المدمجة، وضوح الكاميرا، والتقاط الميكروفون، مع تثبيت نظام تشغيل نظيف ومحدث.", "en": "Internal speaker acoustics, mic input clarity, webcam sensor test, and fresh operating system setup." }
+    }
+  ],
+  "policy": {
+    "durationNote": {
+      "ar": "تحدد مدة الضمان وشروطه الرسمية بالتنسيق مع المتجر عند الطلب لكل جهاز وفئة.",
+      "en": "Official warranty duration and terms are specified upon consultation with the store per category."
+    },
+    "coverage": {
+      "ar": "يشمل الضمان العيوب المصنعية وخلل المكونات الأساسية (اللوحة الأم، المعالج، الذاكرة، الشاشة) خلال المدة المعتمدة.",
+      "en": "Warranty covers hardware defects and core component faults (motherboard, CPU, RAM, display) within the verified term."
+    },
+    "exclusions": {
+      "ar": "لا يشمل الضمان الأضرار الناتجة عن السقوط والكسر، انسكاب السوائل، تذبذب التيار الكهربائي غير المحمي بمنظم/UPS، أو فتح الجهاز وتعديله خارج المركز.",
+      "en": "Excludes accidental drops, liquid spills, erratic electrical surges without UPS/regulator, or unauthorized hardware tampering."
+    },
+    "replacementOrRepair": {
+      "ar": "تخضع الأجهزة للفحص الفني الفوري؛ ويتم الإصلاح أو الاستبدال بجهاز مطابق وفق تقرير المركز الفني وسياسة المتجر المعتمدة.",
+      "en": "Devices undergo immediate technical assessment; repairs or replacement with equivalent hardware follow certified service policy."
+    },
+    "immediateReplacementPeriod": {
+      "ar": "فترة الفحص والتشييك المباشرة تُحدد مع العميل عند استلام الفاتورة لضمان خلو الجهاز من أي ملاحظة.",
+      "en": "Initial verification and checkup period is agreed upon receipt of the invoice to confirm complete device satisfaction."
+    },
+    "proofOfPurchase": {
+      "ar": "يلزم إبراز فاتورة الشراء الأصلية أو الرقم التسلسلي (Serial Number) المسجل في قاعدة بيانات المتجر عند طلب خدمة الضمان.",
+      "en": "Presentation of original receipt or registered device Serial Number in store records is required for warranty service."
+    },
+    "claimProcess": {
+      "ar": "إحضار الجهاز إلى المحل مع إشعار الشراء ليتم فحصه في قسم الصيانة وإصلاحه أو استبداله طبقًا للشروط المعلنة.",
+      "en": "Bring the device to the store with purchase documentation for technical diagnostic inspection and prompt service."
+    }
+  }
+}

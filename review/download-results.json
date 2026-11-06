@@ -1,0 +1,112 @@
+[
+  {
+    "productId": "lap-thinkpad-t490s-001",
+    "files": [
+      "/images/products/lap-thinkpad-t490s-001-480.webp",
+      "/images/products/lap-thinkpad-t490s-001-480.avif",
+      "/images/products/lap-thinkpad-t490s-001-960.webp",
+      "/images/products/lap-thinkpad-t490s-001-960.avif",
+      "/images/products/lap-thinkpad-t490s-001-1600.webp",
+      "/images/products/lap-thinkpad-t490s-001-1600.avif"
+    ],
+    "source": "https://psrefstuff.lenovo.com/syspool/Sys/Image/ThinkPad/ThinkPad_T490s/ThinkPad_T490s_CT1_01.png",
+    "sourcePage": "https://psref.lenovo.com/Product/ThinkPad/ThinkPad_T490s",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  },
+  {
+    "productId": "lap-thinkpad-p1-gen4-010",
+    "files": [
+      "/images/products/lap-thinkpad-p1-gen4-010-480.webp",
+      "/images/products/lap-thinkpad-p1-gen4-010-480.avif",
+      "/images/products/lap-thinkpad-p1-gen4-010-960.webp",
+      "/images/products/lap-thinkpad-p1-gen4-010-960.avif",
+      "/images/products/lap-thinkpad-p1-gen4-010-1600.webp",
+      "/images/products/lap-thinkpad-p1-gen4-010-1600.avif"
+    ],
+    "source": "https://psrefstuff.lenovo.com/syspool/Sys/Image/ThinkPad/ThinkPad_P1_Gen_4/ThinkPad_P1_Gen_4_CT1_01.png",
+    "sourcePage": "https://psref.lenovo.com/Product/ThinkPad/ThinkPad_P1_Gen_4",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  },
+  {
+    "productId": "gam-asus-rog-zephyrus-g14-006",
+    "files": [
+      "/images/products/gam-asus-rog-zephyrus-g14-006-480.webp",
+      "/images/products/gam-asus-rog-zephyrus-g14-006-480.avif",
+      "/images/products/gam-asus-rog-zephyrus-g14-006-960.webp",
+      "/images/products/gam-asus-rog-zephyrus-g14-006-960.avif",
+      "/images/products/gam-asus-rog-zephyrus-g14-006-1600.webp",
+      "/images/products/gam-asus-rog-zephyrus-g14-006-1600.avif"
+    ],
+    "source": "https://dlcdnwebimgs.asus.com/gain/87C641FC-4E5F-4073-B739-1C41E2783B96/w1000/h732",
+    "sourcePage": "https://rog.asus.com/ca-en/laptops/rog-zephyrus/2021-rog-zephyrus-g14-series/gallery/",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  },
+  {
+    "productId": "aud-logitech-g432-005",
+    "files": [
+      "/images/products/aud-logitech-g432-005-480.webp",
+      "/images/products/aud-logitech-g432-005-480.avif",
+      "/images/products/aud-logitech-g432-005-960.webp",
+      "/images/products/aud-logitech-g432-005-960.avif",
+      "/images/products/aud-logitech-g432-005-1600.webp",
+      "/images/products/aud-logitech-g432-005-1600.avif"
+    ],
+    "source": "https://resource.logitechg.com/content/dam/gaming/en/products/g432/2025/g432-3qtr-front-left-angle-gallery-1.png",
+    "sourcePage": "https://www.logitechg.com/en-us/shop/p/g432-7-1-surround-sound-gaming-headset",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  },
+  {
+    "productId": "net-tplink-deco-x50-007",
+    "files": [
+      "/images/products/net-tplink-deco-x50-007-480.webp",
+      "/images/products/net-tplink-deco-x50-007-480.avif",
+      "/images/products/net-tplink-deco-x50-007-960.webp",
+      "/images/products/net-tplink-deco-x50-007-960.avif",
+      "/images/products/net-tplink-deco-x50-007-1600.webp",
+      "/images/products/net-tplink-deco-x50-007-1600.avif"
+    ],
+    "source": "https://static.tp-link.com/upload/image-header/Deco_X50(2-pack)_Overview_normal_20211225093625r.png",
+    "sourcePage": "https://www.tp-link.com/us/deco-mesh-wifi/product-family/deco-x50/",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  },
+  {
+    "productId": "lap-latitude-7420-003",
+    "error": "404 Client Error: Not Found for url: https://i.dell.com/index.html"
+  },
+  {
+    "productId": "disp-dell-u2722de-004",
+    "error": "404 Client Error: Not Found for url: https://i.dell.com/index.html"
+  },
+  {
+    "productId": "sto-samsung-980-pro-008",
+    "files": [
+      "/images/products/sto-samsung-980-pro-008-480.webp",
+      "/images/products/sto-samsung-980-pro-008-480.avif",
+      "/images/products/sto-samsung-980-pro-008-960.webp",
+      "/images/products/sto-samsung-980-pro-008-960.avif",
+      "/images/products/sto-samsung-980-pro-008-1600.webp",
+      "/images/products/sto-samsung-980-pro-008-1600.avif"
+    ],
+    "source": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-v8p1t0b-am/gallery/us-980-pro-nvme-m2-ssd-mz-v8p1t0b-am-550536602?wid=1600&fmt=png-alpha",
+    "sourcePage": "https://www.samsung.com/us/memory-storage/nvme-ssd/980-pro-pcie-4-0-nvme-ssd-1tb-sku-mz-v8p1t0b-am/",
+    "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+    "licensed": false,
+    "demoOnly": true,
+    "retrievedAt": "2026-10-02"
+  }
+]

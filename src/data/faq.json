@@ -1,0 +1,182 @@
+[
+  {
+    "id": "faq-1",
+    "question": {
+      "ar": "ما الفرق بين «جديد» و«وكالة / A» و«مستعمل مفحوص»؟",
+      "en": "What is the difference between 'New', 'Grade A (Like New)', and 'Inspected Pre-owned'?"
+    },
+    "answer": {
+      "ar": "«جديد» يعني الجهاز في كرتونه الأصلي بتغليف المصنع ولم يُفتح سابقًا. «وكالة / A» جهاز أصلي مجدد أو معروض بحالة ممتازة بلا خدوش ظاهرة وبطارية بصحة ممتازة. «مستعمل مفحوص» خضع لتقرير الفحص الشامل وتُذكر أي ملاحظات شكلية فيه بالصور والبيانات.",
+      "en": "'New' comes sealed in its original box. 'Grade A' is original hardware in like-new cosmetic condition with no noticeable scratches and healthy battery. 'Inspected Pre-owned' has passed the 7-point technical verification with any cosmetic notes documented."
+    },
+    "category": "condition"
+  },
+  {
+    "id": "faq-2",
+    "question": {
+      "ar": "هل أستطيع فحص الجهاز وتجريبه قبل الدفع؟",
+      "en": "Can I inspect and test the device before making payment?"
+    },
+    "answer": {
+      "ar": "نعم بالتأكيد. نلتزم بمنحك الوقت الكافي لتشغيل الجهاز وتجربة الشاشة والمنافذ والكيبورد والبطارية، ونوفر لك تقرير الفحص المعتمد للجهاز.",
+      "en": "Yes, absolutely. We ensure you have ample time to test the screen, ports, keyboard, and battery in person, backed by our verified inspection checklist."
+    },
+    "category": "inspection"
+  },
+  {
+    "id": "faq-3",
+    "question": {
+      "ar": "كم مدة الضمان على الأجهزة؟",
+      "en": "How long is the warranty coverage on devices?"
+    },
+    "answer": {
+      "ar": "تحدد مدة الضمان بحسب فئة الجهاز وحالته (جديد، A، B) وتُسجل صراحة في فاتورة الشراء بالتنسيق مع إدارة المتجر عند الطلب.",
+      "en": "Warranty duration depends on the device category and condition grade (New, Grade A, B), and is explicitly stated on the invoice upon consultation with store management."
+    },
+    "category": "warranty"
+  },
+  {
+    "id": "faq-4",
+    "question": {
+      "ar": "ماذا يحدث إذا ظهر عطل مصنعي خلال فترة الضمان؟",
+      "en": "What happens if a hardware defect occurs during the warranty period?"
+    },
+    "answer": {
+      "ar": "يخضع الجهاز لفحص فني فوري في قسم الصيانة، ويتم الإصلاح أو الاستبدال بجهاز مطابق وفق سياسة المتجر وشروط الفاتورة المعتمدة.",
+      "en": "The unit receives immediate technical diagnostic assessment, followed by repair or replacement with an equivalent model per verified store terms."
+    },
+    "category": "warranty"
+  },
+  {
+    "id": "faq-5",
+    "question": {
+      "ar": "هل الأسعار بالدولار الأمريكي أم بالريال اليمني؟",
+      "en": "Are prices quoted in US Dollars or Yemeni Rials?"
+    },
+    "answer": {
+      "ar": "تُحدد الأسعار بالدولار الأمريكي في الكتالوج كمرجع مستقر، ويتم التحاسب بالريال اليمني بحسب سعر الصرف المعتمد في المتجر لحظة الشراء مع بيان تاريخ آخر تحديث.",
+      "en": "Catalog prices are benchmarked in USD for currency stability, with settlement available in Yemeni Rials according to current daily store exchange rates."
+    },
+    "category": "pricing"
+  },
+  {
+    "id": "faq-6",
+    "question": {
+      "ar": "هل توفرون خدمة التوصيل في صنعاء والمحافظات؟",
+      "en": "Do you provide delivery services in Sana'a and other cities?"
+    },
+    "answer": {
+      "ar": "يُنسق التوصيل والتسليم المباشر عبر المحل داخل صنعاء بحسب الطلب وموقع العميل، ونوفر شحنًا آمنًا لباقي المحافظات بالتنسيق المسبق.",
+      "en": "Delivery coordination is arranged within Sana'a depending on order requirements, with secure insured shipping available to other provinces."
+    },
+    "category": "services"
+  },
+  {
+    "id": "faq-7",
+    "question": {
+      "ar": "هل تقبلون استبدال الأجهزة القديمة أو الشراء من العميل؟",
+      "en": "Do you accept device trade-ins or purchase pre-owned units from clients?"
+    },
+    "answer": {
+      "ar": "تخضع خدمة الاستبدال لتقييم وفحص فني للجهاز في المحل لتحديد حالته التقنية وإمكانية الترقية أو البدل.",
+      "en": "Trade-in requests require in-person hardware inspection at the store to evaluate component integrity and determine exchange value."
+    },
+    "category": "services"
+  },
+  {
+    "id": "faq-8",
+    "question": {
+      "ar": "هل يمكن ترقية الذاكرة (RAM) أو وسيط التخزين (SSD) عند الشراء؟",
+      "en": "Can memory (RAM) or solid-state storage (SSD) be upgraded at purchase?"
+    },
+    "answer": {
+      "ar": "نعم، نوضح قابلية الترقية في بطاقة مواصفات كل جهاز. إذا كانت الذاكرة غير مدمجة يمكنك طلب ترقية الرام أو مضاعفة سعة SSD فورًا.",
+      "en": "Yes. Upgradeability is explicitly noted on each product card. If memory is not soldered, RAM capacity or NVMe storage can be upgraded immediately."
+    },
+    "category": "hardware"
+  },
+  {
+    "id": "faq-9",
+    "question": {
+      "ar": "كم سعة الذاكرة (RAM) التي أحتاجها فعليًا؟",
+      "en": "How much RAM do I actually need for my daily tasks?"
+    },
+    "answer": {
+      "ar": "8GB حد أدنى للدراسة والمهام المكتبية وتصفح الإنترنت. 16GB موصى بها للعمل المتعدد البرامج والتطوير. 32GB فما فوق للتصميم الهندسي والمونتاج الاحترافي والرندر.",
+      "en": "8GB is the baseline for study and general productivity. 16GB is the sweet spot for heavy multitasking and development. 32GB+ is advised for 4K video editing and 3D engineering."
+    },
+    "category": "hardware"
+  },
+  {
+    "id": "faq-10",
+    "question": {
+      "ar": "هل أحتاج وحدة طاقة احتياطية (UPS) إذا كان لدي لابتوب؟",
+      "en": "Do I need an uninterruptible power supply (UPS) if I use a laptop?"
+    },
+    "answer": {
+      "ar": "اللابتوب يمتلك بطاريته الخاصة، لكن وحدة الـ UPS ضرورية لتشغيل راوتر الواي فاي والشاشات الخارجية ووحدات التخزين لمنع انقطاع الإنترنت وتلف البيانات أثناء تقلبات الكهرباء.",
+      "en": "While laptops have internal batteries, a UPS is crucial for keeping Wi-Fi routers, external monitors, and NAS storage online through power cuts."
+    },
+    "category": "power"
+  },
+  {
+    "id": "faq-11",
+    "question": {
+      "ar": "كيف أتأكد أن الشاشة الخارجية ستعمل بكامل طاقتها مع جهازي؟",
+      "en": "How can I verify external monitor compatibility with my laptop?"
+    },
+    "answer": {
+      "ar": "تحقق من نوع منفذ USB-C (دعم DisplayPort و Power Delivery) أو منفذ HDMI، وتأكد أن واط الشحن (PD Wattage) يغذي اللابتوب بالقدر الكافي.",
+      "en": "Check your USB-C port specifications (DisplayPort Alt Mode and USB PD support) or HDMI version, and ensure monitor PD wattage matches your laptop requirements."
+    },
+    "category": "hardware"
+  },
+  {
+    "id": "faq-12",
+    "question": {
+      "ar": "هل تجهزون مقرات الشركات والمكاتب وتقدمون عروض أسعار رسمية؟",
+      "en": "Do you provide enterprise workspace setups and official price quotations?"
+    },
+    "answer": {
+      "ar": "نعم، نقدم تجهيزات متكاملة للشركات (محطات عمل، شبكات داخلية، تخزين مشترك، وحلول طاقة UPS) مع عروض أسعار تفصيلية عبر نموذج حلول الأعمال.",
+      "en": "Yes. We curate turnkey enterprise solutions (workstations, networking, shared storage, and UPS protection) with formal itemized quotes via our business solutions team."
+    },
+    "category": "business"
+  },
+  {
+    "id": "faq-13",
+    "question": {
+      "ar": "هل تتوفر لديكم خدمات الصيانة الدورية بعد انتهاء فترة الضمان؟",
+      "en": "Do you provide maintenance and technical support after warranty expiry?"
+    },
+    "answer": {
+      "ar": "نوفر الدعم الفني وخدمات الفحص والتنظيف الحراري وترقية القطع لعملائنا لضمان استمرارية عمل أجهزتهم بكفاءة عالية.",
+      "en": "We offer technical diagnostics, thermal paste maintenance, fan cleaning, and hardware upgrades for customers to keep setups operating reliably."
+    },
+    "category": "services"
+  },
+  {
+    "id": "faq-14",
+    "question": {
+      "ar": "كيف أطلب جهازًا أو باقة تجهيز من الموقع؟",
+      "en": "How do I order a device or tailored setup package from the site?"
+    },
+    "answer": {
+      "ar": "اضغط على زر «اسأل عن الجهاز» في بطاقة المنتج، أو استخدم أداة «جهّز احتياجك» لتنسيق ملخص تفصيلي بمواصفاتك للتواصل المباشر مع فريق المبيعات.",
+      "en": "Click 'Inquire About Device' on any product card, or use the 'Plan Your Setup' assistant to generate a structured brief for direct discussion with sales."
+    },
+    "category": "ordering"
+  },
+  {
+    "id": "faq-15",
+    "question": {
+      "ar": "هل لديكم فروع أخرى أو منصة دفع إلكتروني مباشر؟",
+      "en": "Do you have other branch locations or direct online checkout?"
+    },
+    "answer": {
+      "ar": "مركزنا الرئيسي في صنعاء، ونعتمد آلية المعاينة الشخصية والفحص المباشر في المحل أو التنسيق الشخصي للطلب لضمان مطابقة المواصفات قبل إتمام الدفع.",
+      "en": "Our primary center operates in Sana'a, focusing on personal inspection and direct consultation to verify complete satisfaction before payment is finalized."
+    },
+    "category": "general"
+  }
+]

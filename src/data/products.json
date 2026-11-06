@@ -1,0 +1,2778 @@
+[
+  {
+    "id": "lap-thinkpad-t490s-001",
+    "slug": "lenovo-thinkpad-t490s-i5-8gb-256",
+    "category": "laptops",
+    "brand": "Lenovo",
+    "model": "ThinkPad T490s",
+    "title": {
+      "ar": "لينوفو ثينك باد T490s",
+      "en": "Lenovo ThinkPad T490s"
+    },
+    "summary": {
+      "ar": "لابتوب أعمال خفيف ونحيف بشاشة لمس وهيكل متين للعمل والدراسة",
+      "en": "Slim, durable business laptop with touch display for work and study"
+    },
+    "condition": "A",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "cpu": "Intel Core i5-8265U",
+      "cpuGen": 8,
+      "ramGB": 8,
+      "ramType": "DDR4",
+      "ramUpgradable": false,
+      "storageGB": 256,
+      "storageType": "SSD-NVMe",
+      "display": {
+        "sizeIn": 14,
+        "res": "1920x1080",
+        "touch": true,
+        "hz": 60,
+        "panel": "IPS"
+      },
+      "gpu": "Intel UHD Graphics 620",
+      "batteryHealthPct": null,
+      "ports": [
+        "Thunderbolt 3",
+        "USB-C",
+        "USB-A 3.1 x2",
+        "HDMI 1.4b",
+        "Audio Jack"
+      ],
+      "weightKg": 1.35,
+      "os": "Windows 11 Pro"
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [
+      "disp-dell-u2722de-004",
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/lap-thinkpad-t490s-001-960.webp"
+    ],
+    "tags": [
+      "touch",
+      "light",
+      "business",
+      "thinkpad"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "lap-elitebook-840-g7-002",
+    "slug": "hp-elitebook-840-g7-i7-16gb-512",
+    "category": "laptops",
+    "brand": "HP",
+    "model": "EliteBook 840 G7",
+    "title": {
+      "ar": "إتش بي إيليت بوك 840 G7",
+      "en": "HP EliteBook 840 G7"
+    },
+    "summary": {
+      "ar": "لابتوب أعمال أنيق بهيكل ألومنيوم وأداء قوي مع معالج Core i7 وذاكرة 16GB",
+      "en": "Premium aluminum business laptop with Core i7 performance and 16GB RAM"
+    },
+    "condition": "A",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "cpu": "Intel Core i7-10610U",
+      "cpuGen": 10,
+      "ramGB": 16,
+      "ramType": "DDR4",
+      "ramUpgradable": true,
+      "storageGB": 512,
+      "storageType": "SSD-NVMe",
+      "display": {
+        "sizeIn": 14,
+        "res": "1920x1080",
+        "touch": false,
+        "hz": 60,
+        "panel": "IPS Anti-glare"
+      },
+      "gpu": "Intel UHD Graphics",
+      "batteryHealthPct": null,
+      "ports": [
+        "Thunderbolt 3 x2",
+        "USB-A 3.1 x2",
+        "HDMI 1.4",
+        "Audio Jack"
+      ],
+      "weightKg": 1.33,
+      "os": "Windows 11 Pro"
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [
+      "disp-dell-u2722de-004",
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/lap-elitebook-840-g7-002-960.webp"
+    ],
+    "tags": [
+      "aluminum",
+      "business",
+      "elitebook",
+      "fast"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "lap-latitude-7420-003",
+    "slug": "dell-latitude-7420-i5-16gb-256",
+    "category": "laptops",
+    "brand": "Dell",
+    "model": "Latitude 7420",
+    "title": {
+      "ar": "ديل لاتيتيود 7420",
+      "en": "Dell Latitude 7420"
+    },
+    "summary": {
+      "ar": "جهاز أعمال فائق الاعتمادية بجيل حديث، مناسب للمهام المكتبية والتنقل المستمر",
+      "en": "Highly reliable modern business notebook built for mobile productivity"
+    },
+    "condition": "B",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "cpu": "Intel Core i5-1145G7",
+      "cpuGen": 11,
+      "ramGB": 16,
+      "ramType": "LPDDR4x",
+      "ramUpgradable": false,
+      "storageGB": 256,
+      "storageType": "SSD-NVMe",
+      "display": {
+        "sizeIn": 14,
+        "res": "1920x1080",
+        "touch": false,
+        "hz": 60,
+        "panel": "ComfortView Plus IPS"
+      },
+      "gpu": "Intel Iris Xe Graphics",
+      "batteryHealthPct": null,
+      "ports": [
+        "Thunderbolt 4 x2",
+        "USB-A 3.2",
+        "HDMI 2.0",
+        "MicroSD",
+        "Audio Jack"
+      ],
+      "weightKg": 1.22,
+      "os": "Windows 11 Pro"
+    },
+    "bestFor": [
+      "work"
+    ],
+    "compatibleWith": [
+      "disp-dell-u2722de-004",
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/lap-latitude-7420-003-960.webp"
+    ],
+    "tags": [
+      "dell",
+      "latitude",
+      "iris-xe",
+      "lightweight"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "disp-dell-u2722de-004",
+    "slug": "dell-ultrasharp-u2722de-27-qhd-usbc",
+    "category": "displays",
+    "brand": "Dell",
+    "model": "UltraSharp U2722DE",
+    "title": {
+      "ar": "شاشة ديل ألترا شارب 27 بوصة U2722DE",
+      "en": "Dell UltraSharp 27\" U2722DE Hub Monitor"
+    },
+    "summary": {
+      "ar": "شاشة إنتاجية بدقة 2K مع موزع منافذ USB-C وشحن PD 90W ومنفذ شبكة RJ45 مدمج",
+      "en": "2K QHD productivity hub monitor with 90W USB-C PD and integrated RJ45 Ethernet"
+    },
+    "condition": "new",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "display": {
+        "sizeIn": 27,
+        "res": "2560x1440",
+        "touch": false,
+        "hz": 60,
+        "panel": "IPS"
+      },
+      "panel": "IPS Black",
+      "colorGamut": "100% sRGB, 95% DCI-P3",
+      "usbCPdWatts": 90,
+      "heightAdjustable": true,
+      "ports": [
+        "USB-C upstream (90W PD)",
+        "DisplayPort 1.4",
+        "HDMI 1.4",
+        "RJ45 Ethernet",
+        "USB-A 3.2 x4",
+        "Audio out"
+      ],
+      "weightKg": 4.78
+    },
+    "bestFor": [
+      "work",
+      "content"
+    ],
+    "compatibleWith": [
+      "lap-thinkpad-t490s-001",
+      "lap-elitebook-840-g7-002",
+      "lap-latitude-7420-003"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/disp-dell-u2722de-004-960.webp"
+    ],
+    "tags": [
+      "monitor",
+      "qhd",
+      "usbc-hub",
+      "color-accurate"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "lap-thinkpad-t490s-001",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "lap-elitebook-840-g7-002",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "lap-latitude-7420-003",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "aud-logitech-g432-005",
+    "slug": "logitech-g432-wired-gaming-headset",
+    "category": "audio",
+    "brand": "Logitech",
+    "model": "G432",
+    "title": {
+      "ar": "سماعة لوجيتك G432 للألعاب",
+      "en": "Logitech G432 Wired Gaming Headset"
+    },
+    "summary": {
+      "ar": "سماعة ألعاب سلكية بميكروفون قابل للرفع واتصال USB أو 3.5 مم.",
+      "en": "Wired gaming headset with a flip-to-mute microphone and USB or 3.5 mm connectivity."
+    },
+    "condition": "new",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "connectionType": "USB / 3.5 mm",
+      "frequencyResponse": "20 Hz – 20 kHz",
+      "ports": [
+        "USB",
+        "3.5 mm"
+      ],
+      "weightKg": 0.259
+    },
+    "bestFor": [
+      "content",
+      "work"
+    ],
+    "compatibleWith": [
+      "lap-thinkpad-t490s-001",
+      "lap-elitebook-840-g7-002"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/aud-logitech-g432-005-960.webp"
+    ],
+    "tags": [
+      "audio",
+      "microphone",
+      "podcast",
+      "streaming"
+    ],
+    "demo": true,
+    "specSources": [
+      "https://www.logitechg.com/en-us/shop/p/g432-7-1-surround-sound-gaming-headset"
+    ],
+    "connections": [
+      {
+        "targetId": "lap-thinkpad-t490s-001",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "lap-elitebook-840-g7-002",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "gam-asus-rog-zephyrus-g14-006",
+    "slug": "asus-rog-zephyrus-g14-ryzen9-rtx3060",
+    "category": "gaming",
+    "brand": "ASUS",
+    "model": "ROG Zephyrus G14",
+    "title": {
+      "ar": "أسوس روج زيفيروس G14 للألعاب وصناعة المحتوى",
+      "en": "ASUS ROG Zephyrus G14 Gaming Laptop"
+    },
+    "summary": {
+      "ar": "قوة ألعاب وتصميم هائلة في حجم 14 بوصة مع معالج Ryzen 9 وشاشة 144Hz وكرت RTX 3060",
+      "en": "Compact gaming beast with AMD Ryzen 9, 144Hz display, and NVIDIA RTX 3060"
+    },
+    "condition": "A",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "cpu": "AMD Ryzen 9 5900HS",
+      "cpuGen": 5,
+      "ramGB": 16,
+      "ramType": "DDR4 3200MHz",
+      "ramUpgradable": true,
+      "storageGB": 1000,
+      "storageType": "SSD-NVMe Gen3",
+      "display": {
+        "sizeIn": 14,
+        "res": "1920x1080",
+        "touch": false,
+        "hz": 144,
+        "panel": "IPS 100% sRGB"
+      },
+      "gpu": "NVIDIA GeForce RTX 3060 6GB GDDR6",
+      "batteryHealthPct": null,
+      "ports": [
+        "USB-C 3.2 Gen 2 (PD)",
+        "USB-C 3.2 Gen 2 (DP)",
+        "USB-A 3.2 x2",
+        "HDMI 2.0b",
+        "Audio Jack"
+      ],
+      "weightKg": 1.7,
+      "os": "Windows 11 Home"
+    },
+    "bestFor": [
+      "gaming",
+      "content"
+    ],
+    "compatibleWith": [
+      "disp-dell-u2722de-004",
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/gam-asus-rog-zephyrus-g14-006-960.webp"
+    ],
+    "tags": [
+      "gaming",
+      "rog",
+      "rtx",
+      "high-refresh",
+      "compact"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "net-tplink-deco-x50-007",
+    "slug": "tp-link-deco-x50-mesh-wifi6-pack",
+    "category": "network",
+    "brand": "TP-Link",
+    "model": "Deco X50 (2-Pack)",
+    "title": {
+      "ar": "تي بي لينك ديكو X50 منظومة واي فاي 6 شبكية Mesh",
+      "en": "TP-Link Deco X50 AX3000 Whole Home Mesh Wi-Fi 6"
+    },
+    "summary": {
+      "ar": "تغطية واي فاي منزلية ومكتبية سلسة تلغي النقاط الميتة وتتحمل أكثر من 150 جهازًا متزامنًا",
+      "en": "Seamless whole-home Wi-Fi 6 mesh coverage eliminating dead zones for 150+ devices"
+    },
+    "condition": "new",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "wifiStandard": "Wi-Fi 6 (802.11ax)",
+      "speedMbps": 3000,
+      "portsCount": 3,
+      "meshSupport": true,
+      "ports": [
+        "Gigabit WAN/LAN Auto-sensing x3 per unit"
+      ],
+      "weightKg": 0.82
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/net-tplink-deco-x50-007-960.webp"
+    ],
+    "tags": [
+      "mesh",
+      "wifi6",
+      "networking",
+      "tplink",
+      "coverage"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "sto-samsung-980-pro-008",
+    "slug": "samsung-980-pro-1tb-nvme-pcie4",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "980 PRO 1TB",
+    "title": {
+      "ar": "سامسونج 980 برو قرص تخزين سريع 1TB M.2 NVMe",
+      "en": "Samsung 980 PRO 1TB PCIe Gen 4.0 x4 M.2 NVMe SSD"
+    },
+    "summary": {
+      "ar": "أداء قراءة يصل إلى 7000MB/s مثالي لتسريع إقلاع النظام والمونتاج وألعاب الجيل الجديد",
+      "en": "Blazing fast read speeds up to 7000MB/s ideal for OS responsiveness and gaming"
+    },
+    "condition": "new",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "storageType": "PCIe Gen 4.0 x4 NVMe 1.3c",
+      "readSpeedMBs": 7000,
+      "writeSpeedMBs": 5000,
+      "interface": "M.2 2280",
+      "weightKg": 0.01
+    },
+    "bestFor": [
+      "work",
+      "content",
+      "gaming"
+    ],
+    "compatibleWith": [
+      "lap-elitebook-840-g7-002",
+      "gam-asus-rog-zephyrus-g14-006"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/sto-samsung-980-pro-008-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "nvme",
+      "pcie4",
+      "samsung",
+      "high-speed"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "lap-elitebook-840-g7-002",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "gam-asus-rog-zephyrus-g14-006",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "pow-apc-back-ups-650va-009",
+    "slug": "demo-ups-650va",
+    "category": "power",
+    "brand": "غير محددة",
+    "model": "UPS 650VA (demo)",
+    "title": {
+      "ar": "وحدة طاقة احتياطية وحماية UPS قدرة 650VA / 360W",
+      "en": "Demo UPS 650VA / 360W — brand unconfirmed"
+    },
+    "summary": {
+      "ar": "حماية الراوتر ومحطة العمل والشاشات من تذبذب الكهرباء وانقطاع التيار المفاجئ في صنعاء",
+      "en": "Protects workstations, monitors and routers from voltage spikes and sudden outages"
+    },
+    "condition": "new",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityVA": 650,
+      "capacityWatts": 360,
+      "waveType": "Stepped approximation to a sinewave",
+      "outletsCount": 4,
+      "ports": [
+        "Universal Battery Backup + Surge Sockets x4"
+      ],
+      "weightKg": 4.5
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [
+      "lap-thinkpad-t490s-001",
+      "net-tplink-deco-x50-007",
+      "disp-dell-u2722de-004"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/ups-illustration.svg"
+    ],
+    "tags": [
+      "ups",
+      "power",
+      "avr",
+      "surge-protection",
+      "outage"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "lap-thinkpad-t490s-001",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "net-tplink-deco-x50-007",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "lap-thinkpad-p1-gen4-010",
+    "slug": "lenovo-thinkpad-p1-gen4-i7-32gb-1tb-rtx",
+    "category": "laptops",
+    "brand": "Lenovo",
+    "model": "ThinkPad P1 Gen 4",
+    "title": {
+      "ar": "لينوفو ثينك باد P1 الجيل الرابع محطة عمل متنقلة",
+      "en": "Lenovo ThinkPad P1 Gen 4 Mobile Workstation"
+    },
+    "summary": {
+      "ar": "ورك ستيشن احترافي بشاشة 16 بوصة 2.5K وكرت RTX وذاكرة 32GB لمهام الهندسة والمونتاج",
+      "en": "Elite 16-inch mobile workstation with RTX graphics and 32GB RAM for engineering"
+    },
+    "condition": "A",
+    "warrantyMonths": null,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "cpu": "Intel Core i7-11850H",
+      "cpuGen": 11,
+      "ramGB": 32,
+      "ramType": "DDR4 3200MHz",
+      "ramUpgradable": true,
+      "storageGB": 1000,
+      "storageType": "SSD-NVMe PCIe Gen4",
+      "display": {
+        "sizeIn": 16,
+        "res": "2560x1600",
+        "touch": false,
+        "hz": 60,
+        "panel": "IPS 400 nits 16:10 100% sRGB"
+      },
+      "gpu": "NVIDIA RTX A2000 4GB GDDR6",
+      "batteryHealthPct": null,
+      "ports": [
+        "Thunderbolt 4 x2",
+        "USB-A 3.2 Gen 1 x2",
+        "HDMI 2.1",
+        "SD Card Reader",
+        "Audio Jack"
+      ],
+      "weightKg": 1.81,
+      "os": "Windows 11 Pro"
+    },
+    "bestFor": [
+      "work",
+      "content"
+    ],
+    "compatibleWith": [
+      "disp-dell-u2722de-004",
+      "pow-apc-back-ups-650va-009"
+    ],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "نموذج تجريبي؛ الفحص الفعلي ينتظر جهاز المتجر.",
+        "en": "Demo model; physical inspection awaits store inventory."
+      }
+    },
+    "images": [
+      "/images/products/lap-thinkpad-p1-gen4-010-960.webp"
+    ],
+    "tags": [
+      "workstation",
+      "thinkpad",
+      "rtx",
+      "creator",
+      "engineering"
+    ],
+    "demo": true,
+    "connections": [
+      {
+        "targetId": "disp-dell-u2722de-004",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      },
+      {
+        "targetId": "pow-apc-back-ups-650va-009",
+        "port": null,
+        "watts": null,
+        "verified": false,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": "hdd-wd-blue-1tb-011",
+    "slug": "wd-blue-1tb-3-5-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Blue 1TB",
+    "title": {
+      "ar": "ويسترن ديجيتال بلو 1 تيرابايت HDD 3.5 بوصة",
+      "en": "WD Blue 1TB 3.5\" Desktop HDD SATA"
+    },
+    "summary": {
+      "ar": "هاردسك مكتبي بسعة 1TB وسرعة 7200RPM مناسب لتخزين الملفات والبيانات اليومية",
+      "en": "Desktop HDD with 1TB capacity and 7200RPM ideal for everyday data storage"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "64MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 180,
+      "writeSpeedMBs": 180,
+      "weightKg": 0.4,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-wd-blue-1tb-011-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "wd",
+      "blue",
+      "desktop",
+      "sata"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-wd-blue-2tb-012",
+    "slug": "wd-blue-2tb-3-5-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Blue 2TB",
+    "title": {
+      "ar": "ويسترن ديجيتال بلو 2 تيرابايت HDD 3.5 بوصة",
+      "en": "WD Blue 2TB 3.5\" Desktop HDD SATA"
+    },
+    "summary": {
+      "ar": "هاردسك مكتبي سعة 2TB لتخزين آمن وواسع للمستندات والصور ومقاطع الفيديو",
+      "en": "2TB desktop HDD for safe and spacious storage of documents, photos and videos"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "256MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 180,
+      "writeSpeedMBs": 180,
+      "weightKg": 0.42,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-wd-blue-2tb-012-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "wd",
+      "blue",
+      "desktop",
+      "2tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-wd-blue-4tb-013",
+    "slug": "wd-blue-4tb-3-5-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Blue 4TB",
+    "title": {
+      "ar": "ويسترن ديجيتال بلو 4 تيرابايت HDD 3.5 بوصة",
+      "en": "WD Blue 4TB 3.5\" Desktop HDD SATA"
+    },
+    "summary": {
+      "ar": "سعة تخزينية ضخمة 4TB بسعر مناسب للنسخ الاحتياطي ومحطات العمل المكتبية",
+      "en": "4TB massive capacity at an affordable price for backup and desktop workstations"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 4000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 5400,
+      "cacheSize": "256MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 180,
+      "writeSpeedMBs": 180,
+      "weightKg": 0.44,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-wd-blue-4tb-013-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "wd",
+      "blue",
+      "desktop",
+      "4tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-wd-purple-2tb-014",
+    "slug": "wd-purple-2tb-surveillance-hdd",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Purple 2TB",
+    "title": {
+      "ar": "ويسترن ديجيتال بربل 2TB هاردسك مراقبة وكاميرات",
+      "en": "WD Purple 2TB Surveillance Hard Drive"
+    },
+    "summary": {
+      "ar": "هاردسك مخصص لأنظمة المراقبة الأمنية وكاميرات الـ CCTV بتصميم متخصص للكتابة المستمرة",
+      "en": "Specialized surveillance HDD optimized for continuous write operations in CCTV systems"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 5400,
+      "cacheSize": "64MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 150,
+      "writeSpeedMBs": 150,
+      "weightKg": 0.41,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-wd-purple-2tb-014-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "wd",
+      "purple",
+      "surveillance",
+      "cctv"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-seagate-barracuda-1tb-015",
+    "slug": "seagate-barracuda-1tb-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Barracuda 1TB",
+    "title": {
+      "ar": "سيجيت باراكودا 1 تيرابايت HDD مكتبي",
+      "en": "Seagate Barracuda 1TB Desktop HDD"
+    },
+    "summary": {
+      "ar": "هاردسك سيجيت الشهير بموثوقيته العالية وسرعة 7200RPM للاستخدام المكتبي والمنزلي",
+      "en": "Seagate's reliable Barracuda HDD with 7200RPM speed for home and office use"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "256MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 190,
+      "writeSpeedMBs": 190,
+      "weightKg": 0.38,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-seagate-barracuda-1tb-015-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "seagate",
+      "barracuda",
+      "7200rpm",
+      "desktop"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-seagate-barracuda-2tb-016",
+    "slug": "seagate-barracuda-2tb-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Barracuda 2TB",
+    "title": {
+      "ar": "سيجيت باراكودا 2 تيرابايت HDD مكتبي",
+      "en": "Seagate Barracuda 2TB Desktop HDD"
+    },
+    "summary": {
+      "ar": "سعة مضاعفة 2TB مع أداء 7200RPM ورسوخ سيجيت الشهير في موثوقية التخزين طويل الأمد",
+      "en": "Double capacity 2TB with 7200RPM performance and Seagate's proven long-term reliability"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "256MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 190,
+      "writeSpeedMBs": 190,
+      "weightKg": 0.4,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-seagate-barracuda-2tb-016-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "seagate",
+      "barracuda",
+      "2tb",
+      "desktop"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-seagate-barracuda-4tb-017",
+    "slug": "seagate-barracuda-4tb-hdd-sata",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Barracuda 4TB",
+    "title": {
+      "ar": "سيجيت باراكودا 4 تيرابايت HDD مكتبي",
+      "en": "Seagate Barracuda 4TB Desktop HDD"
+    },
+    "summary": {
+      "ar": "تخزين ضخم 4TB لأجهزة الكمبيوتر المكتبية ومحطات العمل مع ضمان سيجيت الموثوق",
+      "en": "Massive 4TB storage for desktop PCs and workstations with Seagate's trusted warranty"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 4000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 5400,
+      "cacheSize": "256MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 190,
+      "writeSpeedMBs": 190,
+      "weightKg": 0.42,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-seagate-barracuda-4tb-017-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "seagate",
+      "barracuda",
+      "4tb",
+      "desktop"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-seagate-skyhawk-2tb-018",
+    "slug": "seagate-skyhawk-2tb-surveillance-hdd",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "SkyHawk 2TB",
+    "title": {
+      "ar": "سيجيت سكاي هوك 2TB هاردسك كاميرات مراقبة",
+      "en": "Seagate SkyHawk 2TB Surveillance HDD"
+    },
+    "summary": {
+      "ar": "هاردسك سيجيت سكاي هوك مصمم خصيصاً لأنظمة CCTV مع دعم 8 كاميرات متزامنة",
+      "en": "Seagate SkyHawk designed for CCTV systems with support for up to 8 simultaneous cameras"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 5900,
+      "cacheSize": "64MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 180,
+      "writeSpeedMBs": 180,
+      "weightKg": 0.41,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-seagate-skyhawk-2tb-018-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "seagate",
+      "skyhawk",
+      "surveillance",
+      "cctv"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-toshiba-p300-1tb-019",
+    "slug": "toshiba-p300-1tb-hdd-desktop",
+    "category": "hard-drives",
+    "brand": "Toshiba",
+    "model": "P300 1TB",
+    "title": {
+      "ar": "توشيبا P300 1 تيرابايت HDD مكتبي",
+      "en": "Toshiba P300 1TB Desktop Hard Drive"
+    },
+    "summary": {
+      "ar": "هاردسك توشيبا P300 للحواسب المكتبية بسعة 1TB وسرعة 7200RPM بتصميم موثوق واقتصادي",
+      "en": "Toshiba P300 desktop HDD 1TB with 7200RPM and reliable economical design"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "64MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 150,
+      "writeSpeedMBs": 150,
+      "weightKg": 0.38,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-toshiba-p300-1tb-019-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "toshiba",
+      "p300",
+      "desktop",
+      "7200rpm"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-toshiba-p300-2tb-020",
+    "slug": "toshiba-p300-2tb-hdd-desktop",
+    "category": "hard-drives",
+    "brand": "Toshiba",
+    "model": "P300 2TB",
+    "title": {
+      "ar": "توشيبا P300 2 تيرابايت HDD مكتبي",
+      "en": "Toshiba P300 2TB Desktop Hard Drive"
+    },
+    "summary": {
+      "ar": "هاردسك توشيبا P300 سعة 2TB بأداء ثابت 7200RPM لتخزين موسع للمستخدمين المتطورين",
+      "en": "Toshiba P300 2TB with consistent 7200RPM for expanded storage of advanced users"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "HDD",
+      "formFactor": "3.5\"",
+      "rpm": 7200,
+      "cacheSize": "64MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 150,
+      "writeSpeedMBs": 150,
+      "weightKg": 0.4,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-toshiba-p300-2tb-020-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "toshiba",
+      "p300",
+      "desktop",
+      "2tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-wd-blue-500gb-laptop-021",
+    "slug": "wd-blue-500gb-2-5-laptop-hdd",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Blue 500GB 2.5\"",
+    "title": {
+      "ar": "ويسترن ديجيتال بلو 500GB هاردسك لابتوب 2.5 بوصة",
+      "en": "WD Blue 500GB 2.5\" Laptop HDD SATA"
+    },
+    "summary": {
+      "ar": "هاردسك لابتوب بسعة 500GB وتصميم 2.5 بوصة رفيع لترقية أجهزة اللابتوب القديمة",
+      "en": "500GB laptop HDD in slim 2.5\" form for upgrading older laptop storage"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 500,
+      "hddType": "HDD",
+      "formFactor": "2.5\"",
+      "rpm": 5400,
+      "cacheSize": "16MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 150,
+      "writeSpeedMBs": 150,
+      "weightKg": 0.11,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-wd-blue-500gb-laptop-021-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "wd",
+      "blue",
+      "laptop",
+      "2.5inch",
+      "500gb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "hdd-seagate-st1000-laptop-022",
+    "slug": "seagate-momentus-1tb-2-5-laptop-hdd",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Momentus 1TB 2.5\"",
+    "title": {
+      "ar": "سيجيت موميتوس 1TB هاردسك لابتوب 2.5 بوصة",
+      "en": "Seagate Momentus 1TB 2.5\" Laptop HDD"
+    },
+    "summary": {
+      "ar": "هاردسك لابتوب سيجيت 1TB لترقية أجهزة اللابتوب بتخزين أكبر وأداء ثابت",
+      "en": "Seagate 1TB laptop HDD for upgrading storage capacity in older laptop models"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "HDD",
+      "formFactor": "2.5\"",
+      "rpm": 5400,
+      "cacheSize": "128MB",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 140,
+      "writeSpeedMBs": 140,
+      "weightKg": 0.115,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/hdd-seagate-st1000-laptop-022-960.webp"
+    ],
+    "tags": [
+      "hdd",
+      "seagate",
+      "laptop",
+      "2.5inch",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ssd-kingston-a400-240gb-023",
+    "slug": "kingston-a400-240gb-sata-ssd",
+    "category": "hard-drives",
+    "brand": "Kingston",
+    "model": "A400 240GB SSD",
+    "title": {
+      "ar": "كينغستون A400 240GB SSD سريع SATA",
+      "en": "Kingston A400 240GB SATA SSD"
+    },
+    "summary": {
+      "ar": "SSD بسعر اقتصادي وسرعة قراءة 500MB/s لتسريع الكمبيوتر القديم وتحسين الاستجابة",
+      "en": "Budget-friendly SSD with 500MB/s read speed to speed up older computers significantly"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 240,
+      "hddType": "SSD",
+      "formFactor": "2.5\"",
+      "storageType": "SATA SSD",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 500,
+      "writeSpeedMBs": 350,
+      "weightKg": 0.043,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ssd-kingston-a400-240gb-023-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "kingston",
+      "a400",
+      "sata",
+      "budget"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ssd-kingston-a400-480gb-024",
+    "slug": "kingston-a400-480gb-sata-ssd",
+    "category": "hard-drives",
+    "brand": "Kingston",
+    "model": "A400 480GB SSD",
+    "title": {
+      "ar": "كينغستون A400 480GB SSD SATA",
+      "en": "Kingston A400 480GB SATA SSD"
+    },
+    "summary": {
+      "ar": "سعة 480GB بأداء SSD ممتاز وسرعة 500MB/s للنظام والتطبيقات والملفات الشخصية",
+      "en": "480GB with excellent SSD performance at 500MB/s for OS, apps and personal files"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 480,
+      "hddType": "SSD",
+      "formFactor": "2.5\"",
+      "storageType": "SATA SSD",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 500,
+      "writeSpeedMBs": 450,
+      "weightKg": 0.043,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ssd-kingston-a400-480gb-024-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "kingston",
+      "a400",
+      "sata",
+      "480gb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ssd-kingston-a400-960gb-025",
+    "slug": "kingston-a400-960gb-sata-ssd",
+    "category": "hard-drives",
+    "brand": "Kingston",
+    "model": "A400 960GB SSD",
+    "title": {
+      "ar": "كينغستون A400 960GB SSD SATA قريب من التيرابايت",
+      "en": "Kingston A400 960GB SATA SSD Near-1TB"
+    },
+    "summary": {
+      "ar": "سعة قريبة من التيرابايت بسعر مناسب لمن يحتاج تخزين SSD واسع دون تكلفة المليون",
+      "en": "Near-1TB capacity at an affordable price for those needing wide SSD storage"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 960,
+      "hddType": "SSD",
+      "formFactor": "2.5\"",
+      "storageType": "SATA SSD",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 500,
+      "writeSpeedMBs": 450,
+      "weightKg": 0.043,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ssd-kingston-a400-960gb-025-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "kingston",
+      "a400",
+      "sata",
+      "960gb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ssd-crucial-mx500-500gb-026",
+    "slug": "crucial-mx500-500gb-sata-ssd",
+    "category": "hard-drives",
+    "brand": "Crucial",
+    "model": "MX500 500GB SSD",
+    "title": {
+      "ar": "كروشال MX500 500GB SSD SATA",
+      "en": "Crucial MX500 500GB SATA SSD"
+    },
+    "summary": {
+      "ar": "SSD كروشال بسرعة قراءة 560MB/s وتشفير AES 256-bit لحماية بياناتك بثقة",
+      "en": "Crucial MX500 SSD with 560MB/s read speed and AES 256-bit encryption for data protection"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 500,
+      "hddType": "SSD",
+      "formFactor": "2.5\"",
+      "storageType": "SATA SSD",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 560,
+      "writeSpeedMBs": 510,
+      "weightKg": 0.04,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ssd-crucial-mx500-500gb-026-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "crucial",
+      "mx500",
+      "sata",
+      "encrypted"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ssd-crucial-mx500-1tb-027",
+    "slug": "crucial-mx500-1tb-sata-ssd",
+    "category": "hard-drives",
+    "brand": "Crucial",
+    "model": "MX500 1TB SSD",
+    "title": {
+      "ar": "كروشال MX500 1 تيرابايت SSD SATA",
+      "en": "Crucial MX500 1TB SATA SSD"
+    },
+    "summary": {
+      "ar": "تيرابايت كامل بأداء SSD وسرعة 560MB/s مع تشفير بيانات AES وضمان 5 سنوات",
+      "en": "Full 1TB SSD with 560MB/s, AES data encryption and 5-year warranty from Crucial"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "SSD",
+      "formFactor": "2.5\"",
+      "storageType": "SATA SSD",
+      "interface": "SATA III 6Gb/s",
+      "readSpeedMBs": 560,
+      "writeSpeedMBs": 510,
+      "weightKg": 0.04,
+      "ports": [
+        "SATA III"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ssd-crucial-mx500-1tb-027-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "crucial",
+      "mx500",
+      "sata",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "nvme-wd-sn770-500gb-028",
+    "slug": "wd-black-sn770-500gb-nvme-m2",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Black SN770 500GB NVMe",
+    "title": {
+      "ar": "ويسترن ديجيتال بلاك SN770 500GB NVMe M.2",
+      "en": "WD Black SN770 500GB NVMe M.2 SSD PCIe 4.0"
+    },
+    "summary": {
+      "ar": "NVMe PCIe 4.0 من WD Black بسرعة قراءة 5150MB/s لتسريع اللابتوب والكمبيوتر المكتبي",
+      "en": "WD Black PCIe 4.0 NVMe with 5150MB/s read speed for laptops and desktops"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 500,
+      "hddType": "NVMe",
+      "formFactor": "M.2 2280",
+      "storageType": "PCIe Gen4 x4 NVMe",
+      "interface": "M.2 2280",
+      "readSpeedMBs": 5150,
+      "writeSpeedMBs": 4900,
+      "weightKg": 0.007,
+      "ports": [
+        "M.2 NVMe"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "gaming",
+      "content"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/nvme-wd-sn770-500gb-028-960.webp"
+    ],
+    "tags": [
+      "nvme",
+      "wd",
+      "black",
+      "pcie4",
+      "m2",
+      "fast"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "nvme-wd-sn770-1tb-029",
+    "slug": "wd-black-sn770-1tb-nvme-m2",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Black SN770 1TB NVMe",
+    "title": {
+      "ar": "ويسترن ديجيتال بلاك SN770 1TB NVMe M.2",
+      "en": "WD Black SN770 1TB NVMe M.2 SSD PCIe 4.0"
+    },
+    "summary": {
+      "ar": "تيرابايت NVMe PCIe 4.0 بسرعة 5150MB/s وضمان 5 سنوات لترقية اللابتوب والبلايستيشن",
+      "en": "1TB PCIe 4.0 NVMe at 5150MB/s with 5-year warranty for laptop and PS5 upgrades"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "NVMe",
+      "formFactor": "M.2 2280",
+      "storageType": "PCIe Gen4 x4 NVMe",
+      "interface": "M.2 2280",
+      "readSpeedMBs": 5150,
+      "writeSpeedMBs": 4900,
+      "weightKg": 0.007,
+      "ports": [
+        "M.2 NVMe"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "gaming",
+      "content"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/nvme-wd-sn770-1tb-029-960.webp"
+    ],
+    "tags": [
+      "nvme",
+      "wd",
+      "black",
+      "pcie4",
+      "m2",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "nvme-crucial-p3-1tb-030",
+    "slug": "crucial-p3-1tb-nvme-m2-pcie3",
+    "category": "hard-drives",
+    "brand": "Crucial",
+    "model": "P3 1TB NVMe",
+    "title": {
+      "ar": "كروشال P3 1TB NVMe M.2 PCIe 3.0",
+      "en": "Crucial P3 1TB NVMe M.2 PCIe 3.0 SSD"
+    },
+    "summary": {
+      "ar": "NVMe اقتصادي PCIe 3.0 من كروشال بسرعة 3500MB/s وضمان 5 سنوات لترقية مقبولة التكلفة",
+      "en": "Budget NVMe PCIe 3.0 from Crucial at 3500MB/s with 5-year warranty for cost-effective upgrade"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "NVMe",
+      "formFactor": "M.2 2280",
+      "storageType": "PCIe Gen3 x4 NVMe",
+      "interface": "M.2 2280",
+      "readSpeedMBs": 3500,
+      "writeSpeedMBs": 3000,
+      "weightKg": 0.007,
+      "ports": [
+        "M.2 NVMe"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/nvme-crucial-p3-1tb-030-960.webp"
+    ],
+    "tags": [
+      "nvme",
+      "crucial",
+      "p3",
+      "pcie3",
+      "m2",
+      "budget"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "nvme-kingston-nv2-1tb-031",
+    "slug": "kingston-nv2-1tb-nvme-m2-pcie4",
+    "category": "hard-drives",
+    "brand": "Kingston",
+    "model": "NV2 1TB NVMe",
+    "title": {
+      "ar": "كينغستون NV2 1TB NVMe M.2 PCIe 4.0",
+      "en": "Kingston NV2 1TB NVMe M.2 PCIe 4.0 SSD"
+    },
+    "summary": {
+      "ar": "NVMe PCIe 4.0 من كينغستون بسرعة 3500MB/s وسعة 1TB بسعر منافس جداً للترقية",
+      "en": "Kingston NV2 PCIe 4.0 NVMe at 3500MB/s with 1TB capacity at a very competitive price"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "NVMe",
+      "formFactor": "M.2 2280",
+      "storageType": "PCIe Gen4 x4 NVMe",
+      "interface": "M.2 2280",
+      "readSpeedMBs": 3500,
+      "writeSpeedMBs": 2100,
+      "weightKg": 0.007,
+      "ports": [
+        "M.2 NVMe"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "study",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/nvme-kingston-nv2-1tb-031-960.webp"
+    ],
+    "tags": [
+      "nvme",
+      "kingston",
+      "nv2",
+      "pcie4",
+      "m2",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-wd-elements-1tb-032",
+    "slug": "wd-elements-1tb-usb3-portable-hdd",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Elements Portable 1TB",
+    "title": {
+      "ar": "ويسترن ديجيتال إليمنتس 1TB هاردسك خارجي محمول",
+      "en": "WD Elements Portable 1TB USB 3.0 External HDD"
+    },
+    "summary": {
+      "ar": "هاردسك خارجي محمول WD بسعة 1TB وتوصيل USB 3.0 للحمل والتنقل بين الأجهزة بسهولة",
+      "en": "WD portable external 1TB HDD with USB 3.0 connectivity for easy transfer between devices"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.13,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-wd-elements-1tb-032-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "wd",
+      "elements",
+      "usb3",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-wd-elements-2tb-033",
+    "slug": "wd-elements-2tb-usb3-portable-hdd",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "WD Elements Portable 2TB",
+    "title": {
+      "ar": "ويسترن ديجيتال إليمنتس 2TB هاردسك خارجي محمول",
+      "en": "WD Elements Portable 2TB USB 3.0 External HDD"
+    },
+    "summary": {
+      "ar": "هاردسك خارجي 2TB محمول وخفيف الوزن لتخزين الصور ومقاطع الفيديو والبيانات في مكان آمن",
+      "en": "Lightweight 2TB portable external HDD for safe storage of photos, videos and important data"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.135,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-wd-elements-2tb-033-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "wd",
+      "elements",
+      "usb3",
+      "2tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-seagate-expansion-1tb-034",
+    "slug": "seagate-expansion-1tb-usb3-portable",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Expansion 1TB Portable",
+    "title": {
+      "ar": "سيجيت اكسبانشن 1TB هاردسك خارجي محمول",
+      "en": "Seagate Expansion 1TB USB 3.0 Portable External HDD"
+    },
+    "summary": {
+      "ar": "هاردسك سيجيت خارجي 1TB بتصميم أنيق يتصل بـ USB 3.0 دون الحاجة لكابل طاقة منفصل",
+      "en": "Seagate 1TB portable external HDD with sleek design connecting via USB 3.0, no separate power needed"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.125,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-seagate-expansion-1tb-034-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "seagate",
+      "expansion",
+      "usb3",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-seagate-expansion-2tb-035",
+    "slug": "seagate-expansion-2tb-usb3-portable",
+    "category": "hard-drives",
+    "brand": "Seagate",
+    "model": "Expansion 2TB Portable",
+    "title": {
+      "ar": "سيجيت اكسبانشن 2TB هاردسك خارجي محمول",
+      "en": "Seagate Expansion 2TB USB 3.0 Portable External HDD"
+    },
+    "summary": {
+      "ar": "سعة 2TB خارجية من سيجيت بتوصيل USB 3.0 لنقل وتخزين ملفاتك الكبيرة بسرعة ويسر",
+      "en": "2TB external from Seagate with USB 3.0 for fast transfer and storage of large files"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.13,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-seagate-expansion-2tb-035-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "seagate",
+      "expansion",
+      "usb3",
+      "2tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-sandisk-ssd-500gb-036",
+    "slug": "sandisk-extreme-v2-500gb-usbc-portable-ssd",
+    "category": "hard-drives",
+    "brand": "SanDisk",
+    "model": "Extreme V2 500GB",
+    "title": {
+      "ar": "سانديسك اكستريم V2 500GB SSD خارجي محمول USB-C",
+      "en": "SanDisk Extreme V2 500GB USB-C Portable SSD"
+    },
+    "summary": {
+      "ar": "SSD خارجي 500GB بسرعة 1050MB/s وواجهة USB-C ومقاومة للصدمات والماء والغبار IP55",
+      "en": "500GB portable SSD at 1050MB/s with USB-C, shock-resistant and IP55 water/dust rated"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 500,
+      "hddType": "External SSD",
+      "formFactor": "External Portable",
+      "usbVersion": "USB-C 3.2 Gen 2",
+      "interface": "USB-C",
+      "readSpeedMBs": 1050,
+      "writeSpeedMBs": 1000,
+      "weightKg": 0.079,
+      "ports": [
+        "USB-C 3.2 Gen 2"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "content",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-sandisk-ssd-500gb-036-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "external",
+      "sandisk",
+      "extreme",
+      "usbc",
+      "portable",
+      "ip55"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-sandisk-ssd-1tb-037",
+    "slug": "sandisk-extreme-v2-1tb-usbc-portable-ssd",
+    "category": "hard-drives",
+    "brand": "SanDisk",
+    "model": "Extreme V2 1TB",
+    "title": {
+      "ar": "سانديسك اكستريم V2 1TB SSD خارجي محمول USB-C",
+      "en": "SanDisk Extreme V2 1TB USB-C Portable SSD"
+    },
+    "summary": {
+      "ar": "تيرابايت كامل في حجم صغير مع سرعة 1050MB/s ومقاومة IP55 للمصورين والمحترفين المتنقلين",
+      "en": "Full 1TB in a compact size at 1050MB/s with IP55 rating for mobile photographers and professionals"
+    },
+    "condition": "new",
+    "warrantyMonths": 60,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "External SSD",
+      "formFactor": "External Portable",
+      "usbVersion": "USB-C 3.2 Gen 2",
+      "interface": "USB-C",
+      "readSpeedMBs": 1050,
+      "writeSpeedMBs": 1000,
+      "weightKg": 0.082,
+      "ports": [
+        "USB-C 3.2 Gen 2"
+      ]
+    },
+    "bestFor": [
+      "work",
+      "content",
+      "gaming"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-sandisk-ssd-1tb-037-960.webp"
+    ],
+    "tags": [
+      "ssd",
+      "external",
+      "sandisk",
+      "extreme",
+      "usbc",
+      "portable",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-wd-my-passport-2tb-038",
+    "slug": "wd-my-passport-2tb-usbc-portable",
+    "category": "hard-drives",
+    "brand": "Western Digital (WD)",
+    "model": "My Passport 2TB",
+    "title": {
+      "ar": "ويسترن ديجيتال ماي باسبورت 2TB خارجي USB-C",
+      "en": "WD My Passport 2TB USB-C Portable External HDD"
+    },
+    "summary": {
+      "ar": "هاردسك WD My Passport بتشفير تلقائي وواجهة USB-C ومتوفر بألوان متعددة وضمان 3 سنوات",
+      "en": "WD My Passport with auto-backup, USB-C connectivity, available in multiple colors with 3-year warranty"
+    },
+    "condition": "new",
+    "warrantyMonths": 36,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB-C 3.2",
+      "interface": "USB-C",
+      "readSpeedMBs": 130,
+      "writeSpeedMBs": 120,
+      "weightKg": 0.13,
+      "ports": [
+        "USB-C 3.2",
+        "USB-A 3.0"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-wd-my-passport-2tb-038-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "wd",
+      "passport",
+      "usbc",
+      "2tb",
+      "encrypted"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-toshiba-canvio-1tb-039",
+    "slug": "toshiba-canvio-basics-1tb-usb3-portable",
+    "category": "hard-drives",
+    "brand": "Toshiba",
+    "model": "Canvio Basics 1TB",
+    "title": {
+      "ar": "توشيبا كانفيو بيسيكس 1TB هاردسك خارجي USB 3.0",
+      "en": "Toshiba Canvio Basics 1TB USB 3.0 Portable External HDD"
+    },
+    "summary": {
+      "ar": "هاردسك توشيبا خارجي بتصميم بسيط وأسود أنيق وسعة 1TB مثالي للاستخدام اليومي والتنقل",
+      "en": "Toshiba portable HDD in simple elegant black design with 1TB capacity for daily use on the go"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 1000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.12,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-toshiba-canvio-1tb-039-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "toshiba",
+      "canvio",
+      "usb3",
+      "1tb"
+    ],
+    "demo": true,
+    "connections": []
+  },
+  {
+    "id": "ext-toshiba-canvio-2tb-040",
+    "slug": "toshiba-canvio-basics-2tb-usb3-portable",
+    "category": "hard-drives",
+    "brand": "Toshiba",
+    "model": "Canvio Basics 2TB",
+    "title": {
+      "ar": "توشيبا كانفيو بيسيكس 2TB هاردسك خارجي USB 3.0",
+      "en": "Toshiba Canvio Basics 2TB USB 3.0 Portable External HDD"
+    },
+    "summary": {
+      "ar": "تخزين 2TB خارجي من توشيبا بأسعار مناسبة للطلاب وصغار المشاريع مع واجهة USB 3.0",
+      "en": "2TB external storage from Toshiba at affordable prices for students and small businesses via USB 3.0"
+    },
+    "condition": "new",
+    "warrantyMonths": 24,
+    "price": {
+      "usd": null,
+      "yer": null,
+      "updatedAt": null,
+      "negotiable": false
+    },
+    "stock": "in_stock",
+    "specs": {
+      "capacityGB": 2000,
+      "hddType": "External",
+      "formFactor": "External 2.5\"",
+      "rpm": 5400,
+      "usbVersion": "USB 3.0",
+      "interface": "USB 3.0",
+      "readSpeedMBs": 120,
+      "writeSpeedMBs": 100,
+      "weightKg": 0.125,
+      "ports": [
+        "USB 3.0",
+        "Micro-USB"
+      ]
+    },
+    "bestFor": [
+      "study",
+      "work"
+    ],
+    "compatibleWith": [],
+    "inspection": {
+      "passed": false,
+      "date": null,
+      "notes": {
+        "ar": "منتج جديد في الصندوق الأصلي.",
+        "en": "New product in original box."
+      }
+    },
+    "images": [
+      "/images/products/ext-toshiba-canvio-2tb-040-960.webp"
+    ],
+    "tags": [
+      "external",
+      "portable",
+      "toshiba",
+      "canvio",
+      "usb3",
+      "2tb"
+    ],
+    "demo": true,
+    "connections": []
+  }
+]

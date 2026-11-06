@@ -1,0 +1,916 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum Role {
+  owner
+  manager
+  sales
+  editor
+  viewer
+}
+enum Category {
+  laptops
+  displays
+  audio
+  gaming
+  network
+  storage
+  power
+}
+enum Condition {
+  new
+  open_box
+  like_new
+  refurbished
+  used
+  defective
+  A
+  B
+  C
+}
+enum ContentStatus {
+  draft
+  published
+  archived
+}
+enum Stock {
+  in_stock
+  low
+  order
+  sold
+}
+enum Shot {
+  front_closed @map("front-closed")
+  three_quarter_right @map("34-right")
+  three_quarter_left @map("34-left")
+  side
+  open_screen @map("open-screen")
+  keyboard
+  ports_right @map("ports-right")
+  ports_left @map("ports-left")
+  back
+  label
+  defect
+  accessories
+}
+enum BundleTier {
+  economy
+  balanced
+  advanced
+}
+enum MediaKind {
+  image
+  sequence
+  document
+}
+enum CustomerType {
+  individual
+  business
+}
+enum LeadSource {
+  brief_builder
+  quote_form
+  contact_form
+  product_inquiry
+  whatsapp_click
+  walk_in
+  phone
+  manual
+  exhibition_contest
+}
+enum LeadStatus {
+  new
+  contacted
+  quoted
+  won
+  lost
+}
+enum ActivityType {
+  note
+  call
+  whatsapp
+  status_change
+  assignment
+}
+enum QuoteStatus {
+  draft
+  sent
+  accepted
+  rejected
+  expired
+}
+enum Currency {
+  USD
+  YER
+}
+enum SubscriberChannel {
+  email
+  whatsapp
+}
+enum SubscriberStatus {
+  active
+  unsubscribed
+  bounced
+}
+enum EventType {
+  page_view
+  product_view
+  whatsapp_click
+  filter_used
+  compare_used
+  search
+  form_submit
+  bundle_view
+}
+enum DeviceClass {
+  mobile
+  tablet
+  desktop
+}
+enum Language {
+  ar
+  en
+}
+
+model User {
+  id                 String @id @default(uuid()) @db.VarChar(100)
+  email              String @unique @db.VarChar(254)
+  name               String @db.VarChar(100)
+  nameSearch         String @default("") @db.VarChar(100)
+  passwordHash       String
+  role               Role
+  isActive           Boolean @default(true)
+  mustChangePassword Boolean @default(true)
+  totpSecret         String?
+  totpPendingSecret  String?
+  totpPendingUntil   DateTime? @db.DateTime(3)
+  totpLastCounter    BigInt?
+  failedLogins       Int @default(0)
+  lockedUntil        DateTime? @db.DateTime(3)
+  lastLoginAt        DateTime? @db.DateTime(3)
+  createdAt          DateTime @default(now()) @db.DateTime(3)
+  updatedAt          DateTime @updatedAt @db.DateTime(3)
+  sessions           Session[]
+  auditLogs          AuditLog[]
+  priceChanges       PriceHistory[]
+  createdMedia       MediaAsset[]
+  assignedLeads      Lead[]
+  activities         LeadActivity[]
+  inventoryMovements InventoryMovement[]
+  @@index([role, isActive])
+}
+model Session {
+  id        String @id @db.VarChar(64)
+  userId    String @db.VarChar(100)
+  expiresAt DateTime @db.DateTime(3)
+  lastSeenAt DateTime @default(now()) @db.DateTime(3)
+  userAgent String @db.VarChar(300)
+  ipHash    String @db.VarChar(64)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, expiresAt])
+  @@index([expiresAt])
+}
+model AuditLog {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  userId    String? @db.VarChar(100)
+  action    String @db.VarChar(80)
+  entity    String @db.VarChar(80)
+  entityId  String? @db.VarChar(100)
+  before    Json? @db.Json
+  after     Json? @db.Json
+  // A keyed IP hash only, never a raw address.
+  ip        String? @db.VarChar(64)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  user      User? @relation(fields: [userId], references: [id], onDelete: Restrict)
+  @@index([createdAt])
+  @@index([entity, entityId, createdAt])
+  @@index([userId, createdAt])
+}
+model Brand {
+  id                 String @id @default(uuid()) @db.VarChar(100)
+  slug               String @unique @db.VarChar(160)
+  name               String @db.VarChar(160)
+  description        Json @default("{}") @db.Json
+  tagline            Json? @db.Json
+  categories         BrandCategory[]
+  logoMediaId        String? @db.VarChar(100)
+  isAuthorizedDealer Boolean @default(false)
+  sort               Int @default(0)
+  published          Boolean @default(false)
+  logo               MediaAsset? @relation(fields: [logoMediaId], references: [id], onDelete: Restrict)
+  products           Product[]
+  @@index([published, sort])
+}
+model Product {
+  id               String @id @default(uuid()) @db.VarChar(100)
+  slug             String @unique @db.VarChar(160)
+  category         String @db.VarChar(100)
+  categoryRef      CatalogCategory @relation(fields: [category], references: [slug], onDelete: Restrict)
+  brandId          String @db.VarChar(100)
+  model            String @db.VarChar(200)
+  title            Json @db.Json
+  summary          Json @db.Json
+  condition        Condition
+  status           ContentStatus @default(draft)
+  demo             Boolean @default(false)
+  warrantyMonths   Int?
+  priceUsd         Decimal? @db.Decimal(14, 2)
+  originalPriceUsd Decimal? @db.Decimal(14, 2)
+  discountPercent  Decimal? @db.Decimal(5, 2)
+  priceYer         Decimal? @db.Decimal(18, 2)
+  priceUpdatedAt   DateTime? @db.DateTime(3)
+  negotiable       Boolean @default(false)
+  stock            Stock @default(order)
+  quantity         Int @default(0)
+  serialNumber     String? @db.VarChar(200)
+  batteryHealthPct Int?
+  specs            Json @db.Json
+  inspection       Json @db.Json
+  specSources Json @db.Json
+  bestFor Json @db.Json
+  tags Json @db.Json
+  publishedAt      DateTime? @db.DateTime(3)
+  deletedAt        DateTime? @db.DateTime(3)
+  createdAt        DateTime @default(now()) @db.DateTime(3)
+  updatedAt        DateTime @updatedAt @db.DateTime(3)
+  brand            Brand @relation(fields: [brandId], references: [id], onDelete: Restrict)
+  images           ProductImage[]
+  compatibleWith   ProductCompat[] @relation("compatSource")
+  compatibleFrom   ProductCompat[] @relation("compatTarget")
+  priceHistory     PriceHistory[]
+  bundleItems      BundleItem[]
+  leads            Lead[]
+  quoteItems       QuoteItem[]
+  sales            Sale[]
+  events           AnalyticsEvent[]
+  facets           ProductFacet[]
+  labels           ProductLabel[]
+  variants         ProductVariant[]
+  collectionLinks CollectionProduct[]
+  productTypeId    String? @db.VarChar(100)
+  productType ProductType? @relation(fields:[productTypeId],references:[id],onDelete:Restrict)
+  redirects ProductRedirect[]
+  @@index([status, deletedAt, category, publishedAt])
+  @@index([brandId, status])
+  @@index([stock, deletedAt])
+  @@index([demo, deletedAt])
+}
+model ProductImage {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  productId String @db.VarChar(100)
+  mediaId   String @db.VarChar(100)
+  sort      Int @default(0)
+  shot      Shot
+  altAr     String @default("")
+  altEn     String @default("")
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  media     MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+  @@unique([productId, mediaId])
+  @@index([productId, sort])
+  @@index([mediaId])
+}
+model ProductCompat {
+  id             String @id @default(uuid()) @db.VarChar(100)
+  productId      String @db.VarChar(100)
+  otherProductId String @db.VarChar(100)
+  portType       String?
+  watts          Decimal? @db.Decimal(10, 2)
+  verified       Boolean @default(false)
+  source         String?
+  note           String?
+  product        Product @relation("compatSource", fields: [productId], references: [id], onDelete: Cascade)
+  otherProduct   Product @relation("compatTarget", fields: [otherProductId], references: [id], onDelete: Restrict)
+  @@unique([productId, otherProductId])
+  @@index([otherProductId])
+}
+model PriceHistory {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  productId        String   @db.VarChar(100)
+  priceUsd         Decimal? @db.Decimal(14, 2)
+  originalPriceUsd Decimal? @db.Decimal(14, 2)
+  discountPercent  Decimal? @db.Decimal(5, 2)
+  priceYer         Decimal? @db.Decimal(18, 2)
+  changedBy        String   @db.VarChar(100)
+  changedAt        DateTime @default(now()) @db.DateTime(3)
+  reason           String?
+  changeType       String   @default("price") @db.VarChar(20)
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Restrict)
+  user             User     @relation(fields: [changedBy], references: [id], onDelete: Restrict)
+  @@index([productId, changedAt])
+  @@index([changedBy])
+  @@index([changedAt])
+}
+model Bundle {
+  id             String @id @default(uuid()) @db.VarChar(100)
+  slug           String @unique @db.VarChar(160)
+  useCase        String @db.VarChar(80)
+  title          Json @db.Json
+  summary        Json @db.Json
+  why            Json @db.Json
+  problemSolved  Json @db.Json
+  tiers          Json @db.Json
+  published      Boolean @default(false)
+  createdAt      DateTime @default(now()) @db.DateTime(3)
+  items          BundleItem[]
+  @@index([published, useCase])
+}
+model BundleItem {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  bundleId  String @db.VarChar(100)
+  tier      BundleTier
+  productId String? @db.VarChar(100)
+  roleLabel Json? @db.Json
+  qty       Int @default(1)
+  sort      Int @default(0)
+  bundle    Bundle @relation(fields: [bundleId], references: [id], onDelete: Cascade)
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Restrict)
+  @@index([bundleId, tier, sort])
+  @@index([productId])
+}
+model FaqItem {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  question  Json @db.Json
+  answer    Json @db.Json
+  sort      Int @default(0)
+  published Boolean @default(false)
+  category  String? @db.VarChar(80)
+  @@index([published, category, sort])
+}
+model WarrantyPolicy {
+  id                   Int @id @default(1)
+  conditionGrades      Json @db.Json
+  inspectionChecklist  Json @db.Json
+  policy               Json @db.Json
+  newMonths            Int?
+  gradeAMonths         Int?
+  gradeBMonths         Int?
+  gradeCMonths         Int?
+  updatedAt            DateTime @updatedAt @db.DateTime(3)
+}
+model Guide {
+  id           String @id @default(uuid()) @db.VarChar(100)
+  slug         String @unique @db.VarChar(160)
+  title        Json @db.Json
+  body         Json @db.Json
+  coverMediaId String? @db.VarChar(100)
+  tags Json @db.Json
+  status       ContentStatus @default(draft)
+  publishedAt  DateTime? @db.DateTime(3)
+  createdAt    DateTime @default(now()) @db.DateTime(3)
+  updatedAt    DateTime @updatedAt @db.DateTime(3)
+  cover        MediaAsset? @relation(fields: [coverMediaId], references: [id], onDelete: Restrict)
+  @@index([status, publishedAt])
+}
+model SiteSetting {
+  key       String @id @db.VarChar(100)
+  value     Json @db.Json
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+}
+model MediaAsset {
+  id           String @id @default(uuid()) @db.VarChar(100)
+  kind         MediaKind
+  originalPath String
+  variants     Json @db.Json
+  manifest     Json? @db.Json
+  width        Int?
+  height       Int?
+  bytes        BigInt
+  sourceNote   String?
+  licensed     Boolean @default(false)
+  altAr        String @default("")
+  altEn        String @default("")
+  content      Bytes? @db.MediumBlob
+  mime         String @default("image/webp") @db.VarChar(40)
+  createdBy    String? @db.VarChar(100)
+  createdAt    DateTime @default(now()) @db.DateTime(3)
+  creator      User? @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  productImages ProductImage[]
+  brands       Brand[]
+  guides       Guide[]
+  categoryImages CatalogCategory[]
+  @@index([kind, createdAt])
+  @@index([createdBy])
+  @@index([originalPath])
+}
+model Customer {
+  id               String @id @default(uuid()) @db.VarChar(100)
+  name             String? @db.VarChar(150)
+  phone            String? @db.VarChar(16)
+  email            String? @db.VarChar(254)
+  city             String? @db.VarChar(100)
+  type             CustomerType @default(individual)
+  company          String?
+  notes            String?
+  tags Json @db.Json
+  firstSource      LeadSource
+  marketingConsent Boolean @default(false)
+  consentAt        DateTime? @db.DateTime(3)
+  createdAt        DateTime @default(now()) @db.DateTime(3)
+  deletedAt        DateTime? @db.DateTime(3)
+  leads            Lead[]
+  quotes           Quote[]
+  sales            Sale[]
+  @@index([phone])
+  @@index([deletedAt, createdAt])
+}
+model Lead {
+  id             String @id @default(uuid()) @db.VarChar(100)
+  customerId     String? @db.VarChar(100)
+  source         LeadSource
+  status         LeadStatus @default(new)
+  lostReason     String?
+  payload        Json @db.Json
+  productId      String? @db.VarChar(100)
+  assignedToId   String? @db.VarChar(100)
+  nextFollowUpAt DateTime? @db.DateTime(3)
+  createdAt      DateTime @default(now()) @db.DateTime(3)
+  updatedAt      DateTime @updatedAt @db.DateTime(3)
+  customer       Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  product        Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  assignedTo     User? @relation(fields: [assignedToId], references: [id], onDelete: SetNull)
+  activities     LeadActivity[]
+  quotes         Quote[]
+  @@index([status, createdAt])
+  @@index([assignedToId, nextFollowUpAt])
+  @@index([source, createdAt])
+  @@index([customerId])
+  @@index([productId])
+}
+model LeadActivity {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  leadId    String @db.VarChar(100)
+  userId    String @db.VarChar(100)
+  type      ActivityType
+  body      String
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  lead      Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  user      User @relation(fields: [userId], references: [id], onDelete: Restrict)
+  @@index([leadId, createdAt])
+  @@index([userId])
+}
+model Quote {
+  id         String @id @default(uuid()) @db.VarChar(100)
+  leadId     String? @db.VarChar(100)
+  customerId String? @db.VarChar(100)
+  currency   Currency @default(USD)
+  subtotal   Decimal @db.Decimal(18, 2)
+  discount   Decimal @default(0) @db.Decimal(18, 2)
+  total      Decimal @db.Decimal(18, 2)
+  validUntil DateTime? @db.DateTime(3)
+  status     QuoteStatus @default(draft)
+  notes      Json? @db.Json
+  createdAt  DateTime @default(now()) @db.DateTime(3)
+  updatedAt  DateTime @updatedAt @db.DateTime(3)
+  lead       Lead? @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  customer   Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  items      QuoteItem[]
+  @@index([status, createdAt])
+  @@index([customerId])
+  @@index([leadId])
+}
+model QuoteItem {
+  id        String @id @default(uuid()) @db.VarChar(100)
+  quoteId   String @db.VarChar(100)
+  productId String? @db.VarChar(100)
+  label     Json @db.Json
+  qty       Int @default(1)
+  unitPrice Decimal @db.Decimal(18, 2)
+  currency  Currency
+  sort      Int @default(0)
+  quote     Quote @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  @@index([quoteId, sort])
+  @@index([productId])
+}
+model Sale {
+  id             String @id @default(uuid()) @db.VarChar(100)
+  customerId     String? @db.VarChar(100)
+  productId      String? @db.VarChar(100)
+  serialNumber   String?
+  soldAt         DateTime @default(now()) @db.DateTime(3)
+  priceUsd       Decimal? @db.Decimal(14, 2)
+  warrantyMonths Int?
+  warrantyStart  DateTime @db.DateTime(3)
+  warrantyEnd    DateTime? @db.DateTime(3)
+  notes          String?
+  customer       Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  product        Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  @@index([warrantyEnd])
+  @@index([customerId, soldAt])
+  @@index([productId])
+}
+model Subscriber {
+  id                 String @id @default(uuid()) @db.VarChar(100)
+  channel            SubscriberChannel
+  contact            String @db.VarChar(254)
+  status             SubscriberStatus @default(active)
+  consentAt          DateTime @db.DateTime(3)
+  consentSource      String @db.VarChar(100)
+  consentTextVersion String @db.VarChar(80)
+  unsubscribeToken   String @unique @db.VarChar(64)
+  tags Json @db.Json
+  lang               Language @default(ar)
+  createdAt          DateTime @default(now()) @db.DateTime(3)
+  @@unique([channel, contact])
+  @@index([channel, status, createdAt])
+}
+model AnalyticsEvent {
+  id           String @id @default(uuid()) @db.VarChar(100)
+  type         EventType
+  path         String @db.VarChar(500)
+  productId    String? @db.VarChar(100)
+  visitorHash  String @db.VarChar(64)
+  sessionHash  String @db.VarChar(64)
+  referrerHost String? @db.VarChar(254)
+  utm          Json? @db.Json
+  deviceClass  DeviceClass
+  lang         Language
+  createdAt    DateTime @default(now()) @db.DateTime(3)
+  product      Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  @@index([createdAt])
+  @@index([type, createdAt])
+  @@index([productId, type, createdAt])
+  @@index([visitorHash, createdAt])
+}
+model AnalyticsDaily {
+  id          String @id @default(uuid()) @db.VarChar(100)
+  day         DateTime @db.Date
+  type        EventType
+  // Stable hash of dimension JSON; no visitor identifiers retained.
+  dimensionKey String @db.VarChar(64)
+  dimensions   Json @db.Json
+  events       Int @default(0)
+  visitors     Int @default(0)
+  @@unique([day, type, dimensionKey])
+  @@index([day, type])
+}
+
+model CatalogCategory {
+  slug String @id @db.VarChar(100)
+  title Json @db.Json
+  sort Int @default(0)
+  parentSlug String? @db.VarChar(100)
+  parent CatalogCategory? @relation("categoryTree", fields: [parentSlug], references: [slug], onDelete: Restrict)
+  children CatalogCategory[] @relation("categoryTree")
+  description Json @default("{}") @db.Json
+  imageId String? @db.VarChar(100)
+  image MediaAsset? @relation(fields:[imageId],references:[id],onDelete:Restrict)
+  status ContentStatus @default(published)
+  productTypeId String? @db.VarChar(100)
+  productType ProductType? @relation(fields:[productTypeId],references:[id],onDelete:Restrict)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  products Product[]
+  brands BrandCategory[]
+}
+model BrandCategory {
+  brandId String @db.VarChar(100)
+  categorySlug String @db.VarChar(100)
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  category CatalogCategory @relation(fields: [categorySlug], references: [slug], onDelete: Restrict)
+  @@id([brandId, categorySlug])
+  @@index([categorySlug])
+}
+model SpecDefinition {
+  key String @id @db.VarChar(80)
+  title Json @db.Json
+  filterable Boolean @default(true)
+  valueType String @default("text") @db.VarChar(20)
+  unit String? @db.VarChar(40)
+  options Json @default("[]") @db.Json
+  required Boolean @default(false)
+  card Boolean @default(false)
+  sort Int @default(0)
+  values ProductFacet[]
+}
+model ProductFacet {
+  productId String @db.VarChar(100)
+  key String @db.VarChar(80)
+  value String @db.VarChar(160)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  definition SpecDefinition @relation(fields: [key], references: [key], onDelete: Restrict)
+  @@id([productId, key, value])
+  @@index([key, value])
+}
+model ProductLabel {
+  productId String @db.VarChar(100)
+  kind String @db.VarChar(20)
+  value String @db.VarChar(100)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  @@id([productId, kind, value])
+  @@index([kind, value])
+}
+
+model ProductType {
+  id String @id @db.VarChar(100)
+  title Json @db.Json
+  fields Json @db.Json
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  products Product[]
+  categories CatalogCategory[]
+}
+model ProductVariant {
+  id String @id @default(uuid()) @db.VarChar(100)
+  productId String @db.VarChar(100)
+  sku String @unique @db.VarChar(100)
+  optionKey String @db.VarChar(500)
+  options Json @db.Json
+  specs Json @db.Json
+  images Json @db.Json
+  priceUsd Decimal? @db.Decimal(14,2)
+  originalPriceUsd Decimal? @db.Decimal(14,2)
+  discountPercent  Decimal? @db.Decimal(5,2)
+  warrantyMonths Int?
+  condition Condition
+  inventoryMode String @default("quantity") @db.VarChar(20)
+  availabilityMode String @default("in_stock") @db.VarChar(30)
+  leadTimeDays Int?
+  quantity Int @default(0)
+  inventoryReviewed Boolean @default(false)
+  active Boolean @default(true)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  product Product @relation(fields:[productId],references:[id],onDelete:Restrict)
+  units InventoryUnit[]
+  movements InventoryMovement[]
+  packageItems PackageItem[]
+  @@unique([productId,optionKey])
+  @@index([productId,active])
+}
+model InventoryUnit {
+  id String @id @default(uuid()) @db.VarChar(100)
+  variantId String @db.VarChar(100)
+  serialNumber String @unique @db.VarChar(200)
+  condition Condition
+  batteryHealthPct Int?
+  inspection Json @db.Json
+  defects Json @db.Json
+  images Json @db.Json
+  available Boolean @default(true)
+  soldOrderId String? @db.VarChar(100)
+  soldOrder CommerceOrder? @relation(fields:[soldOrderId],references:[id],onDelete:Restrict)
+  movements InventoryMovement[]
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  variant ProductVariant @relation(fields:[variantId],references:[id],onDelete:Restrict)
+  @@index([variantId,available])
+}
+model InventoryMovement {
+  id String @id @default(uuid()) @db.VarChar(100)
+  variantId String @db.VarChar(100)
+  unitId String? @db.VarChar(100)
+  delta Int
+  reason String @db.VarChar(500)
+  userId String @db.VarChar(100)
+  orderId String? @db.VarChar(100)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  variant ProductVariant @relation(fields:[variantId],references:[id],onDelete:Restrict)
+  unit InventoryUnit? @relation(fields:[unitId],references:[id],onDelete:Restrict)
+  user User @relation(fields:[userId],references:[id],onDelete:Restrict)
+  order CommerceOrder? @relation(fields:[orderId],references:[id],onDelete:Restrict)
+  @@index([variantId,createdAt])
+  @@index([orderId])
+}
+model CatalogCollection {
+  id String @id @db.VarChar(100)
+  slug String @unique @db.VarChar(160)
+  title Json @db.Json
+  description Json @db.Json
+  mode String @db.VarChar(20)
+  rules Json @db.Json
+  published Boolean @default(false)
+  sort Int @default(0)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  products CollectionProduct[]
+}
+model CollectionProduct {
+  collectionId String @db.VarChar(100)
+  productId String @db.VarChar(100)
+  collection CatalogCollection @relation(fields:[collectionId],references:[id],onDelete:Cascade)
+  product Product @relation(fields:[productId],references:[id],onDelete:Restrict)
+  @@id([collectionId,productId])
+}
+model CatalogPackage {
+  id String @id @db.VarChar(100)
+  slug String @unique @db.VarChar(160)
+  title Json @db.Json
+  description Json @db.Json
+  priceMode String @db.VarChar(20)
+  priceUsd Decimal? @db.Decimal(14,2)
+  published Boolean @default(false)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  items PackageItem[]
+}
+model PackageItem {
+  packageId String @db.VarChar(100)
+  variantId String @db.VarChar(100)
+  quantity Int
+  package CatalogPackage @relation(fields:[packageId],references:[id],onDelete:Cascade)
+  variant ProductVariant @relation(fields:[variantId],references:[id],onDelete:Restrict)
+  @@id([packageId,variantId])
+}
+model CustomerAccount {
+  id String @id @default(uuid()) @db.VarChar(100)
+  name String @db.VarChar(150)
+  phone String @unique @db.VarChar(16)
+  passwordHash String
+  phoneVerified Boolean @default(false)
+  active Boolean @default(true)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  sessions CustomerSession[]
+  resets CustomerReset[]
+  cart ShoppingCart?
+  orders CommerceOrder[]
+  couponUsages CouponUsage[]
+}
+model CustomerSession {
+  id String @id @db.VarChar(64)
+  customerId String @db.VarChar(100)
+  expiresAt DateTime @db.DateTime(3)
+  customer CustomerAccount @relation(fields:[customerId],references:[id],onDelete:Cascade)
+  @@index([customerId])
+}
+model CustomerReset {
+  id String @id @db.VarChar(64)
+  customerId String @db.VarChar(100)
+  expiresAt DateTime @db.DateTime(3)
+  usedAt DateTime? @db.DateTime(3)
+  customer CustomerAccount @relation(fields:[customerId],references:[id],onDelete:Cascade)
+}
+model ShoppingCart {
+  id String @id @db.VarChar(64)
+  customerId String? @unique @db.VarChar(100)
+  items Json @db.Json
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  customer CustomerAccount? @relation(fields:[customerId],references:[id],onDelete:Cascade)
+}
+model PricingConfig {
+  id Int @id @default(1)
+  usdToYer Decimal? @db.Decimal(18,6)
+  whatsapp String? @db.VarChar(16)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+}
+model CommerceOrder {
+  id String @id @default(uuid()) @db.VarChar(100)
+  number String @unique @db.VarChar(50)
+  customerId String @db.VarChar(100)
+  idempotencyKey String @db.VarChar(100)
+  status String @default("new") @db.VarChar(30)
+  currency Currency
+  usdToYer Decimal? @db.Decimal(18,6)
+  rateAt DateTime? @db.DateTime(3)
+  subtotalUsd Decimal @db.Decimal(18,2)
+  subtotalYer Decimal? @db.Decimal(24,2)
+  couponId String? @db.VarChar(100)
+  couponCode String? @db.VarChar(50)
+  discountUsd Decimal? @default(0) @db.Decimal(18,2)
+  discountYer Decimal? @default(0) @db.Decimal(24,2)
+  totalUsd Decimal @default(0) @db.Decimal(18,2)
+  totalYer Decimal? @db.Decimal(24,2)
+  couponDetails Json? @db.Json
+  hasUnpriced Boolean
+  items Json @db.Json
+  fulfillment Json @db.Json
+  customerSnapshot Json @db.Json
+  completedAt DateTime? @db.DateTime(3)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  customer CustomerAccount @relation(fields:[customerId],references:[id],onDelete:Restrict)
+  coupon Coupon? @relation(fields:[couponId],references:[id],onDelete:SetNull)
+  couponUsage CouponUsage?
+  soldUnits InventoryUnit[]
+  movements InventoryMovement[]
+  @@unique([customerId,idempotencyKey])
+  @@index([status,createdAt])
+  @@index([couponId])
+}
+model ProductRedirect {
+  path String @id @db.VarChar(500)
+  productId String @db.VarChar(100)
+  product Product @relation(fields:[productId],references:[id],onDelete:Restrict)
+}
+
+model Contest {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  slug        String   @unique @db.VarChar(100)
+  title       Json     @db.Json
+  description Json     @db.Json
+  isActive    Boolean  @default(true)
+  startsAt    DateTime @default(now()) @db.DateTime(3)
+  endsAt      DateTime? @db.DateTime(3)
+  createdAt   DateTime @default(now()) @db.DateTime(3)
+  updatedAt   DateTime @updatedAt @db.DateTime(3)
+  prizes      ContestPrize[]
+  entries     ContestEntry[]
+  drawLogs    ContestDrawLog[]
+  @@index([isActive, startsAt])
+}
+
+model ContestPrize {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  contestId   String   @db.VarChar(100)
+  title       Json     @db.Json
+  description Json?    @db.Json
+  imageUrl    String?  @db.VarChar(500)
+  category    String   @default("electronics") @db.VarChar(50)
+  quantity    Int      @default(1)
+  sort        Int      @default(0)
+  contest     Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  winners     ContestEntry[]
+  drawLogs    ContestDrawLog[]
+  @@index([contestId, sort])
+}
+
+model ContestEntry {
+  id          String    @id @default(uuid()) @db.VarChar(100)
+  contestId   String    @db.VarChar(100)
+  ticketNumber String   @unique @db.VarChar(60)
+  name        String    @db.VarChar(150)
+  phone       String    @db.VarChar(20)
+  city        String?   @db.VarChar(100)
+  interests   Json      @db.Json
+  deviceHash  String?   @db.VarChar(64)
+  ipHash      String?   @db.VarChar(64)
+  isWinner    Boolean   @default(false)
+  wonPrizeId  String?   @db.VarChar(100)
+  wonAt       DateTime? @db.DateTime(3)
+  claimedAt   DateTime? @db.DateTime(3)
+  notes       String?   @db.VarChar(500)
+  createdAt   DateTime  @default(now()) @db.DateTime(3)
+  contest     Contest   @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  wonPrize    ContestPrize? @relation(fields: [wonPrizeId], references: [id], onDelete: SetNull)
+  drawLogs    ContestDrawLog[]
+  @@unique([contestId, phone])
+  @@index([contestId, isWinner])
+  @@index([contestId, deviceHash])
+  @@index([createdAt])
+}
+
+model ContestDrawLog {
+  id          String   @id @default(uuid()) @db.VarChar(100)
+  contestId   String   @db.VarChar(100)
+  prizeId     String   @db.VarChar(100)
+  entryId     String   @db.VarChar(100)
+  drawnBy     String?  @db.VarChar(100)
+  drawnAt     DateTime @default(now()) @db.DateTime(3)
+  contest     Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  prize       ContestPrize @relation(fields: [prizeId], references: [id], onDelete: Cascade)
+  entry       ContestEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  @@index([contestId, drawnAt])
+}
+
+model Coupon {
+  id                    String            @id @default(uuid()) @db.VarChar(100)
+  code                  String            @unique @db.VarChar(50)
+  title                 Json              @db.Json
+  description           Json?             @db.Json
+  discountType          String            @db.VarChar(20)
+  discountValue         Decimal           @db.Decimal(18,2)
+  maxDiscountUsd        Decimal?          @db.Decimal(18,2)
+  minOrderAmountUsd     Decimal?          @db.Decimal(18,2)
+  maxOrderAmountUsd     Decimal?          @db.Decimal(18,2)
+  minItemQuantity       Int?              @default(1)
+  startDate             DateTime?         @db.DateTime(3)
+  endDate               DateTime?         @db.DateTime(3)
+  usageLimitTotal       Int?
+  usageLimitPerCustomer Int?              @default(1)
+  usedCount             Int               @default(0)
+  firstOrderOnly        Boolean           @default(false)
+  excludeDiscounted     Boolean           @default(false)
+  isPublic              Boolean           @default(false)
+  active                Boolean           @default(true)
+  applicableCategories  Json?             @db.Json
+  excludedCategories    Json?             @db.Json
+  applicableBrands      Json?             @db.Json
+  excludedBrands        Json?             @db.Json
+  applicableProducts    Json?             @db.Json
+  customerPhones        Json?             @db.Json
+  createdAt             DateTime          @default(now()) @db.DateTime(3)
+  updatedAt             DateTime          @updatedAt @db.DateTime(3)
+  orders                CommerceOrder[]
+  usages                CouponUsage[]
+  @@index([active, endDate])
+}
+
+model CouponUsage {
+  id                String          @id @default(uuid()) @db.VarChar(100)
+  couponId          String          @db.VarChar(100)
+  orderId           String          @unique @db.VarChar(100)
+  customerId        String          @db.VarChar(100)
+  discountUsd       Decimal         @db.Decimal(18,2)
+  discountYer       Decimal?        @db.Decimal(24,2)
+  orderSubtotalUsd  Decimal         @db.Decimal(18,2)
+  customerPhone     String?         @db.VarChar(30)
+  usedAt            DateTime        @default(now()) @db.DateTime(3)
+  coupon            Coupon          @relation(fields: [couponId], references: [id], onDelete: Restrict)
+  order             CommerceOrder   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  customer          CustomerAccount @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  @@index([couponId])
+  @@index([customerId])
+  @@index([couponId, customerId])
+}
+
+

@@ -1,0 +1,350 @@
+{
+  "screens": [
+    {
+      "width": 360,
+      "theme": "light",
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 16,
+        "y": 68,
+        "width": 328,
+        "height": 732,
+        "top": 68,
+        "right": 344,
+        "bottom": 800,
+        "left": 16
+      },
+      "metrics": {
+        "lcp": 408,
+        "cls": 0,
+        "longTasks": [
+          250
+        ]
+      },
+      "images": []
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 16,
+        "y": 68,
+        "width": 328,
+        "height": 732,
+        "top": 68,
+        "right": 344,
+        "bottom": 800,
+        "left": 16
+      },
+      "metrics": {
+        "lcp": 384,
+        "cls": 0,
+        "longTasks": [
+          243
+        ]
+      },
+      "images": []
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 24,
+        "y": 68,
+        "width": 705,
+        "height": 832,
+        "top": 68,
+        "right": 729,
+        "bottom": 900,
+        "left": 24
+      },
+      "metrics": {
+        "lcp": 380,
+        "cls": 0,
+        "longTasks": [
+          224
+        ]
+      },
+      "images": []
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 24,
+        "y": 68,
+        "width": 705,
+        "height": 832,
+        "top": 68,
+        "right": 729,
+        "bottom": 900,
+        "left": 24
+      },
+      "metrics": {
+        "lcp": 328,
+        "cls": 0,
+        "longTasks": [
+          230
+        ]
+      },
+      "images": []
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 48,
+        "y": 86,
+        "width": 621.859375,
+        "height": 814,
+        "top": 86,
+        "right": 669.859375,
+        "bottom": 900,
+        "left": 48
+      },
+      "metrics": {
+        "lcp": 500,
+        "cls": 0,
+        "longTasks": [
+          306
+        ]
+      },
+      "images": []
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "title": "تقنيتك، تعمل معًا. ",
+      "stage": {
+        "x": 48,
+        "y": 86,
+        "width": 621.859375,
+        "height": 814,
+        "top": 86,
+        "right": 669.859375,
+        "bottom": 900,
+        "left": 48
+      },
+      "metrics": {
+        "lcp": 452,
+        "cls": 0,
+        "longTasks": [
+          301,
+          54
+        ]
+      },
+      "images": []
+    }
+  ],
+  "story": [
+    {
+      "p": 0,
+      "actual": "0.000",
+      "lid": "rotateX(-10deg)",
+      "monitor": "0",
+      "screen": "0.93",
+      "wire": "0",
+      "ups": "0"
+    },
+    {
+      "p": 0.27,
+      "actual": "0.270",
+      "lid": "rotateX(-3.74717deg)",
+      "monitor": "0",
+      "screen": "0.97377",
+      "wire": "0",
+      "ups": "0"
+    },
+    {
+      "p": 0.46,
+      "actual": "0.460",
+      "lid": "rotateX(0deg)",
+      "monitor": "0.858657",
+      "screen": "1",
+      "wire": "0",
+      "ups": "0"
+    },
+    {
+      "p": 0.62,
+      "actual": "0.620",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "0"
+    },
+    {
+      "p": 0.74,
+      "actual": "0.740",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "0"
+    },
+    {
+      "p": 0.79,
+      "actual": "0.790",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "0.06",
+      "wire": "1",
+      "ups": "0"
+    },
+    {
+      "p": 0.85,
+      "actual": "0.850",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "1"
+    },
+    {
+      "p": 0.94,
+      "actual": "0.940",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "1"
+    },
+    {
+      "p": 1,
+      "actual": "1.000",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "1"
+    },
+    {
+      "p": 0.62,
+      "actual": "0.620",
+      "lid": "rotateX(0deg)",
+      "monitor": "1",
+      "screen": "1",
+      "wire": "1",
+      "ups": "0"
+    },
+    {
+      "p": 0.27,
+      "actual": "0.270",
+      "lid": "rotateX(-3.74717deg)",
+      "monitor": "0",
+      "screen": "0.97377",
+      "wire": "0",
+      "ups": "0"
+    },
+    {
+      "p": 0,
+      "actual": "0.000",
+      "lid": "rotateX(-10deg)",
+      "monitor": "0",
+      "screen": "0.93",
+      "wire": "0",
+      "ups": "0"
+    }
+  ],
+  "checks": [
+    {
+      "name": "reduced",
+      "lite": true,
+      "height": 1702,
+      "chapters": 4,
+      "overflow": false
+    }
+  ],
+  "mobileMetrics": {
+    "lcp": 8444,
+    "cls": 0,
+    "longTasks": [
+      65,
+      216,
+      5096,
+      617,
+      109,
+      95,
+      61
+    ],
+    "loaded": true,
+    "resources": [
+      {
+        "name": "LinaRound-Regular.otf",
+        "bytes": 48668,
+        "duration": 1232.9000000001397
+      },
+      {
+        "name": "LinaRound-Bold.otf",
+        "bytes": 46724,
+        "duration": 1211.6999999999534
+      },
+      {
+        "name": "index-BrxBlXSw.js",
+        "bytes": 228629,
+        "duration": 2140.3000000000466
+      },
+      {
+        "name": "react-vendor-nYjpkyHx.js",
+        "bytes": 9940,
+        "duration": 473.19999999995343
+      },
+      {
+        "name": "animation-vendor-BUbfJI-N.js",
+        "bytes": 33307,
+        "duration": 1011.1999999999534
+      },
+      {
+        "name": "index-CDJYi0HN.css",
+        "bytes": 18483,
+        "duration": 690.1999999999534
+      },
+      {
+        "name": "MPLUSRounded1c-Regular-latin.woff2",
+        "bytes": 29108,
+        "duration": 600.6999999999534
+      },
+      {
+        "name": "MPLUSRounded1c-Bold-latin.woff2",
+        "bytes": 29744,
+        "duration": 619
+      },
+      {
+        "name": "LinaRound-SemiBold.otf",
+        "bytes": 49784,
+        "duration": 713.5
+      },
+      {
+        "name": "manifest.json",
+        "bytes": 312,
+        "duration": 159.0999999998603
+      },
+      {
+        "name": "manifest.json",
+        "bytes": 312,
+        "duration": 159.19999999995343
+      },
+      {
+        "name": "logo.png",
+        "bytes": 53549,
+        "duration": 429.5999999998603
+      }
+    ]
+  }
+}

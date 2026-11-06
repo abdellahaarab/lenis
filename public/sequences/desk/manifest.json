@@ -1,0 +1,10 @@
+{
+  "enabled": false,
+  "count": 0,
+  "width": 1280,
+  "height": 896,
+  "poster": "poster.webp",
+  "pattern": "frame_{index}.webp",
+  "illustrative": true,
+  "note": "v0 procedural stage. Set enabled=true and supply actual store frames plus poster to activate. Mobile uses mobileFrames or every second frame."
+}

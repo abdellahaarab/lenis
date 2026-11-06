@@ -1,132 +1,25 @@
-import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { SplitText } from 'gsap/SplitText'
-import { Github, ArrowRight, BookOpen } from 'lucide-react'
-import { InlineCode } from '@/components/ui/CodeBlock'
-import GradientOrb from '@/components/ui/GradientOrb'
-import Particles from '@/components/ui/Particles'
-
-gsap.registerPlugin(SplitText)
-
-export default function FinalCTA() {
-  const headingRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!headingRef.current) return
-      const split = new SplitText(headingRef.current, { type: 'chars' })
-
-      gsap.fromTo(
-        split.chars,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.02,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        }
-      )
-    })
-    return () => ctx.revert()
-  }, [])
-
-  return (
-    <section className="relative py-40 overflow-hidden text-center">
-      <GradientOrb color="purple" size="xl" className="left-1/2 -translate-x-1/2 -bottom-40 opacity-20" />
-      <GradientOrb color="blue" size="md" className="-left-20 top-0 opacity-10" />
-      <GradientOrb color="cyan" size="md" className="-right-20 top-0 opacity-10" />
-      <Particles count={60} />
-
-      {/* Grid */}
-      <div
-        className="absolute inset-0 grid-overlay pointer-events-none"
-        style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)' }}
-      />
-
-      <div className="section-padding container-custom relative z-10 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <span className="tag">Ready to ship</span>
-        </motion.div>
-
-        <div className="overflow-hidden mb-8">
-          <h2
-            ref={headingRef}
-            className="text-[clamp(48px,8vw,100px)] font-black leading-none tracking-[-0.04em]"
-          >
-            Start scrolling
-            <br />
-            <span className="gradient-text-aurora">beautifully.</span>
-          </h2>
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-white/50 text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
-        >
-          One package install. Zero configuration required.
-          Your scroll transforms in under a minute.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
-        >
-          <InlineCode>npm install lenis</InlineCode>
-
-          <a
-            href="https://github.com/abdellahaarab/lenis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            <Github size={16} />
-            View on GitHub
-          </a>
-
-          <a
-            href="https://pro-lenis.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            <BookOpen size={16} />
-            Documentation
-            <ArrowRight size={14} />
-          </a>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-xs text-white/20"
-        >
-          MIT License · No attribution required · Forever free
-        </motion.p>
-      </div>
-
-      {/* Bottom border glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-    </section>
-  )
+import {useCatalog} from '@/data/CatalogContext'
+import MotionHeading from '@/components/home/MotionHeading'
+import { referenceHome } from '@/data/reference-home'
+import { useState, useEffect } from 'react'
+import { Copy, Check, ArrowUpLeft, ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
+export default function FinalCTA(){
+ const {t,language}=useLanguage()
+ const {site}=useCatalog()
+ const ar=language==='ar',Arrow=ar?ArrowUpLeft:ArrowUpRight
+ const [interest,setInterest]=useState('study')
+ const [details,setDetails]=useState('')
+ const [copied,setCopied]=useState(false)
+ const [error,setError]=useState(false)
+ const options=[...t.useCases.cases.map(c=>({id:c.id,label:c.label})),...t.categories.items.map(c=>({id:`category-${c.id}`,label:c.name})),{id:'business',label:t.finalCta.business},{id:'support',label:t.finalCta.support}]
+ useEffect(()=>{
+  const handler=(e:Event)=>{setInterest((e as CustomEvent<string>).detail);setCopied(false)}
+  window.addEventListener('setup-interest',handler)
+  return()=>window.removeEventListener('setup-interest',handler)
+ },[])
+ useEffect(()=>{setCopied(false)},[interest,details,language])
+ const summary=`${site.storeName[language]}\n${ar?'احتياجي':'My setup'}: ${options.find(o=>o.id===interest)?.label}\n${details.trim()}`
+ const copy=async()=>{try{await navigator.clipboard.writeText(summary);setCopied(true);setError(false)}catch{setError(true)}}
+ return <section id="contact" className="contact-section section-space"><div className="page-shell contact-grid"><div><div className="eyebrow"><span className="status-dot"/>{ar?'خطوتك التالية تبدأ هنا':'YOUR NEXT CHAPTER STARTS HERE'}</div><MotionHeading lines={referenceHome[language].contactTitle} accent/><p>{referenceHome[language].contactDescription}</p><span className="contact-location">{site.city[language]} / {ar?'أجهزة • تجهيزات • حلول':'DEVICES • SETUPS • SOLUTIONS'}</span></div><div className="brief-card"><span className="micro-label">{ar?'رتّب احتياجك':'BUILD YOUR BRIEF'}</span><h3>{t.finalCta.title}</h3><label htmlFor="brief-interest">{t.contact.useCaseLabel}</label><select id="brief-interest" value={interest} onChange={e=>setInterest(e.target.value)}>{options.map(o=><option value={o.id} key={o.id}>{o.label}</option>)}</select><label htmlFor="brief-details">{ar?'ما الذي يهمك في تجهيزك؟':'What matters in your setup?'}</label><textarea id="brief-details" rows={3} value={details} onChange={e=>setDetails(e.target.value)} placeholder={ar?'استخدامك، جهازك الحالي، والميزانية التقريبية…':'Your use, current device and approximate budget…'}/><button type="button" className="action-primary" onClick={copy}>{copied?<Check size={19}/>:<Copy size={19}/>}<span>{copied?(ar?'تم نسخ ملخصك':'Brief copied'):(ar?'انسخ ملخص احتياجك':'Copy your setup brief')}</span><Arrow size={19}/></button>{site.whatsapp&&<a className="action-text" href={`https://wa.me/${site.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(summary)}`} target="_blank" rel="noopener noreferrer">{ar?'أرسل ملخصك عبر واتساب':'Send your brief on WhatsApp'}<Arrow size={19}/></a>}<p className="brief-note" role="status">{error?(ar?'تعذر النسخ. يمكنك تحديد النص من الحقول ونسخه يدويًا.':'Copy unavailable. Select and copy the fields manually.'):(ar?'ملخص جاهز لتشاركه مع فريقنا. لا تُرسل بياناتك تلقائيًا.':'A brief ready to share with our team. Nothing is sent automatically.')}</p></div></div></section>
 }

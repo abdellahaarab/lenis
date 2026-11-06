@@ -10,8 +10,6 @@ dist-ssr/
 build/
 
 
-package-lock.json
-./package-lock.json
 # Vite
 *.local
 .vite/
@@ -56,3 +54,19 @@ coverage/
 .cache/
 .temp/
 *.zip
+
+# Admin runtime and verification
+server/generated/
+uploads/
+backups/
+test-results/
+playwright-report/
+.env.test
+admin/public/
+**/test-results/
+
+.backups/
+.local/
+review/
+
+.env.hostinger

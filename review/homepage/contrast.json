@@ -1,0 +1,106 @@
+[
+  {
+    "theme": "light",
+    "role": "body",
+    "foreground": "#201532",
+    "background": "#f7f8fc",
+    "ratio": 16.29,
+    "AA": true
+  },
+  {
+    "theme": "light",
+    "role": "muted",
+    "foreground": "#625b70",
+    "background": "#f7f8fc",
+    "ratio": 6.09,
+    "AA": true
+  },
+  {
+    "theme": "light",
+    "role": "link",
+    "foreground": "#322f83",
+    "background": "#f7f8fc",
+    "ratio": 10.58,
+    "AA": true
+  },
+  {
+    "theme": "light",
+    "role": "muted on card",
+    "foreground": "#625b70",
+    "background": "#ffffff",
+    "ratio": 6.46,
+    "AA": true
+  },
+  {
+    "theme": "dark",
+    "role": "body",
+    "foreground": "#f6f1ff",
+    "background": "#110c1b",
+    "ratio": 17.34,
+    "AA": true
+  },
+  {
+    "theme": "dark",
+    "role": "muted",
+    "foreground": "#b8b0c6",
+    "background": "#110c1b",
+    "ratio": 9.21,
+    "AA": true
+  },
+  {
+    "theme": "dark",
+    "role": "link",
+    "foreground": "#b5b1ee",
+    "background": "#110c1b",
+    "ratio": 9.6,
+    "AA": true
+  },
+  {
+    "theme": "dark",
+    "role": "muted on card",
+    "foreground": "#b8b0c6",
+    "background": "#1c1429",
+    "ratio": 8.52,
+    "AA": true
+  },
+  {
+    "theme": "dark",
+    "role": "link on card",
+    "foreground": "#b5b1ee",
+    "background": "#1c1429",
+    "ratio": 8.88,
+    "AA": true
+  },
+  {
+    "theme": "both",
+    "role": "brand button text",
+    "foreground": "#ffffff",
+    "background": "#322f83",
+    "ratio": 11.23,
+    "AA": true
+  },
+  {
+    "theme": "both",
+    "role": "order button text",
+    "foreground": "#201532",
+    "background": "#f2a93b",
+    "ratio": 8.66,
+    "AA": true
+  },
+  {
+    "theme": "both",
+    "role": "demo label",
+    "foreground": "#322f83",
+    "background": "#f0eef8",
+    "ratio": 9.78,
+    "AA": true
+  },
+  {
+    "theme": "both",
+    "role": "screen text",
+    "foreground": "#ddd9ff",
+    "background": "#322f83",
+    "ratio": 8.26,
+    "AA": true
+  }
+]

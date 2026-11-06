@@ -1,0 +1,690 @@
+{
+  "images": [
+    {
+      "productId": "lap-thinkpad-t490s-001",
+      "files": [
+        "/images/products/lap-thinkpad-t490s-001-480.webp",
+        "/images/products/lap-thinkpad-t490s-001-480.avif",
+        "/images/products/lap-thinkpad-t490s-001-960.webp",
+        "/images/products/lap-thinkpad-t490s-001-960.avif",
+        "/images/products/lap-thinkpad-t490s-001-1600.webp",
+        "/images/products/lap-thinkpad-t490s-001-1600.avif",
+        "/images/laptop.webp",
+        "/images/study.webp"
+      ],
+      "source": "https://psrefstuff.lenovo.com/syspool/Sys/Image/ThinkPad/ThinkPad_T490s/ThinkPad_T490s_CT1_01.png",
+      "sourcePage": "https://psref.lenovo.com/Product/ThinkPad/ThinkPad_T490s",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "lap-thinkpad-p1-gen4-010",
+      "files": [
+        "/images/products/lap-thinkpad-p1-gen4-010-480.webp",
+        "/images/products/lap-thinkpad-p1-gen4-010-480.avif",
+        "/images/products/lap-thinkpad-p1-gen4-010-960.webp",
+        "/images/products/lap-thinkpad-p1-gen4-010-960.avif",
+        "/images/products/lap-thinkpad-p1-gen4-010-1600.webp",
+        "/images/products/lap-thinkpad-p1-gen4-010-1600.avif",
+        "/images/laptop-design.webp",
+        "/images/content.webp"
+      ],
+      "source": "https://psrefstuff.lenovo.com/syspool/Sys/Image/ThinkPad/ThinkPad_P1_Gen_4/ThinkPad_P1_Gen_4_CT1_01.png",
+      "sourcePage": "https://psref.lenovo.com/Product/ThinkPad/ThinkPad_P1_Gen_4",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "gam-asus-rog-zephyrus-g14-006",
+      "files": [
+        "/images/products/gam-asus-rog-zephyrus-g14-006-480.webp",
+        "/images/products/gam-asus-rog-zephyrus-g14-006-480.avif",
+        "/images/products/gam-asus-rog-zephyrus-g14-006-960.webp",
+        "/images/products/gam-asus-rog-zephyrus-g14-006-960.avif",
+        "/images/products/gam-asus-rog-zephyrus-g14-006-1600.webp",
+        "/images/products/gam-asus-rog-zephyrus-g14-006-1600.avif",
+        "/images/gaming.webp"
+      ],
+      "source": "https://dlcdnwebimgs.asus.com/gain/87C641FC-4E5F-4073-B739-1C41E2783B96/w1000/h732",
+      "sourcePage": "https://rog.asus.com/ca-en/laptops/rog-zephyrus/2021-rog-zephyrus-g14-series/gallery/",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "aud-logitech-g432-005",
+      "files": [
+        "/images/products/aud-logitech-g432-005-480.webp",
+        "/images/products/aud-logitech-g432-005-480.avif",
+        "/images/products/aud-logitech-g432-005-960.webp",
+        "/images/products/aud-logitech-g432-005-960.avif",
+        "/images/products/aud-logitech-g432-005-1600.webp",
+        "/images/products/aud-logitech-g432-005-1600.avif",
+        "/images/headphones.webp"
+      ],
+      "source": "https://resource.logitechg.com/content/dam/gaming/en/products/g432/2025/g432-3qtr-front-left-angle-gallery-1.png",
+      "sourcePage": "https://www.logitechg.com/en-us/shop/p/g432-7-1-surround-sound-gaming-headset",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "net-tplink-deco-x50-007",
+      "files": [
+        "/images/products/net-tplink-deco-x50-007-480.webp",
+        "/images/products/net-tplink-deco-x50-007-480.avif",
+        "/images/products/net-tplink-deco-x50-007-960.webp",
+        "/images/products/net-tplink-deco-x50-007-960.avif",
+        "/images/products/net-tplink-deco-x50-007-1600.webp",
+        "/images/products/net-tplink-deco-x50-007-1600.avif",
+        "/images/network.webp"
+      ],
+      "source": "https://static.tp-link.com/upload/image-header/Deco_X50(2-pack)_Overview_normal_20211225093625r.png",
+      "sourcePage": "https://www.tp-link.com/us/deco-mesh-wifi/product-family/deco-x50/",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "sto-samsung-980-pro-008",
+      "files": [
+        "/images/products/sto-samsung-980-pro-008-480.webp",
+        "/images/products/sto-samsung-980-pro-008-480.avif",
+        "/images/products/sto-samsung-980-pro-008-960.webp",
+        "/images/products/sto-samsung-980-pro-008-960.avif",
+        "/images/products/sto-samsung-980-pro-008-1600.webp",
+        "/images/products/sto-samsung-980-pro-008-1600.avif",
+        "/images/storage.webp"
+      ],
+      "source": "https://images.samsung.com/is/image/samsung/au-980-pro-nvme-m2-ssd-mz-v8p1t0bw-frontblack-292739022?wid=1600&fmt=png-alpha",
+      "sourcePage": "https://www.samsung.com/au/memory-storage/nvme-ssd/980-pro-pcle-4-0-nvme-m-2-ssd-1tb-mz-v8p1t0bw/",
+      "potentialLicense": "Manufacturer copyright; no redistribution permission established. Obtain written permission before commercial publication.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "pow-apc-back-ups-650va-009",
+      "files": [
+        "/images/products/ups-illustration.svg"
+      ],
+      "source": "Local procedural SVG",
+      "sourcePage": null,
+      "potentialLicense": "Project-authored illustration",
+      "licensed": true,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "lap-latitude-7420-003",
+      "files": [
+        "/images/products/lap-latitude-7420-003-480.webp",
+        "/images/products/lap-latitude-7420-003-480.avif",
+        "/images/products/lap-latitude-7420-003-960.webp",
+        "/images/products/lap-latitude-7420-003-960.avif",
+        "/images/products/lap-latitude-7420-003-1600.webp",
+        "/images/products/lap-latitude-7420-003-1600.avif"
+      ],
+      "source": "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/latitude-14-7420/global-spi/ng/non-touch/notebook-latitude-14-7420-nt-relsize-500-ng.psd?fmt=png-alpha&wid=1000",
+      "sourcePage": "https://www.dell.com/support/product-details/en-us/product/latitude-14-7420-2-in-1-laptop/overview",
+      "potentialLicense": "Manufacturer copyright; redistribution permission not established.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "disp-dell-u2722de-004",
+      "files": [
+        "/images/products/disp-dell-u2722de-004-480.webp",
+        "/images/products/disp-dell-u2722de-004-480.avif",
+        "/images/products/disp-dell-u2722de-004-960.webp",
+        "/images/products/disp-dell-u2722de-004-960.avif",
+        "/images/products/disp-dell-u2722de-004-1600.webp",
+        "/images/products/disp-dell-u2722de-004-1600.avif",
+        "/images/desktop.webp",
+        "/images/display-screen.webp"
+      ],
+      "source": "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/peripherals/output-devices/dell/monitors/u-series/u2722de/global-spi/ng/monitor-u2722de-relsize-500-ng.psd?fmt=jpg&hei=367&wid=500",
+      "sourcePage": "https://www.dell.com/support/product-details/en-us/product/dell-u2722de-monitor",
+      "potentialLicense": "Manufacturer copyright; redistribution permission not established.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "lap-elitebook-840-g7-002",
+      "files": [
+        "/images/products/lap-elitebook-840-g7-002-480.webp",
+        "/images/products/lap-elitebook-840-g7-002-480.avif",
+        "/images/products/lap-elitebook-840-g7-002-960.webp",
+        "/images/products/lap-elitebook-840-g7-002-960.avif",
+        "/images/products/lap-elitebook-840-g7-002-1600.webp",
+        "/images/products/lap-elitebook-840-g7-002-1600.avif"
+      ],
+      "source": "https://cdn.panacompu.com/doc/pd/hp-elitebook-840-g7-datasheet.pdf",
+      "sourcePage": "https://www8.hp.com/h20195/v2/GetPDF.aspx/4AA7-6811ENUC.pdf",
+      "manufacturer": "HP",
+      "potentialLicense": "HP manufacturer datasheet 4AA7-6811, mirrored by distributor because HP endpoint is unavailable. Image copyright HP; redistribution permission not established.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-02"
+    },
+    {
+      "productId": "hdd-wd-blue-1tb-011",
+      "files": [
+        "/images/products/hdd-wd-blue-1tb-011-480.webp",
+        "/images/products/hdd-wd-blue-1tb-011-480.avif",
+        "/images/products/hdd-wd-blue-1tb-011-960.webp",
+        "/images/products/hdd-wd-blue-1tb-011-960.avif",
+        "/images/products/hdd-wd-blue-1tb-011-1600.webp",
+        "/images/products/hdd-wd-blue-1tb-011-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-wd-blue-2tb-012",
+      "files": [
+        "/images/products/hdd-wd-blue-2tb-012-480.webp",
+        "/images/products/hdd-wd-blue-2tb-012-480.avif",
+        "/images/products/hdd-wd-blue-2tb-012-960.webp",
+        "/images/products/hdd-wd-blue-2tb-012-960.avif",
+        "/images/products/hdd-wd-blue-2tb-012-1600.webp",
+        "/images/products/hdd-wd-blue-2tb-012-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-wd-blue-4tb-013",
+      "files": [
+        "/images/products/hdd-wd-blue-4tb-013-480.webp",
+        "/images/products/hdd-wd-blue-4tb-013-480.avif",
+        "/images/products/hdd-wd-blue-4tb-013-960.webp",
+        "/images/products/hdd-wd-blue-4tb-013-960.avif",
+        "/images/products/hdd-wd-blue-4tb-013-1600.webp",
+        "/images/products/hdd-wd-blue-4tb-013-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-wd-purple-2tb-014",
+      "files": [
+        "/images/products/hdd-wd-purple-2tb-014-480.webp",
+        "/images/products/hdd-wd-purple-2tb-014-480.avif",
+        "/images/products/hdd-wd-purple-2tb-014-960.webp",
+        "/images/products/hdd-wd-purple-2tb-014-960.avif",
+        "/images/products/hdd-wd-purple-2tb-014-1600.webp",
+        "/images/products/hdd-wd-purple-2tb-014-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-seagate-barracuda-1tb-015",
+      "files": [
+        "/images/products/hdd-seagate-barracuda-1tb-015-480.webp",
+        "/images/products/hdd-seagate-barracuda-1tb-015-480.avif",
+        "/images/products/hdd-seagate-barracuda-1tb-015-960.webp",
+        "/images/products/hdd-seagate-barracuda-1tb-015-960.avif",
+        "/images/products/hdd-seagate-barracuda-1tb-015-1600.webp",
+        "/images/products/hdd-seagate-barracuda-1tb-015-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-seagate-barracuda-2tb-016",
+      "files": [
+        "/images/products/hdd-seagate-barracuda-2tb-016-480.webp",
+        "/images/products/hdd-seagate-barracuda-2tb-016-480.avif",
+        "/images/products/hdd-seagate-barracuda-2tb-016-960.webp",
+        "/images/products/hdd-seagate-barracuda-2tb-016-960.avif",
+        "/images/products/hdd-seagate-barracuda-2tb-016-1600.webp",
+        "/images/products/hdd-seagate-barracuda-2tb-016-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-seagate-barracuda-4tb-017",
+      "files": [
+        "/images/products/hdd-seagate-barracuda-4tb-017-480.webp",
+        "/images/products/hdd-seagate-barracuda-4tb-017-480.avif",
+        "/images/products/hdd-seagate-barracuda-4tb-017-960.webp",
+        "/images/products/hdd-seagate-barracuda-4tb-017-960.avif",
+        "/images/products/hdd-seagate-barracuda-4tb-017-1600.webp",
+        "/images/products/hdd-seagate-barracuda-4tb-017-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-seagate-skyhawk-2tb-018",
+      "files": [
+        "/images/products/hdd-seagate-skyhawk-2tb-018-480.webp",
+        "/images/products/hdd-seagate-skyhawk-2tb-018-480.avif",
+        "/images/products/hdd-seagate-skyhawk-2tb-018-960.webp",
+        "/images/products/hdd-seagate-skyhawk-2tb-018-960.avif",
+        "/images/products/hdd-seagate-skyhawk-2tb-018-1600.webp",
+        "/images/products/hdd-seagate-skyhawk-2tb-018-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-toshiba-p300-1tb-019",
+      "files": [
+        "/images/products/hdd-toshiba-p300-1tb-019-480.webp",
+        "/images/products/hdd-toshiba-p300-1tb-019-480.avif",
+        "/images/products/hdd-toshiba-p300-1tb-019-960.webp",
+        "/images/products/hdd-toshiba-p300-1tb-019-960.avif",
+        "/images/products/hdd-toshiba-p300-1tb-019-1600.webp",
+        "/images/products/hdd-toshiba-p300-1tb-019-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-toshiba-p300-2tb-020",
+      "files": [
+        "/images/products/hdd-toshiba-p300-2tb-020-480.webp",
+        "/images/products/hdd-toshiba-p300-2tb-020-480.avif",
+        "/images/products/hdd-toshiba-p300-2tb-020-960.webp",
+        "/images/products/hdd-toshiba-p300-2tb-020-960.avif",
+        "/images/products/hdd-toshiba-p300-2tb-020-1600.webp",
+        "/images/products/hdd-toshiba-p300-2tb-020-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-wd-blue-500gb-laptop-021",
+      "files": [
+        "/images/products/hdd-wd-blue-500gb-laptop-021-480.webp",
+        "/images/products/hdd-wd-blue-500gb-laptop-021-480.avif",
+        "/images/products/hdd-wd-blue-500gb-laptop-021-960.webp",
+        "/images/products/hdd-wd-blue-500gb-laptop-021-960.avif",
+        "/images/products/hdd-wd-blue-500gb-laptop-021-1600.webp",
+        "/images/products/hdd-wd-blue-500gb-laptop-021-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "hdd-seagate-st1000-laptop-022",
+      "files": [
+        "/images/products/hdd-seagate-st1000-laptop-022-480.webp",
+        "/images/products/hdd-seagate-st1000-laptop-022-480.avif",
+        "/images/products/hdd-seagate-st1000-laptop-022-960.webp",
+        "/images/products/hdd-seagate-st1000-laptop-022-960.avif",
+        "/images/products/hdd-seagate-st1000-laptop-022-1600.webp",
+        "/images/products/hdd-seagate-st1000-laptop-022-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ssd-kingston-a400-240gb-023",
+      "files": [
+        "/images/products/ssd-kingston-a400-240gb-023-480.webp",
+        "/images/products/ssd-kingston-a400-240gb-023-480.avif",
+        "/images/products/ssd-kingston-a400-240gb-023-960.webp",
+        "/images/products/ssd-kingston-a400-240gb-023-960.avif",
+        "/images/products/ssd-kingston-a400-240gb-023-1600.webp",
+        "/images/products/ssd-kingston-a400-240gb-023-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B01N5IB20Q",
+      "sourcePage": "https://www.amazon.com/dp/B01N5IB20Q",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ssd-kingston-a400-480gb-024",
+      "files": [
+        "/images/products/ssd-kingston-a400-480gb-024-480.webp",
+        "/images/products/ssd-kingston-a400-480gb-024-480.avif",
+        "/images/products/ssd-kingston-a400-480gb-024-960.webp",
+        "/images/products/ssd-kingston-a400-480gb-024-960.avif",
+        "/images/products/ssd-kingston-a400-480gb-024-1600.webp",
+        "/images/products/ssd-kingston-a400-480gb-024-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B01N5IB20Q",
+      "sourcePage": "https://www.amazon.com/dp/B01N5IB20Q",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ssd-kingston-a400-960gb-025",
+      "files": [
+        "/images/products/ssd-kingston-a400-960gb-025-480.webp",
+        "/images/products/ssd-kingston-a400-960gb-025-480.avif",
+        "/images/products/ssd-kingston-a400-960gb-025-960.webp",
+        "/images/products/ssd-kingston-a400-960gb-025-960.avif",
+        "/images/products/ssd-kingston-a400-960gb-025-1600.webp",
+        "/images/products/ssd-kingston-a400-960gb-025-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B01N5IB20Q",
+      "sourcePage": "https://www.amazon.com/dp/B01N5IB20Q",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ssd-crucial-mx500-500gb-026",
+      "files": [
+        "/images/products/ssd-crucial-mx500-500gb-026-480.webp",
+        "/images/products/ssd-crucial-mx500-500gb-026-480.avif",
+        "/images/products/ssd-crucial-mx500-500gb-026-960.webp",
+        "/images/products/ssd-crucial-mx500-500gb-026-960.avif",
+        "/images/products/ssd-crucial-mx500-500gb-026-1600.webp",
+        "/images/products/ssd-crucial-mx500-500gb-026-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ssd-crucial-mx500-1tb-027",
+      "files": [
+        "/images/products/ssd-crucial-mx500-1tb-027-480.webp",
+        "/images/products/ssd-crucial-mx500-1tb-027-480.avif",
+        "/images/products/ssd-crucial-mx500-1tb-027-960.webp",
+        "/images/products/ssd-crucial-mx500-1tb-027-960.avif",
+        "/images/products/ssd-crucial-mx500-1tb-027-1600.webp",
+        "/images/products/ssd-crucial-mx500-1tb-027-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "nvme-wd-sn770-500gb-028",
+      "files": [
+        "/images/products/nvme-wd-sn770-500gb-028-480.webp",
+        "/images/products/nvme-wd-sn770-500gb-028-480.avif",
+        "/images/products/nvme-wd-sn770-500gb-028-960.webp",
+        "/images/products/nvme-wd-sn770-500gb-028-960.avif",
+        "/images/products/nvme-wd-sn770-500gb-028-1600.webp",
+        "/images/products/nvme-wd-sn770-500gb-028-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "nvme-wd-sn770-1tb-029",
+      "files": [
+        "/images/products/nvme-wd-sn770-1tb-029-480.webp",
+        "/images/products/nvme-wd-sn770-1tb-029-480.avif",
+        "/images/products/nvme-wd-sn770-1tb-029-960.webp",
+        "/images/products/nvme-wd-sn770-1tb-029-960.avif",
+        "/images/products/nvme-wd-sn770-1tb-029-1600.webp",
+        "/images/products/nvme-wd-sn770-1tb-029-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "nvme-crucial-p3-1tb-030",
+      "files": [
+        "/images/products/nvme-crucial-p3-1tb-030-480.webp",
+        "/images/products/nvme-crucial-p3-1tb-030-480.avif",
+        "/images/products/nvme-crucial-p3-1tb-030-960.webp",
+        "/images/products/nvme-crucial-p3-1tb-030-960.avif",
+        "/images/products/nvme-crucial-p3-1tb-030-1600.webp",
+        "/images/products/nvme-crucial-p3-1tb-030-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "nvme-kingston-nv2-1tb-031",
+      "files": [
+        "/images/products/nvme-kingston-nv2-1tb-031-480.webp",
+        "/images/products/nvme-kingston-nv2-1tb-031-480.avif",
+        "/images/products/nvme-kingston-nv2-1tb-031-960.webp",
+        "/images/products/nvme-kingston-nv2-1tb-031-960.avif",
+        "/images/products/nvme-kingston-nv2-1tb-031-1600.webp",
+        "/images/products/nvme-kingston-nv2-1tb-031-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B01N5IB20Q",
+      "sourcePage": "https://www.amazon.com/dp/B01N5IB20Q",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-wd-elements-1tb-032",
+      "files": [
+        "/images/products/ext-wd-elements-1tb-032-480.webp",
+        "/images/products/ext-wd-elements-1tb-032-480.avif",
+        "/images/products/ext-wd-elements-1tb-032-960.webp",
+        "/images/products/ext-wd-elements-1tb-032-960.avif",
+        "/images/products/ext-wd-elements-1tb-032-1600.webp",
+        "/images/products/ext-wd-elements-1tb-032-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B06VWB5L73",
+      "sourcePage": "https://www.amazon.com/dp/B06VWB5L73",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-wd-elements-2tb-033",
+      "files": [
+        "/images/products/ext-wd-elements-2tb-033-480.webp",
+        "/images/products/ext-wd-elements-2tb-033-480.avif",
+        "/images/products/ext-wd-elements-2tb-033-960.webp",
+        "/images/products/ext-wd-elements-2tb-033-960.avif",
+        "/images/products/ext-wd-elements-2tb-033-1600.webp",
+        "/images/products/ext-wd-elements-2tb-033-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B06VWB5L73",
+      "sourcePage": "https://www.amazon.com/dp/B06VWB5L73",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-seagate-expansion-1tb-034",
+      "files": [
+        "/images/products/ext-seagate-expansion-1tb-034-480.webp",
+        "/images/products/ext-seagate-expansion-1tb-034-480.avif",
+        "/images/products/ext-seagate-expansion-1tb-034-960.webp",
+        "/images/products/ext-seagate-expansion-1tb-034-960.avif",
+        "/images/products/ext-seagate-expansion-1tb-034-1600.webp",
+        "/images/products/ext-seagate-expansion-1tb-034-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-seagate-expansion-2tb-035",
+      "files": [
+        "/images/products/ext-seagate-expansion-2tb-035-480.webp",
+        "/images/products/ext-seagate-expansion-2tb-035-480.avif",
+        "/images/products/ext-seagate-expansion-2tb-035-960.webp",
+        "/images/products/ext-seagate-expansion-2tb-035-960.avif",
+        "/images/products/ext-seagate-expansion-2tb-035-1600.webp",
+        "/images/products/ext-seagate-expansion-2tb-035-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B07D99KFPK",
+      "sourcePage": "https://www.amazon.com/dp/B07D99KFPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-sandisk-ssd-500gb-036",
+      "files": [
+        "/images/products/ext-sandisk-ssd-500gb-036-480.webp",
+        "/images/products/ext-sandisk-ssd-500gb-036-480.avif",
+        "/images/products/ext-sandisk-ssd-500gb-036-960.webp",
+        "/images/products/ext-sandisk-ssd-500gb-036-960.avif",
+        "/images/products/ext-sandisk-ssd-500gb-036-1600.webp",
+        "/images/products/ext-sandisk-ssd-500gb-036-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B08GTYFC37",
+      "sourcePage": "https://www.amazon.com/dp/B08GTYFC37",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-sandisk-ssd-1tb-037",
+      "files": [
+        "/images/products/ext-sandisk-ssd-1tb-037-480.webp",
+        "/images/products/ext-sandisk-ssd-1tb-037-480.avif",
+        "/images/products/ext-sandisk-ssd-1tb-037-960.webp",
+        "/images/products/ext-sandisk-ssd-1tb-037-960.avif",
+        "/images/products/ext-sandisk-ssd-1tb-037-1600.webp",
+        "/images/products/ext-sandisk-ssd-1tb-037-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B08GTYFC37",
+      "sourcePage": "https://www.amazon.com/dp/B08GTYFC37",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-wd-my-passport-2tb-038",
+      "files": [
+        "/images/products/ext-wd-my-passport-2tb-038-480.webp",
+        "/images/products/ext-wd-my-passport-2tb-038-480.avif",
+        "/images/products/ext-wd-my-passport-2tb-038-960.webp",
+        "/images/products/ext-wd-my-passport-2tb-038-960.avif",
+        "/images/products/ext-wd-my-passport-2tb-038-1600.webp",
+        "/images/products/ext-wd-my-passport-2tb-038-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-toshiba-canvio-1tb-039",
+      "files": [
+        "/images/products/ext-toshiba-canvio-1tb-039-480.webp",
+        "/images/products/ext-toshiba-canvio-1tb-039-480.avif",
+        "/images/products/ext-toshiba-canvio-1tb-039-960.webp",
+        "/images/products/ext-toshiba-canvio-1tb-039-960.avif",
+        "/images/products/ext-toshiba-canvio-1tb-039-1600.webp",
+        "/images/products/ext-toshiba-canvio-1tb-039-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    },
+    {
+      "productId": "ext-toshiba-canvio-2tb-040",
+      "files": [
+        "/images/products/ext-toshiba-canvio-2tb-040-480.webp",
+        "/images/products/ext-toshiba-canvio-2tb-040-480.avif",
+        "/images/products/ext-toshiba-canvio-2tb-040-960.webp",
+        "/images/products/ext-toshiba-canvio-2tb-040-960.avif",
+        "/images/products/ext-toshiba-canvio-2tb-040-1600.webp",
+        "/images/products/ext-toshiba-canvio-2tb-040-1600.avif"
+      ],
+      "source": "https://www.amazon.com/dp/B0088PUEPK",
+      "sourcePage": "https://www.amazon.com/dp/B0088PUEPK",
+      "potentialLicense": "Amazon / Manufacturer product imagery; illustrative reference.",
+      "licensed": false,
+      "demoOnly": true,
+      "retrievedAt": "2026-10-03"
+    }
+  ]
+}

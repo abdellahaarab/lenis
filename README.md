@@ -1,166 +1,61 @@
-# Lenis — Premium Landing Page
+# الجيل العربي الرقمي
 
-A world-class, Awwwards-quality landing page for the [Lenis](https://github.com/abdellahaarab/lenis) smooth scroll library. Built with React 19, GSAP, Framer Motion, and Tailwind CSS.
+متجر إلكتروني (عربي/إنجليزي) للأجهزة والتجهيزات — React 19، Vite، Fastify، MySQL.
 
-**Live Demo:** [pro-lenis.vercel.app](https://pro-lenis.vercel.app)  
-**Repository:** [github.com/abdellahaarab/lenis](https://github.com/abdellahaarab/lenis)
+> **تنبيه:** اسم المستودع `lenis` تاريخي (fork قديم). المشروع الحالي **متجر الجيل العربي** وليس صفحة تسويق مكتبة Lenis.  
+> **Cursor Cloud:** اتبع [docs/CURSOR-CLOUD.md](docs/CURSOR-CLOUD.md) وملف [`.cursor/environment.json`](.cursor/environment.json) — المنفذ **53000** ومسار **`/ar/shop`**.
 
----
+## التشغيل (محلي كامل — مثل الإنتاج)
 
-## Stack
-
-| Technology | Role |
-|---|---|
-| [Vite 6](https://vitejs.dev) | Build tool & dev server |
-| [React 19](https://react.dev) | UI framework |
-| [TypeScript](https://www.typescriptlang.org) | Type safety |
-| [GSAP 3.13](https://gsap.com) | SplitText animations, ScrollTrigger |
-| [Lenis 1.3](https://github.com/abdellahaarab/lenis) | Smooth scroll engine |
-| [Framer Motion](https://www.framer.com/motion) | Declarative animations |
-| [Tailwind CSS v3](https://tailwindcss.com) | Utility-first styling |
-| [Lucide React](https://lucide.dev) | Icon system |
-
----
-
-## Features
-
-- **GSAP SplitText** character-by-character hero reveal with 3D perspective
-- **Lenis smooth scroll** wired directly to GSAP's ticker for zero frame drops
-- **Custom cursor follower** with lerp-based lag and magnetic hover states
-- **Canvas particle system** — zero-dependency, RAF-driven floating particles
-- **Dual-direction infinite marquees** for showcase and testimonial sections
-- **SVG Lighthouse score rings** animated on scroll via GSAP ScrollTrigger
-- **Glass morphism** components with consistent `backdrop-filter` system
-- **Aurora gradient text** with `background-size: 300%` keyframe animation
-- **Live config demo** — interactive sliders update displayed code in real-time
-- **Progress bar** using Framer Motion `useSpring` on `scrollYProgress`
-- **Keyboard accessible** navigation with smooth-scroll anchoring
-- **Reduced motion** support via `prefers-reduced-motion` media query
-- **Code splitting** — animation, React, and vendor chunks separated
-
----
-
-## Getting Started
-
-```bash
-# Clone
-git clone https://github.com/abdellahaarab/lenis.git
-cd lenis
-
-# Install
+```sh
 npm install
+npm run build:all
+npm run start:local    # http://127.0.0.1:53000/ar/shop — قاعدة MariaDB محلية فقط
+```
 
-# Dev server → http://localhost:5173
-npm run dev
+تطوير الواجهة فقط (بدون نفس منفذ المتجر الكامل):
 
-# Production build
+```sh
+npm run dev            # Vite — غالباً 5173؛ يحتاج dev:server للـ API
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
----
+## التصميم والحركة
 
-## Project Structure
+- العربية افتراضيًا؛ اللغة والمظهر محفوظان محليًا.
+- GSAP وScrollTrigger: دخول متدرج، عمق في المشهد الرئيسي، وتجميع منتجات خلال مشهد مثبت على الكمبيوتر.
+- تحت عرض 900 بكسل يتحول المشهد إلى تمرير طبيعي دون تثبيت. احترام إعداد تقليل الحركة في النظام.
+- Lenis للتمرير مع حلقة واحدة تُنظف عند الإزالة؛ تمرير اللمس يبقى طبيعيًا.
+- Radix للتبويبات وحوار معلومات الموقع؛ القائمة تدير التركيز وتدعم Escape.
+- صور WebP محلية؛ سجل المصادر في `public/images/sources.json`. الشاشة مركبة من صورة العتاد وصورة الشاشة الأصليتين.
+- نموذج الاحتياج ينسخ الملخص محليًا. لم يُربط بإرسال خارجي لعدم توفر بيانات التواصل الفعلية للمحل.
 
-```
-src/
-├── components/
-│   ├── layout/
-│   │   ├── Navigation.tsx    # Glassmorphism nav, scroll-aware blur
-│   │   ├── Footer.tsx        # Minimal footer with links
-│   │   └── ProgressBar.tsx   # Spring-smoothed scroll indicator
-│   ├── sections/
-│   │   ├── Hero.tsx          # SplitText reveal, particles, mouse spotlight
-│   │   ├── WhyLenis.tsx      # Problem/solution cards, animated stats
-│   │   ├── InteractiveDemo.tsx  # Tab code viewer, live config sliders
-│   │   ├── Features.tsx      # 9-card grid with hover gradient reveals
-│   │   ├── Showcase.tsx      # Infinite marquee, parallax on scroll
-│   │   ├── Performance.tsx   # Animated bar charts, Lighthouse score rings
-│   │   ├── Testimonials.tsx  # Dual-direction testimonial marquee
-│   │   ├── OpenSource.tsx    # GitHub stats, contributors, release timeline
-│   │   └── FinalCTA.tsx      # SplitText headline, install command
-│   └── ui/
-│       ├── CodeBlock.tsx     # Syntax highlighter with copy-to-clipboard
-│       ├── CursorFollower.tsx  # Lerp cursor dot + ring
-│       ├── GradientOrb.tsx   # Blurred color orbs for depth
-│       ├── GridOverlay.tsx   # CSS grid background with fade mask
-│       ├── Particles.tsx     # Canvas 2D particle system
-│       └── Badge.tsx         # Tag/badge component
-├── hooks/
-│   ├── useLenis.ts           # Lenis init + GSAP ticker sync
-│   ├── useMousePosition.ts   # Normalized cursor coordinates
-│   ├── useMagneticButton.ts  # Magnetic button hover effect
-│   └── useScrollReveal.ts    # GSAP ScrollTrigger reveal + count-up
-├── lib/
-│   └── utils.ts              # cn(), lerp, clamp, map, easing presets
-└── types/
-    └── index.ts              # Shared TypeScript interfaces
+التوثيق البصري ونتائج الاختبار في `review/REVIEW.md`.
+
+## نظام الإدارة — MySQL وHostinger
+
+المتجر ولوحة الإدارة وFastify يعملون تحت `/` و`/admin/` و`/api/`. المحتوى القابل للإدارة يأتي من MySQL، والصور تُحفظ داخل القاعدة. المرجع الحالي هو [دليل Hostinger والتشغيل والنسخ الاحتياطي](docs/HOSTINGER-MYSQL.md) و[دليل إضافة الوظائف](docs/DEVELOPMENT-MYSQL.md). تم التحقق من قاعدة Hostinger، بينما نشر التطبيق على الدومين لم يُنفّذ بعد.
+
+الأوامر التالية ووثائق المرحلة A أدناه محفوظة للسياق التاريخي الخاص بـPostgreSQL؛ استخدم دليل MySQL أعلاه للتشغيل الحالي.
+
+مساحات العمل `server/` و`admin/` و`packages/shared/` داخل هذا المستودع. المتجر في `src/`، وواجهة الإدارة منفصلة تحت `/admin/`. لم يُعدّل تصميم المتجر أو الحركات لهذه المرحلة.
+
+```sh
+npm install
+npm run env:init
+npm run db:generate
+docker compose -f docker-compose.dev.yml up --build
+docker compose -f docker-compose.dev.yml exec -it api npm run seed:owner
 ```
 
----
+افتح `http://localhost:5174/admin/`. أمر إنشاء المالك تفاعلي دون حساب أو كلمة مرور افتراضية، ويلزم تغيير كلمة المرور عند أول دخول. تفعيل التحقق بخطوتين اختياري في المرحلة A. البيانات التجارية لا تُعبّأ تلقائيًا.
 
-## Animation Architecture
+للتطوير المحلي واختبارات قاعدة البيانات وخيارات الأمان راجع [دليل الأساس](docs/admin-foundation.md)، [خطة A](docs/ADMIN-PLAN-A.md)، [تقرير A](docs/ADMIN-REPORT-A.md) و[سجل التغييرات](docs/ADMIN-CHANGELOG.md).
 
+```sh
+npm run build:all
+npm run typecheck
+npm run lint
+npm test
+npm run test:ui
 ```
-Lenis (smooth scroll)
-  └── GSAP ticker.add()           ← Lenis.raf() called every frame
-        └── ScrollTrigger.update() ← Synced on Lenis scroll event
-
-Component animations:
-  Hero title   → GSAP SplitText (chars, perspective 3D)
-  Section entry → Framer Motion whileInView (once)
-  Stats bars   → GSAP ScrollTrigger + fromTo width
-  Score rings  → GSAP ScrollTrigger + strokeDashoffset
-  Marquees     → CSS animation (marquee / marquee-reverse keyframes)
-  Cursor       → requestAnimationFrame lerp loop
-  Progress bar → Framer Motion useSpring(scrollYProgress)
-```
-
----
-
-## Performance
-
-| Metric | Value |
-|---|---|
-| JS (gzipped) | ~180 KB total |
-| Animation vendor chunk | ~77 KB (GSAP + Framer Motion + Lenis) |
-| React vendor chunk | ~1.5 KB |
-| CSS (gzipped) | ~6.5 KB |
-| Target FPS | 60 |
-| Lighthouse Performance | 95+ |
-
----
-
-## Customization
-
-### Colors & tokens — [tailwind.config.ts](tailwind.config.ts)
-
-```ts
-colors: {
-  accent: {
-    purple: '#8b5cf6',
-    blue:   '#3b82f6',
-    cyan:   '#06b6d4',
-  }
-}
-```
-
-### Lenis options — [src/hooks/useLenis.ts](src/hooks/useLenis.ts)
-
-```ts
-new Lenis({
-  duration: 1.4,           // Inertia duration (seconds)
-  easing: (t) => ...,      // Custom easing function
-  smoothWheel: true,
-  wheelMultiplier: 1,
-  touchMultiplier: 2,
-})
-```
-
----
-
-## License
-
-MIT © [abdellahaarab](https://github.com/abdellahaarab)

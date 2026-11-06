@@ -1,0 +1,13 @@
+{
+  "headphones": "https://www.apple.com/v/airpods-max/l/images/overview/contrast/airpods_max_midnight__ddy8oa1y3y4i_large_2x.png",
+  "laptop": "https://www.apple.com/v/macbook-air/z/images/overview/hero/hero_static__c9sislzzicq6_large_2x.png",
+  "study": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200&q=85&auto=format&fit=crop",
+  "content": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=85&auto=format&fit=crop",
+  "gaming": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=85&auto=format&fit=crop",
+  "network": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop",
+  "storage": "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=800&q=80&auto=format&fit=crop",
+  "power": "https://download.schneider-electric.com/files?p_Doc_Ref=SPD_NCAO-AGKHKJ_FL_V&p_File_Type=rendition_369_jpg&default_image=DefaultProductImage.png",
+  "desktop": "https://www.apple.com/v/mac-mini/ab/images/overview/performance/performance_hw_display_mac_mini__duzudvllj8sy_large.png",
+  "display-screen": "https://www.apple.com/v/studio-display/f/images/overview/hero/hero_screen__emyv4tvgj6c2_large.jpg",
+  "laptop-design": "https://www.apple.com/v/macbook-air/z/images/overview/design/design_hero_static__e56c1v71mr6u_large.png"
+}

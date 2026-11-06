@@ -1,0 +1,47 @@
+{
+  "name": "@aljeel/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/index.js",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "seed:owner": "tsx src/seed-owner.ts",
+    "seed:coupons": "tsx src/seed-coupons.ts",
+    "test": "vitest run tests/unit.test.ts tests/laptop-filter.test.ts tests/excel.unit.test.ts tests/product-updates.unit.test.ts tests/coupon.unit.test.ts tests/seo-meta.unit.test.ts",
+    "test:integration": "vitest run tests/auth.integration.test.ts tests/commerce.integration.test.ts --no-file-parallelism"
+  },
+  "dependencies": {
+    "@aljeel/shared": "*",
+    "@fastify/cookie": "^11.0.0",
+    "@fastify/cors": "^11.0.0",
+    "@fastify/helmet": "^13.0.0",
+    "@fastify/rate-limit": "^10.3.0",
+    "@fastify/static": "^10.1.5",
+    "@fastify/swagger": "^9.5.0",
+    "@fastify/swagger-ui": "^6.1.1",
+    "@fastify/type-provider-zod": "^1.0.0",
+    "@prisma/adapter-mariadb": "^7.10.0",
+    "@prisma/client": "^7.0.0",
+    "argon2": "^0.44.0",
+    "dotenv": "^17.2.0",
+    "esbuild": "^0.28.2",
+    "fastify": "^5.6.0",
+    "mariadb": "^3.4.5",
+    "otpauth": "^9.5.2",
+    "pg": "^8.16.0",
+    "prisma": "^7.10.0",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "vitest": "^4.0.0"
+  }
+}

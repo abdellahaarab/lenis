@@ -1,0 +1,35 @@
+{
+  "storeName": {
+    "ar": "الجيل العربي الرقمي",
+    "en": "Digital Arab Generation"
+  },
+  "englishName": "Al-Jeel Al-Arabi Al-Raqmi",
+  "city": {
+    "ar": "صنعاء، اليمن",
+    "en": "Sana'a, Yemen"
+  },
+  "tagline": {
+    "ar": "تقنيتك، تعمل معًا.",
+    "en": "Your tech. In sync."
+  },
+  "warrantySlogan": {
+    "ar": "تقنية تتكامل.. وضمان يستمر",
+    "en": "Integrated Technology, Enduring Reliability"
+  },
+  "foundedYear": null,
+  "address": null,
+  "phone": null,
+  "whatsapp": null,
+  "workingHours": null,
+  "socialAccounts": {
+    "facebook": null,
+    "instagram": null,
+    "telegram": null
+  },
+  "defaultCurrency": "USD",
+  "officialAgentClaim": false,
+  "demoNotice": {
+    "ar": "هذا الموقع يحتوي حاليًا على بيانات تجريبية لأغراض العرض واختبار الأنظمة. الأسعار والمواصفات النهائية تُحدد عند التأكيد مع المتجر.",
+    "en": "This platform currently showcases demonstration catalog data. Definitive availability and pricing are confirmed directly with store management."
+  }
+}
